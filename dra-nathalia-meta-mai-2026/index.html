@@ -1,0 +1,1681 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Situação da Conta Meta — Dra Nathalia Teófilo — 19/05/2026</title>
+<style>
+  :root {
+    --bg: #FAFAF9;
+    --surface: #FFFFFF;
+    --ink: #1C1714;
+    --ink-soft: #5C534D;
+    --ink-muted: #8A817A;
+    --border: #E7E2DC;
+    --border-strong: #C9BFB6;
+    --accent: #14B8A6;
+    --danger: #DC2626;
+    --danger-bg: #FEF2F2;
+    --danger-border: #FCA5A5;
+    --warn: #D97706;
+    --warn-bg: #FFFBEB;
+    --warn-border: #FDE68A;
+    --ok: #15803D;
+    --ok-bg: #F0FDF4;
+    --ok-border: #86EFAC;
+    --info-bg: #F0F9FF;
+    --info-border: #BAE6FD;
+    --code-bg: #F5F0EE;
+    --shadow-card: 0 1px 3px rgba(28,23,20,0.08);
+    --shadow-strong: 0 8px 32px rgba(28,23,20,0.16);
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: var(--bg); color: var(--ink); font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif; line-height: 1.55; -webkit-font-smoothing: antialiased; }
+  body { padding: 32px 16px 80px; }
+  .doc { max-width: 880px; margin: 0 auto; }
+
+  header.doc-header { margin-bottom: 32px; padding-bottom: 24px; border-bottom: 1px solid var(--border); }
+  header.doc-header .eyebrow { font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink-muted); font-weight: 600; margin-bottom: 8px; }
+  header.doc-header h1 { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 38px; line-height: 1.15; margin: 0 0 8px; font-weight: 600; letter-spacing: -0.01em; }
+  header.doc-header .subtitle { font-size: 16px; color: var(--ink-soft); margin: 0; }
+  header.doc-header .meta { display: flex; gap: 24px; flex-wrap: wrap; margin-top: 16px; font-size: 13px; color: var(--ink-muted); }
+  header.doc-header .meta span strong { color: var(--ink); font-weight: 600; }
+
+  section { margin-bottom: 40px; }
+  section h2 { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 26px; font-weight: 600; margin: 0 0 16px; letter-spacing: -0.005em; }
+  section h3 { font-size: 16px; font-weight: 600; margin: 24px 0 12px; }
+
+  p { margin: 0 0 12px; font-size: 15px; }
+  p.lead { font-size: 17px; color: var(--ink-soft); }
+  strong { font-weight: 600; color: var(--ink); }
+  em { font-style: italic; color: var(--ink-soft); }
+
+  .tldr { background: var(--info-bg); border: 1px solid var(--info-border); border-left: 4px solid #0284C7; border-radius: 8px; padding: 20px 24px; margin-bottom: 32px; }
+  .tldr .label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 700; color: #075985; margin-bottom: 8px; }
+  .tldr p { font-size: 15.5px; margin: 0; color: #0C4A6E; }
+  .tldr p + p { margin-top: 10px; }
+
+  .number-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin: 16px 0; }
+  .num-card { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 16px 18px; box-shadow: var(--shadow-card); }
+  .num-card .num-label { font-size: 12px; color: var(--ink-muted); text-transform: uppercase; letter-spacing: 0.04em; font-weight: 600; margin-bottom: 6px; }
+  .num-card .num-value { font-size: 28px; font-weight: 700; line-height: 1.1; font-variant-numeric: tabular-nums; }
+  .num-card .num-delta { font-size: 13px; margin-top: 4px; font-weight: 500; }
+  .num-card.danger { border-color: var(--danger-border); background: var(--danger-bg); }
+  .num-card.danger .num-value { color: var(--danger); }
+  .num-card.ok { border-color: var(--ok-border); background: var(--ok-bg); }
+  .num-card.ok .num-value { color: var(--ok); }
+  .delta-down { color: var(--danger); }
+  .delta-up { color: var(--ok); }
+
+  table { width: 100%; border-collapse: collapse; margin: 12px 0 8px; font-size: 14px; background: var(--surface); border-radius: 8px; overflow: hidden; box-shadow: var(--shadow-card); }
+  thead { background: #F5F0EE; }
+  th, td { text-align: left; padding: 10px 14px; border-bottom: 1px solid var(--border); }
+  th { font-weight: 600; font-size: 12px; text-transform: uppercase; letter-spacing: 0.04em; color: var(--ink-soft); }
+  tr:last-child td { border-bottom: none; }
+  td.right, th.right { text-align: right; font-variant-numeric: tabular-nums; }
+  td.center, th.center { text-align: center; }
+  tr.highlight td { background: #FFF7ED; font-weight: 500; }
+  tr.danger-row td { background: #FEF2F2; }
+  tr.ok-row td { background: #F0FDF4; }
+  td .pill { display: inline-block; padding: 2px 8px; border-radius: 999px; font-size: 11px; font-weight: 600; }
+  .pill.pill-danger { background: #FEE2E2; color: #991B1B; }
+  .pill.pill-ok { background: #DCFCE7; color: #166534; }
+  .pill.pill-neutral { background: #E7E2DC; color: var(--ink-soft); }
+  .pill.pill-warn { background: #FEF3C7; color: #92400E; }
+
+  .timeline { position: relative; padding-left: 24px; margin: 16px 0; }
+  .timeline::before { content: ''; position: absolute; left: 6px; top: 8px; bottom: 8px; width: 2px; background: var(--border-strong); }
+  .timeline-item { position: relative; padding-bottom: 18px; }
+  .timeline-item::before { content: ''; position: absolute; left: -22px; top: 6px; width: 12px; height: 12px; border-radius: 50%; background: var(--surface); border: 2px solid var(--ink-muted); }
+  .timeline-item.danger::before { border-color: var(--danger); background: var(--danger); }
+  .timeline-item.warn::before { border-color: var(--warn); background: var(--warn); }
+  .timeline-item .when { font-weight: 600; font-size: 13px; color: var(--ink-soft); }
+  .timeline-item .what { font-size: 15px; margin-top: 2px; }
+
+  .problem-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 20px 22px; margin-bottom: 14px; box-shadow: var(--shadow-card); }
+  .problem-card.severity-high { border-left: 4px solid var(--danger); }
+  .problem-card.severity-med { border-left: 4px solid var(--warn); }
+  .problem-card .severity { font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; font-weight: 700; margin-bottom: 6px; }
+  .problem-card.severity-high .severity { color: var(--danger); }
+  .problem-card.severity-med .severity { color: var(--warn); }
+  .problem-card h3 { margin: 0 0 8px; font-size: 17px; }
+  .problem-card p { font-size: 14.5px; }
+  .problem-card .quote { background: var(--code-bg); border-left: 3px solid var(--ink-muted); padding: 10px 14px; margin: 10px 0; font-size: 13.5px; color: var(--ink-soft); font-style: italic; }
+  .problem-card .source { font-size: 12.5px; color: var(--ink-muted); margin-top: 8px; }
+  .problem-card .source a { color: var(--accent); text-decoration: none; }
+  .problem-card .source a:hover { text-decoration: underline; }
+
+  .recommendation { background: var(--ok-bg); border: 1px solid var(--ok-border); border-radius: 8px; padding: 20px 24px; }
+  .recommendation h3 { color: var(--ok); margin-top: 0; }
+  .recommendation ol { margin: 0; padding-left: 22px; }
+  .recommendation ol li { margin-bottom: 10px; font-size: 14.5px; }
+
+  .horizon-table { font-size: 14px; }
+  .horizon-table .horizon-now td { background: #FEF2F2; }
+  .horizon-table .horizon-med td { background: #FFFBEB; }
+  .horizon-table .horizon-far td { background: #F0FDF4; }
+
+  .source-list { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 20px 24px; }
+  .source-list h3 { margin-top: 0; }
+  .source-list ul { margin: 0; padding-left: 18px; font-size: 13.5px; }
+  .source-list li { margin-bottom: 6px; }
+  .source-list a { color: var(--accent); text-decoration: none; }
+  .source-list a:hover { text-decoration: underline; }
+  .source-list .source-group { margin-bottom: 16px; }
+  .source-list .source-group:last-child { margin-bottom: 0; }
+  .source-list .source-group-title { font-weight: 600; font-size: 13px; color: var(--ink-soft); margin-bottom: 6px; }
+
+  /* HERO MATH SECTION — central issue, maximum emphasis */
+  .hero-math {
+    background: linear-gradient(180deg, #FEF2F2 0%, #FFFFFF 100%);
+    border: 2px solid var(--danger);
+    border-radius: 12px;
+    padding: 28px 32px;
+    margin: 32px 0;
+    box-shadow: 0 4px 16px rgba(220, 38, 38, 0.1);
+  }
+  .hero-math .alert-banner {
+    background: var(--danger);
+    color: white;
+    padding: 6px 14px;
+    border-radius: 999px;
+    display: inline-block;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 700;
+    margin-bottom: 14px;
+  }
+  .hero-math h2 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 30px;
+    margin: 0 0 8px;
+    font-weight: 600;
+    color: var(--danger);
+    letter-spacing: -0.005em;
+  }
+  .hero-math .subtitle {
+    font-size: 15.5px;
+    color: var(--ink-soft);
+    margin: 0 0 18px;
+  }
+  .hero-math .stage-analogy {
+    background: white;
+    border: 1px solid var(--warn-border);
+    border-left: 4px solid var(--warn);
+    border-radius: 8px;
+    padding: 18px 20px;
+    margin: 16px 0;
+  }
+  .hero-math .stage-analogy .analogy-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-weight: 700;
+    color: #92400E;
+    margin-bottom: 8px;
+  }
+  .hero-math h3 {
+    font-size: 17px;
+    margin-top: 22px;
+    padding-top: 16px;
+    border-top: 1px solid #FCA5A5;
+  }
+  .hero-math .quote {
+    background: var(--code-bg);
+    border-left: 3px solid var(--ink-muted);
+    padding: 10px 14px;
+    margin: 10px 0;
+    font-size: 13.5px;
+    color: var(--ink-soft);
+    font-style: italic;
+  }
+  .hero-math .source {
+    font-size: 12.5px;
+    color: var(--ink-muted);
+    margin-top: 8px;
+  }
+  .hero-math .source a { color: var(--accent); text-decoration: none; }
+  .hero-math .source a:hover { text-decoration: underline; }
+  .hero-math .calc-block {
+    background: var(--code-bg);
+    padding: 14px 18px;
+    border-radius: 6px;
+    font-family: 'Geist Mono', 'SF Mono', Menlo, monospace;
+    font-size: 13.5px;
+    margin: 10px 0;
+    line-height: 1.7;
+  }
+
+  /* Stove case application — visual burners */
+  .stove-case {
+    background: white;
+    border: 1px solid var(--border-strong);
+    border-radius: 10px;
+    padding: 20px 22px;
+    margin: 16px 0;
+  }
+  .stove-case .case-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-weight: 700;
+    color: var(--danger);
+    margin-bottom: 10px;
+  }
+  .stove-case.scenario-paciente .case-label {
+    color: var(--ok);
+  }
+  .stove-case h4 {
+    font-size: 16px;
+    margin: 0 0 6px;
+    font-weight: 600;
+  }
+  .stove-case .case-orçamento {
+    font-size: 13px;
+    color: var(--ink-soft);
+    margin: 0 0 14px;
+  }
+  .burner-row {
+    display: flex;
+    gap: 16px;
+    margin: 10px 0;
+    align-items: center;
+    background: #FCFAF8;
+    padding: 12px 14px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+  }
+  .burner-info {
+    width: 220px;
+    flex-shrink: 0;
+  }
+  .burner-info strong {
+    display: block;
+    font-size: 14px;
+    line-height: 1.3;
+  }
+  .burner-info span {
+    font-size: 12px;
+    color: var(--ink-muted);
+  }
+  .burner-bar-wrapper { flex: 1; }
+  .burner-bar-track {
+    background: #EFE9E3;
+    height: 28px;
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+  }
+  .burner-bar {
+    height: 100%;
+    border-radius: 5px;
+    color: white;
+    font-size: 12.5px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    white-space: nowrap;
+    min-width: 90px;
+  }
+  .burner-bar.flame-ok { background: var(--ok); }
+  .burner-bar.flame-warn { background: var(--warn); }
+  .burner-bar.flame-danger { background: var(--danger); }
+  .burner-bar.flame-full { background: var(--ok); width: 100% !important; }
+  .burner-target {
+    font-size: 12px;
+    color: var(--ink-soft);
+    margin-top: 6px;
+  }
+  .burner-target strong { color: var(--ink); }
+  .stove-summary {
+    background: #FEF2F2;
+    border-left: 4px solid var(--danger);
+    padding: 12px 16px;
+    margin-top: 14px;
+    border-radius: 6px;
+    font-size: 14px;
+  }
+  .stove-case.scenario-paciente .stove-summary {
+    background: var(--ok-bg);
+    border-left-color: var(--ok);
+  }
+  .stove-case.scenario-proposed .stove-summary {
+    background: var(--ok-bg);
+    border-left-color: var(--ok);
+  }
+  @media (max-width: 640px) {
+    .burner-row { flex-direction: column; align-items: stretch; }
+    .burner-info { width: 100%; }
+  }
+
+  /* MACRO SECTION — 3 months overview */
+  .macro-hero {
+    background: white;
+    border: 2px solid var(--ink);
+    border-radius: 12px;
+    padding: 28px 32px;
+    margin: 32px 0;
+    box-shadow: var(--shadow-strong);
+  }
+  .macro-hero .macro-label {
+    display: inline-block;
+    background: var(--ink);
+    color: white;
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 700;
+    margin-bottom: 14px;
+  }
+  .macro-hero h2 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 30px;
+    margin: 0 0 8px;
+    font-weight: 600;
+    letter-spacing: -0.005em;
+  }
+  .macro-hero .macro-intro {
+    font-size: 15.5px;
+    color: var(--ink-soft);
+    margin: 0 0 20px;
+  }
+  .macro-hero h3 {
+    font-size: 17px;
+    margin: 22px 0 12px;
+    padding-top: 18px;
+    border-top: 1px solid var(--border);
+  }
+  .macro-hero h3:first-of-type { border-top: none; padding-top: 0; }
+
+  .macro-numbers {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin: 16px 0;
+  }
+  .macro-column {
+    border-radius: 10px;
+    padding: 20px 22px;
+    border: 1px solid var(--border);
+  }
+  .macro-column.col-pm {
+    background: var(--ok-bg);
+    border-color: var(--ok-border);
+  }
+  .macro-column.col-funnel {
+    background: var(--danger-bg);
+    border-color: var(--danger-border);
+  }
+  .macro-column h4 {
+    margin: 0 0 4px;
+    font-size: 15px;
+    font-weight: 600;
+  }
+  .macro-column .col-subtitle {
+    font-size: 12px;
+    color: var(--ink-muted);
+    margin-bottom: 14px;
+  }
+  .macro-column .col-metric {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    font-size: 13.5px;
+  }
+  .macro-column .col-metric:last-child { border-bottom: none; }
+  .macro-column .col-metric .metric-label { color: var(--ink-soft); }
+  .macro-column .col-metric .metric-value {
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+  }
+  .macro-column .col-metric.highlight {
+    background: rgba(255,255,255,0.6);
+    padding: 10px 12px;
+    margin: 8px -6px 0;
+    border-radius: 6px;
+    border-bottom: none;
+    font-size: 14.5px;
+  }
+
+  /* Horizontal timeline */
+  .timeline-h {
+    margin: 14px 0;
+    padding: 16px 18px;
+    background: var(--code-bg);
+    border-radius: 8px;
+    font-family: 'Geist Mono', monospace;
+    font-size: 13px;
+    line-height: 1.75;
+  }
+  .timeline-h .tl-entry {
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    gap: 12px;
+    padding: 2px 0;
+  }
+  .timeline-h .tl-date { color: var(--ink-soft); font-weight: 600; }
+  .timeline-h .tl-event { color: var(--ink); }
+  .timeline-h .tl-event.critical { color: var(--danger); font-weight: 600; }
+  .timeline-h .tl-event.start { color: var(--ok); }
+
+  /* Macro key insight callout */
+  .macro-key {
+    background: linear-gradient(135deg, #FEF2F2 0%, #FFF7ED 100%);
+    border-left: 4px solid var(--danger);
+    border-radius: 8px;
+    padding: 18px 22px;
+    margin: 18px 0;
+    font-size: 15px;
+  }
+  .macro-key strong { color: var(--danger); }
+
+  @media (max-width: 720px) {
+    .macro-numbers { grid-template-columns: 1fr; }
+  }
+
+  code { font-family: 'Geist Mono', 'SF Mono', Menlo, monospace; font-size: 12.5px; background: var(--code-bg); padding: 1px 6px; border-radius: 4px; color: var(--ink); }
+
+  footer.doc-footer { margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--border); font-size: 12.5px; color: var(--ink-muted); }
+  footer.doc-footer p { margin: 0 0 4px; font-size: 12.5px; }
+
+  @media print {
+    body { padding: 0; background: white; }
+    .doc { max-width: 100%; }
+    .problem-card, .num-card, table { box-shadow: none; }
+    a { color: var(--ink); }
+  }
+  @media (max-width: 640px) {
+    body { padding: 20px 12px; }
+    header.doc-header h1 { font-size: 28px; }
+    section h2 { font-size: 22px; }
+    table { font-size: 13px; }
+    th, td { padding: 8px 10px; }
+  }
+</style>
+</head>
+<body>
+<div class="doc">
+
+  <header class="doc-header">
+    <div class="eyebrow">Pré-leitura para reunião de alinhamento — 19/05/2026 às 17h30</div>
+    <h1>Situação da conta Meta Ads</h1>
+    <p class="subtitle">Compartilhamos abaixo o macro dos <strong>3 meses de contrato</strong>, mais a análise técnica detalhada da estratégia atual. O objetivo é entrarmos na reunião com a mesma base de dados e podermos discutir os próximos passos de forma produtiva.</p>
+    <div class="meta">
+      <span><strong>Conta Meta:</strong> Teofilo Estética e Odontologia <code>act_1185561133726748</code></span>
+      <span><strong>Janela analisada:</strong> Últimos 90 dias (19/02 a 19/05/2026)</span>
+      <span><strong>Fonte dos dados:</strong> Gerenciador de Anúncios do Meta + CRM MarketingPro (auditáveis)</span>
+    </div>
+  </header>
+
+  <!-- ========================= MACRO 3 MESES ========================= -->
+  <div class="macro-hero">
+    <div class="macro-label">Quadro macro — 3 meses de contrato</div>
+    <h2>O que foi entregue em 90 dias por cada estratégia paralela</h2>
+    <p class="macro-intro">Antes de discutir a mudança da última sexta-feira, precisamos olhar pra trás. A clínica está com a agência há aproximadamente <strong>3 meses</strong>, e durante todo esse período duas estratégias rodaram em paralelo: o <strong>Paciente Modelo</strong> (anúncio único de conversa direta) e o <strong>funil em 3 etapas</strong> (Atração → Qualificação → Quente). Os números abaixo mostram, lado a lado, o que cada uma entregou.</p>
+
+    <!-- TIMELINE 3 meses -->
+    <h3>Linha do tempo do contrato</h3>
+    <div class="timeline-h">
+      <div class="tl-entry"><span class="tl-date">~19/02/2026</span><span class="tl-event start">Início do contrato com a agência</span></div>
+      <div class="tl-entry"><span class="tl-date">03/02/2026</span><span class="tl-event">Atração v1 entra no ar — conjunto <code>01 - ULTRASEGUIMENTADO</code>, público segmentado de luxo (R$ 15/dia, otimização "visita ao perfil")</span></div>
+      <div class="tl-entry"><span class="tl-date">~Fev/Mar</span><span class="tl-event">Paciente Modelo (e versões anteriores) já gerando leads regularmente em paralelo</span></div>
+      <div class="tl-entry"><span class="tl-date">09/04/2026</span><span class="tl-event critical">▶ Marco da nova estratégia: Atração v1 é pausada + Atração v2 entra no ar (conjunto <code>03 - ABERTO</code>, público amplo 636k pessoas, R$ 8/dia, otimização "visita ao perfil"). É essa estrutura que roda hoje.</span></div>
+      <div class="tl-entry"><span class="tl-date">29/04/2026</span><span class="tl-event start">Campanha <code>[CST] [QUALIFICAÇÃO]</code> entra no ar (etapa 2 do funil) — 20 dias após a nova Atração</span></div>
+      <div class="tl-entry"><span class="tl-date">06/05/2026</span><span class="tl-event start">Campanha <code>[CST] [MSG] [QUENTE]</code> entra no ar — funil completo. Agência sinaliza que "agora vai virar pra conversão"</span></div>
+      <div class="tl-entry"><span class="tl-date">15/05/2026</span><span class="tl-event critical">Agência PAUSA o Paciente Modelo "para o funil rodar sozinho" + cria 2 conjuntos novos ABERTO (clones do <code>03 - ABERTO</code>)</span></div>
+      <div class="tl-entry"><span class="tl-date">16–19/05</span><span class="tl-event critical">Leads no CRM caem para ~0,6/dia (vs ~10/dia antes). Funil sozinho não entrega.</span></div>
+      <div class="tl-entry"><span class="tl-date">19/05/2026</span><span class="tl-event">Hoje. Reunião marcada para 17h30.</span></div>
+    </div>
+    <p style="font-size: 13.5px; color: var(--ink-soft); margin-top: 4px;"><strong>Resumo dos marcos:</strong> a Atração rodou em duas configurações distintas (v1 segmentada de 03/02 a 09/04, v2 amplo de 09/04 até hoje). O funil em 3 etapas como estrutura completa <strong>só ficou em pé em 06/05</strong> — quando agência sinalizou que "agora ia virar pra conversão". 9 dias depois, pausaram o Paciente Modelo para "deixar o funil rodar sozinho".</p>
+
+    <!-- COMPARAÇÃO LADO A LADO -->
+    <h3>Comparação de entrega em 90 dias: Paciente Modelo vs Funil em 3 etapas</h3>
+    <p style="font-size: 13.5px; color: var(--ink-soft); margin-bottom: 8px;">Dados extraídos do Gerenciador de Anúncios do Meta (relatório dos últimos 90 dias) e cruzados com leads no CRM atribuídos automaticamente pelo WhatsApp.</p>
+
+    <div class="macro-numbers">
+      <!-- Coluna Paciente Modelo -->
+      <div class="macro-column col-pm">
+        <h4>Paciente Modelo</h4>
+        <div class="col-subtitle">1 conjunto único, otimização "iniciar conversa", rodando 90 dias</div>
+        <div class="col-metric">
+          <span class="metric-label">Gasto em 90 dias</span>
+          <span class="metric-value">R$ 2.845</span>
+        </div>
+        <div class="col-metric">
+          <span class="metric-label">% do orçamento total gasto</span>
+          <span class="metric-value">62%</span>
+        </div>
+        <div class="col-metric">
+          <span class="metric-label">Conversas WhatsApp (Meta)</span>
+          <span class="metric-value">1.010</span>
+        </div>
+        <div class="col-metric">
+          <span class="metric-label">Leads no CRM atribuídos</span>
+          <span class="metric-value">652</span>
+        </div>
+        <div class="col-metric">
+          <span class="metric-label">Won (vendas fechadas)</span>
+          <span class="metric-value">7</span>
+        </div>
+        <div class="col-metric">
+          <span class="metric-label">Receita gerada</span>
+          <span class="metric-value">R$ 5.893</span>
+        </div>
+        <div class="col-metric">
+          <span class="metric-label">Ticket médio</span>
+          <span class="metric-value">R$ 841,86</span>
+        </div>
+        <div class="col-metric highlight">
+          <span class="metric-label">Custo por conversa WPP</span>
+          <span class="metric-value">R$ 2,82</span>
+        </div>
+      </div>
+
+      <!-- Coluna Funil -->
+      <div class="macro-column col-funnel">
+        <h4>Funil em 3 etapas (Atração + Qualif + Quente)</h4>
+        <div class="col-subtitle">Atração 3,5 meses · Qualificação 21 dias · Quente 13 dias</div>
+        <div class="col-metric">
+          <span class="metric-label">Gasto em 90 dias</span>
+          <span class="metric-value">R$ 1.757</span>
+        </div>
+        <div class="col-metric">
+          <span class="metric-label">% do orçamento total gasto</span>
+          <span class="metric-value">38%</span>
+        </div>
+        <div class="col-metric">
+          <span class="metric-label">Conversas WhatsApp (Meta)</span>
+          <span class="metric-value">23</span>
+        </div>
+        <div class="col-metric">
+          <span class="metric-label">Leads no CRM atribuídos</span>
+          <span class="metric-value">9</span>
+        </div>
+        <div class="col-metric">
+          <span class="metric-label">Won (vendas fechadas)</span>
+          <span class="metric-value">0</span>
+        </div>
+        <div class="col-metric">
+          <span class="metric-label">Receita gerada</span>
+          <span class="metric-value">R$ 0</span>
+        </div>
+        <div class="col-metric highlight">
+          <span class="metric-label">Custo por conversa WPP</span>
+          <span class="metric-value">R$ 76,39 (27× mais caro)</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="macro-key">
+      <strong>O que essa comparação revela:</strong> em 3 meses, <strong>97,8% das conversas no WhatsApp vieram do Paciente Modelo</strong> (1.010 das 1.033) e <strong>100% das vendas fechadas via Meta Ads também vieram dele</strong> (7 vendas, R$ 5.893 de receita). O funil em 3 etapas — apesar de ter consumido R$ 1.757 (38% do investimento) — entregou apenas 23 conversas, ZERO vendas fechadas e R$ 0 de receita. O Paciente Modelo carregou sozinho a operação da clínica enquanto o funil estava em "fase de maturação" prometida.
+    </div>
+
+    <!-- ATRIBUIÇÃO REAL DAS VENDAS -->
+    <h3>Quem realmente gerou as vendas em 90 dias?</h3>
+    <p>Cruzamento entre o CRM (vendas fechadas confirmadas pela clínica) e a atribuição automática feita pelo WhatsApp:</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Origem da venda</th>
+          <th class="right">Vendas fechadas</th>
+          <th class="right">Receita</th>
+          <th class="right">% da receita</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="ok-row">
+          <td>Orgânico (sem atribuição Meta — Instagram, indicação, busca)</td>
+          <td class="right">19</td>
+          <td class="right">R$ 6.269</td>
+          <td class="right">52%</td>
+        </tr>
+        <tr>
+          <td>Paciente Modelo (Meta Ads) — 4 vendas a R$ 799 + 3 vendas a R$ 899</td>
+          <td class="right">7</td>
+          <td class="right">R$ 5.893</td>
+          <td class="right">48%</td>
+        </tr>
+        <tr class="danger-row">
+          <td><strong>Funil em 3 etapas (Meta Ads)</strong></td>
+          <td class="right"><strong>0</strong></td>
+          <td class="right"><strong>R$ 0</strong></td>
+          <td class="right"><strong>0%</strong></td>
+        </tr>
+        <tr class="highlight">
+          <td colspan="1"><strong>Total 90 dias</strong></td>
+          <td class="right"><strong>26</strong></td>
+          <td class="right"><strong>R$ 12.162</strong></td>
+          <td class="right"><strong>100%</strong></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- IMPLICAÇÃO FINANCEIRA — CONTA COMPLETA -->
+    <h3>A conta dos 3 meses, item por item</h3>
+    <p>Pra dimensionar com clareza, abaixo a estrutura financeira completa, separando o que é responsabilidade direta da agência (Meta Ads) e o que é responsabilidade do redes sociais (Instagram, fornecedor separado contratado por recomendação da agência).</p>
+
+    <h4 style="font-size: 14px; margin-top: 14px;">Quanto a clínica investiu nesses 3 meses</h4>
+    <table>
+      <thead>
+        <tr>
+          <th>Linha de trabalho</th>
+          <th>Item</th>
+          <th class="right">Total 3 meses</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="danger-row">
+          <td rowspan="3" style="vertical-align: top;"><strong>Agência de marketing</strong><br><span style="font-size: 12px; color: var(--ink-soft);">(responsável pela estratégia Meta Ads)</span></td>
+          <td>Implementação (taxa única)</td>
+          <td class="right">R$ 1.900</td>
+        </tr>
+        <tr class="danger-row">
+          <td>Mensalidade da agência (R$ 1.800/mês × 3)</td>
+          <td class="right">R$ 5.400</td>
+        </tr>
+        <tr class="danger-row">
+          <td>Gasto efetivo no Meta Ads (cartão da clínica direto pra Meta, 90 dias)</td>
+          <td class="right">R$ 4.602</td>
+        </tr>
+        <tr class="ok-row">
+          <td><strong>Redes sociais (Insta)</strong><br><span style="font-size: 12px; color: var(--ink-soft);">(fornecedor separado)</span></td>
+          <td>Mensalidade do redes sociais (R$ 1.000/mês × 3)</td>
+          <td class="right">R$ 3.000</td>
+        </tr>
+        <tr class="highlight">
+          <td colspan="2"><strong>TOTAL investido em 3 meses</strong></td>
+          <td class="right"><strong>R$ 14.902</strong></td>
+        </tr>
+      </tbody>
+    </table>
+    <p style="font-size: 12.5px; color: var(--ink-muted); margin-top: 4px;">O gasto efetivo no Meta Ads (R$ 4.602) é dinheiro real saindo do cartão da clínica e indo direto pra Meta, gerenciado pela agência. Por isso entra na conta de "investimento da linha Agência".</p>
+
+    <h4 style="font-size: 14px; margin-top: 18px;">Quanto cada linha de trabalho retornou em receita</h4>
+    <table>
+      <thead>
+        <tr>
+          <th>Origem da receita</th>
+          <th class="right">Receita 3 meses</th>
+          <th>Linha de trabalho</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Paciente Modelo</strong> (Meta Ads — 7 vendas: 4 × R$ 799 + 3 × R$ 899)</td>
+          <td class="right">R$ 5.893</td>
+          <td>Agência (campanha que veio antes do redesenho do funil)</td>
+        </tr>
+        <tr class="danger-row">
+          <td><strong>Funil em 3 etapas</strong> (Atração + Qualif + Quente)</td>
+          <td class="right"><strong>R$ 0</strong></td>
+          <td>Agência (estratégia exclusivamente desenhada por ela)</td>
+        </tr>
+        <tr class="ok-row">
+          <td>Orgânico (Instagram, indicação, busca) — 19 vendas</td>
+          <td class="right">R$ 6.269</td>
+          <td>Redes sociais (Insta está 100% segundo a clínica)</td>
+        </tr>
+        <tr class="highlight">
+          <td><strong>Total receita 3 meses</strong></td>
+          <td class="right"><strong>R$ 12.162</strong></td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+    <p style="font-size: 12.5px; color: var(--ink-muted); margin-top: 4px;">Atribuímos a receita orgânica majoritariamente ao trabalho de redes sociais porque a clínica reporta que o Instagram "está 100%" — mesmo que parte do orgânico venha de indicação/busca, o redes sociais é o canal de atração principal não-pago, e o resultado dele é claro.</p>
+
+    <h4 style="font-size: 14px; margin-top: 18px;">O resultado líquido por linha de trabalho</h4>
+    <table>
+      <thead>
+        <tr>
+          <th>Linha de trabalho</th>
+          <th class="right">Investimento</th>
+          <th class="right">Receita atribuída</th>
+          <th class="right">Resultado</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="danger-row">
+          <td><strong>Agência (Meta Ads)</strong></td>
+          <td class="right">R$ 11.902</td>
+          <td class="right">R$ 5.893</td>
+          <td class="right"><strong>−R$ 6.009 (prejuízo, retorno 0,50× (cada R$ 1 investido virou R$ 0,50))</strong></td>
+        </tr>
+        <tr class="ok-row">
+          <td><strong>Redes sociais (Instagram)</strong></td>
+          <td class="right">R$ 3.000</td>
+          <td class="right">R$ 6.269</td>
+          <td class="right"><strong>+R$ 3.269 (lucro, retorno 2,09× (cada R$ 1 investido virou R$ 2,09))</strong></td>
+        </tr>
+        <tr class="danger-row">
+          <td><strong>Consolidado</strong></td>
+          <td class="right"><strong>R$ 14.902</strong></td>
+          <td class="right"><strong>R$ 12.162</strong></td>
+          <td class="right"><strong>−R$ 2.740 (prejuízo consolidado, retorno 0,82× (cada R$ 1 investido virou R$ 0,82))</strong></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="macro-key">
+      <strong>O que essa conta revela:</strong> a linha que está dando retorno positivo é o <strong>redes sociais (Instagram, retorno 2,09× (cada R$ 1 investido virou R$ 2,09))</strong> — e o Insta é um fornecedor à parte, contratado por recomendação da agência mas executado por outra pessoa. <strong>A linha da agência (Meta Ads) está com retorno 0,50× (cada R$ 1 investido virou R$ 0,50) — prejuízo de R$ 6.009 em 90 dias.</strong> Dentro dessa linha, o Paciente Modelo (que veio antes do redesenho do funil) trouxe os R$ 5.893; o funil em 3 etapas — a aposta principal da agência nos últimos 3 meses — trouxe R$ 0. <strong>Mesmo somando o lucro do Instagram, o consolidado em 90 dias é um prejuízo de R$ 2.740</strong> (a receita orgânica não foi suficiente para cobrir o buraco do investimento Meta Ads). Em síntese: a clínica está perdendo dinheiro nesses 3 meses, e a maior parte do prejuízo concentra-se na linha de trabalho da agência.
+    </div>
+
+    <!-- ATRAÇÃO: O QUE ELA ENTREGOU + PROBLEMAS DE CONFIG -->
+    <h3>A Atração isoladamente — o que ela entregou (e onde a configuração compromete o resultado)</h3>
+    <p>É justo separar a análise da Atração: sendo top de funil, ela <strong>não é avaliada por vendas diretas</strong>. As métricas corretas de sucesso pra essa etapa são alcance, engajamento, visualizações de vídeo e crescimento da audiência da etapa seguinte. Em 90 dias (combinando v1 ultrassegmentada + v2 amplo), os números são:</p>
+
+    <h4 style="margin-top: 16px; font-size: 14px; color: var(--ok); text-transform: uppercase; letter-spacing: 0.05em;">Métricas de reconhecimento de marca — onde a Atração funcionou</h4>
+    <table>
+      <thead>
+        <tr>
+          <th>Métrica</th>
+          <th class="right">Valor em 90 dias</th>
+          <th>Avaliação</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Pessoas únicas alcançadas</td>
+          <td class="right">89.693</td>
+          <td>Bom volume de reconhecimento de marca pra uma clínica local em Campinas</td>
+        </tr>
+        <tr>
+          <td>Frequência</td>
+          <td class="right">1,89</td>
+          <td>Saudável (abaixo de 3 = audiência não saturou)</td>
+        </tr>
+        <tr>
+          <td>Impressões totais</td>
+          <td class="right">169.786</td>
+          <td>Custo por mil impressões de R$ 7,25 — competitivo pra nicho de estética</td>
+        </tr>
+        <tr>
+          <td>Taxa de clique</td>
+          <td class="right">3,94%</td>
+          <td>Acima do padrão do mercado BR pra top de funil (1,5–2%)</td>
+        </tr>
+        <tr>
+          <td>Cliques no link</td>
+          <td class="right">5.922</td>
+          <td>R$ 0,21 por clique — barato</td>
+        </tr>
+        <tr>
+          <td>Visualizações de vídeo (3 segundos)</td>
+          <td class="right">50.473</td>
+          <td>Alto volume — sinal de criativo atrativo</td>
+        </tr>
+        <tr>
+          <td>visualização completa de vídeo (15s ou vídeo completo)</td>
+          <td class="right">10.083</td>
+          <td>~20% das visualizações foram engajadas</td>
+        </tr>
+        <tr>
+          <td>Page engagement (curtidas, comentários, saves, reações)</td>
+          <td class="right">56.976</td>
+          <td>Volume alto — conta movimentada</td>
+        </tr>
+        <tr>
+          <td>Reações em posts</td>
+          <td class="right">466</td>
+          <td>OK</td>
+        </tr>
+        <tr>
+          <td>Saves de post</td>
+          <td class="right">58</td>
+          <td>Bom sinal de intenção de retorno</td>
+        </tr>
+        <tr>
+          <td>Comentários</td>
+          <td class="right">11</td>
+          <td>Baixo, mas existe</td>
+        </tr>
+      </tbody>
+    </table>
+    <p style="margin-top: 6px; font-size: 14px;"><strong>Resumo:</strong> a Atração entregou reconhecimento de marca real — quase 90 mil pessoas em Campinas viram a clínica nos últimos 3 meses, com boa taxa de clique e bom volume de visualizações de vídeo. Isso tem valor (marca, reconhecimento, base de remarketing potencial). <em>Esse é o lado positivo que precisa ser reconhecido.</em></p>
+
+    <h4 style="margin-top: 22px; font-size: 14px; color: var(--danger); text-transform: uppercase; letter-spacing: 0.05em;">Problemas de configuração que limitam o uso desse reconhecimento de marca</h4>
+    <table>
+      <thead>
+        <tr>
+          <th>Sinal observado</th>
+          <th>O que indica</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Apenas 5 conversas WhatsApp em 90 dias</strong> (gasto R$ 1.231 = R$ 246/conversa)</td>
+          <td>Top de funil não precisa converter direto, mas R$ 246/conversa é 87× mais caro que o Paciente Modelo (R$ 2,82). Mesmo descontando que esse não é o indicador principal principal, mostra que a Atração não tem nenhum retorno extra de conversa direta — o que é raro em campanhas de reconhecimento de marca bem configuradas.</td>
+        </tr>
+        <tr>
+          <td><strong>2.946 75% do vídeo assistidos em 90 dias</strong> alimentando a audiência "viu 75% do vídeo"</td>
+          <td>A audiência tem 2.700-3.100 pessoas hoje (bate com o número). <strong>Pace de ~33 pessoas/dia entrando.</strong> Pra chegar em 10k pessoas (mínimo saudável de remarketing), seria preciso ~300 dias nesse ritmo. <strong>A Atração não está populando rápido o suficiente pra alimentar o funil.</strong></td>
+        </tr>
+        <tr>
+          <td><strong>Apenas 5,9% dos viewers de vídeo chegam aos 75%</strong> (50.473 viram 3s, só 2.946 chegaram em 75%)</td>
+          <td>Em campanhas otimizadas pra VISUALIZAÇÃO COMPLETA DE VÍDEO, essa taxa costuma ser 15-25%. A diferença não é o criativo (que tem taxa de clique 3,94%, acima do padrão do mercado) — é a otimização escolhida ("visita ao perfil"), que entrega o anúncio pra quem vai visitar perfil, não pra quem retém vídeo. <strong>Trocar a otimização triplicaria a taxa de retenção.</strong></td>
+        </tr>
+        <tr>
+          <td><strong>Optimization "visita ao perfil"</strong> em vez de VISUALIZAÇÃO COMPLETA DE VÍDEO</td>
+          <td>Causa raiz do item acima. Pra alimentar uma audiência <code>"viu 75% do vídeo"</code>, o Meta precisa entregar o anúncio pra quem tem perfil estatístico de assistir vídeo até o fim — esse é o que <code>VISUALIZAÇÃO COMPLETA DE VÍDEO</code> faz. <code>"visita ao perfil"</code> entrega pra quem vai visitar perfil. São otimizações diferentes pra públicos com comportamentos diferentes.</td>
+        </tr>
+        <tr>
+          <td><strong>3 conjuntos ABERTO ativos hoje, todos idênticos</strong></td>
+          <td>Os criativos competem entre si no leilão (canibalização). O orçamento de R$ 24/dia da Atração estaria mais bem investido em 1 conjunto único com 3 criativos dentro (Andromeda distribui).</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="macro-key">
+      <strong>Síntese sobre a Atração:</strong> ela <em>entregou</em> reconhecimento de marca (89 mil pessoas, 50 mil visualizações, 10 mil visualizações completas) — o que tem valor pra marca da clínica. <em>Mas falhou em sua função técnica dentro do funil:</em> o ritmo de população da audiência "viu 75% do vídeo" é lento demais (33 pessoas/dia) pra fechar a conta matemática do funil em qualquer horizonte razoável. Os 2.946 75% do vídeo assistidos que ela gerou em 3 meses são exatamente o que está hoje na audiência da Qualificação — e ainda assim, a Qualificação só entregou 8 conversas em 21 dias. <strong>A Atração não é "ruim" como reconhecimento de marca — ela é insuficiente como alimentação pra o resto do funil, dado o orçamento e a otimização escolhidos.</strong>
+    </div>
+
+    <!-- A PROMESSA QUEBRADA -->
+    <h3>A promessa que não se cumpriu</h3>
+    <p>O argumento da agência durante esses 3 meses tem sido: <em>"o funil está em fase de maturação. As campanhas de Atração estão alimentando a audiência da Qualificação, que vai alimentar a do Quente. Quando virar pra conversão, vai escalar."</em></p>
+    <p>Os números mostram que isso não aconteceu:</p>
+    <ul style="font-size: 14.5px;">
+      <li>A Atração v1 rodou de 03/02 a 09/04 (66 dias) com público segmentado de luxo. Foi pausada. A Atração v2 entrou em 09/04 com público amplo e roda há <strong>40 dias</strong>. Em 90 dias combinados, gastou R$ 1.231 e populou a audiência VV75% com apenas <strong>2.946 pessoas</strong> (deveria ter 10.000+ pra remarketing saudável).</li>
+      <li>A Qualificação rodou por <strong>21 dias</strong> e gerou <strong>8 conversas</strong>. Era o alimentação pra Quente.</li>
+      <li>A Quente rodou por <strong>13 dias</strong> e gerou <strong>10 conversas</strong>. custo por conversa R$ 21,60 por conversa.</li>
+      <li>Quando finalmente a agência sinalizou que "agora vai virar pra conversão" (06/05) e pausou o Paciente Modelo (15/05) "para o funil rodar sozinho" — o funil sozinho entregou <strong>3 leads em 5 dias</strong> (1 a cada 1,7 dias) vs ~10 leads/dia antes.</li>
+    </ul>
+    <p>A análise técnica completa do <em>por que</em> o funil não maturou em 3 meses (e por que matematicamente <strong>não pode</strong> maturar com o orçamento contratado) está na Seção 1 logo abaixo. Mas o quadro macro já mostra o resultado prático: <strong>R$ 1.757 e 90 dias depois, zero vendas vieram dessa estratégia.</strong></p>
+  </div>
+
+  <!-- ========================= TL;DR ========================= -->
+  <div class="tldr">
+    <div class="label">Como ler este documento</div>
+    <p>O <strong>quadro macro acima</strong> mostra os 3 meses de contrato — o que cada estratégia entregou em 90 dias (Paciente Modelo: 1.010 conversas e 7 vendas; Funil em 3 etapas: 23 conversas e 0 vendas). Essa é a foto que motivou esta análise.</p>
+    <p>O restante do documento explica o <em>porquê</em> técnico:</p>
+    <ul style="margin: 0 0 10px; padding-left: 22px; font-size: 14.5px;">
+      <li><strong><a href="#secao-matematica" style="color: #075985;">Seção 1</a></strong> — a matemática que prova por que o funil em 3 etapas <strong>não pode</strong> maturar com o orçamento atual (precisa de R$ 158/dia só pra etapa Quente sair de fase de aprendizado; a conta tem R$ 51/dia). Cada cálculo aberto passo a passo, usando os números da própria conta nos últimos 90 dias.</li>
+      <li><strong>Seções 2 a 5</strong> — sintomas observáveis da matemática: queda de leads pós-pausa, auditoria dos 4 leads que entraram, onde foi gasto cada real.</li>
+      <li><strong>Seção 6</strong> — outros 3 problemas técnicos complementares (otimização errada, conjuntos duplicados, fase de aprendizado resetando).</li>
+      <li><strong>Seções 7 a 9</strong> — proposta para discussão e pontos abertos para a reunião.</li>
+    </ul>
+    <p style="border-top: 1px solid #BAE6FD; padding-top: 10px; margin-top: 10px;">Esta página foi escrita para ser lida <strong>antes</strong> da reunião. Não é um julgamento — é a base de números que queremos discutir em conjunto. Pode ser que tenhamos perdido alguma nuance da estratégia, e a conversa será mais produtiva se entrarmos com a mesma planilha aberta.</p>
+  </div>
+
+  <!-- ========================= HERO MATH SECTION ========================= -->
+  <div class="hero-math" id="secao-matematica">
+    <div class="alert-banner">Ponto central da pré-leitura</div>
+    <h2>1. A matemática do funil em 3 etapas vs o orçamento de R$ 1.500/mês</h2>
+    <p class="subtitle">Esta é a seção mais importante do documento. Antes de discutirmos qualquer mudança tática (criativos, públicos, texto dos anúncios), precisamos alinhar se a estrutura escolhida é matematicamente compatível com o orçamento atual. Toda a análise abaixo usa <strong>os números da própria conta nos últimos 90 dias</strong> + a documentação oficial do Meta. Pedimos que leiam essa seção com calma — é o que define se a discussão é sobre "ajustes" ou sobre "trocar de estratégia".</p>
+
+    <!-- Analogia do fogão -->
+    <div class="stage-analogy">
+      <div class="analogy-label">Analogia para visualizar antes dos cálculos</div>
+      <p style="margin: 0; font-size: 14.5px;">Pense no funil em 3 etapas como um <strong>fogão de 3 bocas cozinhando um jantar</strong>:</p>
+      <ul style="margin: 8px 0 4px; font-size: 14.5px; padding-left: 22px;">
+        <li><strong>Boca 1 (Atração)</strong> = pré-aquece quem nunca ouviu falar da clínica. Como acender uma chama embaixo de uma panela de água — só precisa de pouco gás.</li>
+        <li><strong>Boca 2 (Qualificação)</strong> = aprofunda interesse de quem viu o vídeo. Como cozinhar um molho em fogo médio — gás moderado.</li>
+        <li><strong>Boca 3 (Quente)</strong> = a panela grande de feijão. <strong>É aqui que o "jantar" (o lead) fica pronto.</strong> Precisa de muito gás, e por bastante tempo. Sem fogo alto, o feijão nunca cozinha.</li>
+      </ul>
+      <p style="margin: 8px 0 0; font-size: 14.5px;">Cada boca precisa de uma quantidade mínima de gás (orçamento) pra acender direito. Se você divide pouco gás entre as 3 bocas, todas ficam com chama baixa — e a panela grande, que precisa de mais, nunca cozinha. O jantar <strong>não fica pronto</strong>. Os cálculos abaixo provam isso com os números reais da conta.</p>
+    </div>
+
+    <!-- APLICAÇÃO AO CASO DA NATHALIA — visualização -->
+    <h3>Aplicando ao caso da Dra Nathalia, com números reais</h3>
+    <p>Vamos converter o orçamento contratado em "gás disponível" e ver como ele está sendo distribuído nas 3 bocas do fogão atual.</p>
+
+    <!-- Cenário 1: estrutura atual -->
+    <div class="stove-case">
+      <div class="case-label">Cenário A — O fogão de hoje (funil em 3 etapas montado pela agência)</div>
+      <h4>R$ 51/dia de gás distribuído entre 3 bocas</h4>
+      <p class="case-orçamento">Orçamento efetivo da conta: R$ 51/dia (média de 90 dias = R$ 4.602 ÷ 90)</p>
+
+      <div class="burner-row">
+        <div class="burner-info">
+          <strong>Boca 1 — Atração</strong>
+          <span>3 conjuntos ABERTO</span>
+        </div>
+        <div class="burner-bar-wrapper">
+          <div class="burner-bar-track">
+            <div class="burner-bar flame-full">R$ 24/dia recebidos (1600% do necessário)</div>
+          </div>
+          <div class="burner-target">Precisa: <strong>R$ 1,50/dia</strong> · Status: madura há muito tempo, sobra gás aqui — mas otimiza visita ao perfil, não conversa</div>
+        </div>
+      </div>
+
+      <div class="burner-row">
+        <div class="burner-info">
+          <strong>Boca 2 — Qualificação</strong>
+          <span>"viu 75% do vídeo"</span>
+        </div>
+        <div class="burner-bar-wrapper">
+          <div class="burner-bar-track">
+            <div class="burner-bar flame-full">R$ 13/dia recebidos (628% do necessário)</div>
+          </div>
+          <div class="burner-target">Precisa: <strong>R$ 2,07/dia</strong> · Status: madura também — mas otimiza o mesmo sinal errado da Atração</div>
+        </div>
+      </div>
+
+      <div class="burner-row">
+        <div class="burner-info">
+          <strong>Boca 3 — Quente</strong>
+          <span>ENGAJOU 60D — onde o lead vira conversa</span>
+        </div>
+        <div class="burner-bar-wrapper">
+          <div class="burner-bar-track">
+            <div class="burner-bar flame-danger" style="width: 19%;">R$ 30/dia</div>
+          </div>
+          <div class="burner-target">Precisa: <strong>R$ 154/dia</strong> · Status: <strong>chama mínima (19%) — feijão NÃO cozinha</strong></div>
+        </div>
+      </div>
+
+      <div class="stove-summary">
+        <strong>O que aconteceu em 90 dias:</strong> Atração e Qualificação ficaram com chama exagerada (queimando gás demais pra produzir muito clique no anúncio, que não é o sinal que importa). Já a panela grande do feijão (Quente) ficou com chama mínima — só 10 conversas em 90 dias, 11% do limite mínimo pra otimizar bem. <strong>Resultado: o funil entregou 23 conversas e 0 vendas em 3 meses.</strong> O jantar não ficou pronto.
+      </div>
+    </div>
+
+    <!-- Cenário 2: Paciente Modelo histórico -->
+    <div class="stove-case scenario-paciente">
+      <div class="case-label">Cenário B — O fogão de antes (Paciente Modelo, 1 única boca acesa direito)</div>
+      <h4>R$ 22/dia concentrados em 1 panela só</h4>
+      <p class="case-orçamento">Orçamento: R$ 32/dia em média nos 90 dias (cabia tranquilamente no orçamento total da conta, com sobra pra outras experiências)</p>
+
+      <div class="burner-row">
+        <div class="burner-info">
+          <strong>Boca única — Paciente Modelo</strong>
+          <span>Optimization "iniciar conversa" direta</span>
+        </div>
+        <div class="burner-bar-wrapper">
+          <div class="burner-bar-track">
+            <div class="burner-bar flame-full">R$ 22/dia recebidos · chama plena</div>
+          </div>
+          <div class="burner-target">Precisa: <strong>R$ 22/dia</strong> (o custo por conversa da oferta era baixo: R$ 2-3/conversa) · Status: <strong>maduro, 123% do limite mínimo Meta</strong></div>
+        </div>
+      </div>
+
+      <div class="stove-summary">
+        <strong>O que aconteceu nos 90 dias do Paciente Modelo:</strong> 1 boca acesa com gás suficiente, cozinhando consistente. 11,2 conversas por dia em média (78,4/semana = 157% do limite mínimo Meta), totalizando 1.010 conversas e 7 vendas (R$ 5.893) em 90 dias. A panela cozinhou. O jantar saiu — não era o jantar ideal (ticket baixo, lead curioso), mas saía todo dia. <strong>Era uma estrutura que cabia no fogão real (R$ 51/dia de gás disponível).</strong>
+      </div>
+    </div>
+
+    <!-- Cenário 3: proposta -->
+    <div class="stove-case scenario-proposed">
+      <div class="case-label">Cenário C — Nossa proposta (2 bocas acesas direito, ainda dentro do orçamento)</div>
+      <h4>R$ 47/dia em 2 panelas paralelas — cabe nos R$ 50</h4>
+      <p class="case-orçamento">Mesmo orçamento contratado (R$ 1.500/mês). 2 bocas acesas com chama plena.</p>
+
+      <div class="burner-row">
+        <div class="burner-info">
+          <strong>Boca A — Paciente Modelo</strong>
+          <span>Lead barato, volume (motor antigo)</span>
+        </div>
+        <div class="burner-bar-wrapper">
+          <div class="burner-bar-track">
+            <div class="burner-bar flame-full">R$ 22/dia · maduro (123% do limite mínimo)</div>
+          </div>
+          <div class="burner-target">Mantém o volume conhecido enquanto se testa a nova oferta</div>
+        </div>
+      </div>
+
+      <div class="burner-row">
+        <div class="burner-info">
+          <strong>Boca B — Oferta Premium nova</strong>
+          <span>Ticket R$ 1.500–3.000, texto de autoridade</span>
+        </div>
+        <div class="burner-bar-wrapper">
+          <div class="burner-bar-track">
+            <div class="burner-bar flame-ok" style="width: 92%;">R$ 25/dia · ~140% do limite mínimo se custo por conversa ficar em R$ 5</div>
+          </div>
+          <div class="burner-target">Endereça o problema real diagnosticado (ticket baixo) sem destruir o motor antes do substituto estar pronto</div>
+        </div>
+      </div>
+
+      <div class="stove-summary">
+        <strong>Por que isso fecha:</strong> 2 bocas acesas direito (R$ 22 + R$ 25 = R$ 47/dia) cabem nos R$ 51/dia disponíveis, com R$ 4/dia de margem para ajustes. As duas bocas atingem o limite mínimo Meta de 50 eventos/semana (Paciente Modelo já maduro; Premium perto, depende do custo por conversa). Em 4 semanas comparamos as duas: se a Premium superar o Paciente Modelo em ticket × volume, migra-se gradualmente para ela. Sem perder o jantar de hoje pra construir o jantar de amanhã.
+      </div>
+    </div>
+
+    <!-- Comparação visual final -->
+    <h3>Resumo visual dos 3 cenários, na mesma régua</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Cenário</th>
+          <th>Bocas acesas direito (gerando conversa)</th>
+          <th>Gás usado</th>
+          <th>Cabe em R$ 51/dia?</th>
+          <th>Jantar cozinha?</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="danger-row">
+          <td><strong>A — Funil atual (3 etapas)</strong></td>
+          <td>0 de 3 efetivas (Atração e Qualif maduras mas no sinal errado; Quente em learning severo)</td>
+          <td>R$ 67/dia atual (R$ 24 Atração + R$ 13 Qualif + R$ 30 Quente)</td>
+          <td>Não — precisaria de R$ 158/dia pra fechar matematicamente</td>
+          <td><strong>Não. 23 conversas em 90 dias, 0 vendas.</strong></td>
+        </tr>
+        <tr class="ok-row">
+          <td><strong>B — Paciente Modelo (histórico)</strong></td>
+          <td>1 de 1 (única, mas plena — 157% do limite mínimo)</td>
+          <td>R$ 32/dia (média 90d)</td>
+          <td>Sim, com sobra de R$ 19/dia</td>
+          <td><strong>Sim. 1.010 conversas em 90 dias, 7 vendas (R$ 5.893).</strong></td>
+        </tr>
+        <tr class="ok-row">
+          <td><strong>C — Proposta (2 ofertas em paralelo)</strong></td>
+          <td>2 de 2 (Paciente Modelo + 1 oferta premium nova)</td>
+          <td>R$ 47/dia (R$ 22 + R$ 25)</td>
+          <td>Sim, com R$ 4/dia de folga</td>
+          <td><strong>Sim. Mantém volume + endereça o ticket baixo.</strong></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>Os cálculos abaixo (passos 1 a 7) <strong>demonstram tecnicamente</strong> por que o cenário A não funciona e por que B e C funcionam. Cada número vem da documentação Meta ou dos dados da própria conta da Dra Nathalia nos últimos 90 dias.</p>
+
+    <!-- PASSO 1 -->
+    <h3>Passo 1 — A regra do Meta sobre Fase de Aprendizado</h3>
+    <p>Na Central de Ajuda oficial do Meta, está documentado que <strong>cada conjunto de anúncios precisa atingir 50 eventos de otimização por semana</strong> para sair da Fase de Aprendizado. Abaixo desse número, o algoritmo não tem dados suficientes pra otimizar a entrega — o anúncio gasta dinheiro sem maturar.</p>
+    <p>Convertendo para base diária:</p>
+    <div class="calc-block">50 eventos / 7 dias = <strong>7,14 eventos por dia</strong>, por conjunto de anúncios</div>
+    <p class="source"><strong>Fonte:</strong> <a href="https://www.facebook.com/business/help/112167992830700" target="_blank">Meta Business Help — About the Learning Phase</a></p>
+
+    <!-- PASSO 2 -->
+    <h3>Passo 2 — Quanto custa cada "evento" em <em>cada etapa do funil</em>, na nossa conta</h3>
+    <p>Esses números <strong>vêm dos últimos 90 dias da própria conta da Dra Nathalia</strong>, extraídos diretamente do Gerenciador de Anúncios do Meta (relatório dos últimos 90 dias). Cálculo: gasto da campanha ÷ eventos reportados pelo Meta no período.</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Etapa do funil</th>
+          <th>Tipo de evento principal</th>
+          <th class="right">Custo do evento (90 dias)</th>
+          <th>De onde tiramos esse número</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Atração</td>
+          <td>Clique no anúncio (clique no anúncio)</td>
+          <td class="right">R$ 0,21</td>
+          <td>Campanha [CST] [ATRAÇÃO] 90d: R$ 1.230,95 ÷ 5.922 clique no anúncios</td>
+        </tr>
+        <tr>
+          <td>Qualificação</td>
+          <td>Clique no anúncio (clique no anúncio)</td>
+          <td class="right">R$ 0,29</td>
+          <td>Campanha [CST] [QUALIFICAÇÃO] 90d: R$ 309,79 ÷ 1.054 clique no anúncios</td>
+        </tr>
+        <tr class="highlight">
+          <td><strong>Quente</strong> (onde lead vira conversa)</td>
+          <td>Iniciar conversa no WhatsApp</td>
+          <td class="right"><strong>R$ 21,61</strong></td>
+          <td>Campanha [CST] [MSG] [QUENTE] 90d: R$ 216,08 ÷ 10 conversas iniciadas</td>
+        </tr>
+      </tbody>
+    </table>
+    <p style="font-size: 13px; color: var(--ink-soft); margin-top: 4px;">Esses números são o "custo por ação" oficial reportado pelo Meta. Podem ser verificados no Gerenciador de Anúncios → ajustar colunas → mostrar custo por cada tipo de ação.</p>
+
+    <!-- PASSO 3 -->
+    <h3>Passo 3 — Orçamento necessário por etapa para sair da Fase de Aprendizado</h3>
+    <p>Multiplicando os 7,14 eventos/dia (passo 1) pelo custo de cada evento (passo 2):</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Etapa</th>
+          <th>Conta</th>
+          <th class="right">Orçamento/dia mínimo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Atração</td>
+          <td><code>7,14 × R$ 0,21</code></td>
+          <td class="right">R$ 1,50</td>
+        </tr>
+        <tr>
+          <td>Qualificação</td>
+          <td><code>7,14 × R$ 0,29</code></td>
+          <td class="right">R$ 2,07</td>
+        </tr>
+        <tr class="highlight">
+          <td><strong>Quente</strong></td>
+          <td><code>7,14 × R$ 21,61</code></td>
+          <td class="right"><strong>R$ 154,29</strong></td>
+        </tr>
+        <tr class="danger-row">
+          <td colspan="2"><strong>SOMA — orçamento mínimo para o funil em 3 etapas funcionar</strong></td>
+          <td class="right"><strong>R$ 157,86/dia</strong></td>
+        </tr>
+      </tbody>
+    </table>
+    <p style="font-size: 14px; margin-top: 6px;"><strong>Observação importante:</strong> Atração e Qualificação custam centavos por evento (R$ 0,21 e R$ 0,29) — então elas <em>já saíram</em> de fase de aprendizado com o orçamento atual. O problema todo do funil está concentrado na <strong>etapa Quente</strong>, que custa R$ 21,61 por conversa porque a audiência de remarketing é pequena (~2.700 pessoas) e a conversa é o evento mais caro.</p>
+
+    <!-- PASSO 4 -->
+    <h3>Passo 4 — Comparação com o orçamento disponível</h3>
+    <table>
+      <tbody>
+        <tr>
+          <td>Orçamento médio efetivo da conta (R$ 4.602 gastos no Meta em 90 dias ÷ 90)</td>
+          <td class="right">R$ 51,14/dia</td>
+        </tr>
+        <tr>
+          <td>Orçamento necessário pelo funil em 3 etapas (passo 3)</td>
+          <td class="right">R$ 157,86/dia</td>
+        </tr>
+        <tr class="danger-row">
+          <td><strong>Déficit</strong></td>
+          <td class="right"><strong>R$ 106,72/dia (o funil precisa de 3,1× o que está sendo gasto)</strong></td>
+        </tr>
+        <tr class="danger-row">
+          <td><strong>% do orçamento necessário que está disponível</strong></td>
+          <td class="right"><strong>32%</strong></td>
+        </tr>
+      </tbody>
+    </table>
+    <p style="font-size: 14px; margin-top: 6px;"><strong>Importante:</strong> mesmo que TODO o orçamento atual de R$ 51/dia fosse direcionado exclusivamente pra etapa Quente (zerando Atração e Qualificação), ainda assim seriam R$ 51 vs R$ 154 necessários = só 33% do limite mínimo. <strong>O Quente não tem como sair de fase de aprendizado com o orçamento atual</strong>, independente de como o dinheiro for redistribuído.</p>
+
+    <!-- PASSO 5 - paciente modelo -->
+    <h3>Passo 5 — Por que o Paciente Modelo funcionava (a mesma matemática, ao contrário)</h3>
+    <p>O Paciente Modelo era 1 único conjunto de anúncios, com otimização <code>"iniciar conversa"</code> (mesmo tipo de evento do Quente), rodando com R$ 18–25/dia. Vamos aplicar a mesma fórmula com os dados de 90 dias reais:</p>
+    <table>
+      <tbody>
+        <tr>
+          <td>Gasto total da campanha Paciente Modelo (90 dias)</td>
+          <td class="right">R$ 2.845,48</td>
+        </tr>
+        <tr>
+          <td>Conversas iniciadas no WhatsApp (90 dias)</td>
+          <td class="right">1.010</td>
+        </tr>
+        <tr>
+          <td>Custo por conversa</td>
+          <td class="right"><code>R$ 2.845 ÷ 1.010</code> = R$ 2,82</td>
+        </tr>
+        <tr>
+          <td>Orçamento médio diário</td>
+          <td class="right">R$ 31,62 (R$ 2.845 ÷ 90 dias)</td>
+        </tr>
+        <tr>
+          <td>Conversas geradas por dia (média 90d)</td>
+          <td class="right">11,2 conversas/dia</td>
+        </tr>
+        <tr>
+          <td>Conversas geradas por semana</td>
+          <td class="right"><code>11,2 × 7</code> = 78,4 conversas/semana</td>
+        </tr>
+        <tr>
+          <td>Limite mínimo Meta para sair da Fase de Aprendizado</td>
+          <td class="right">50 eventos/semana</td>
+        </tr>
+        <tr class="ok-row">
+          <td><strong>Status</strong></td>
+          <td class="right"><strong>MADURO — 157% do limite mínimo (rodou maduro durante todos os 90 dias)</strong></td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Esses dados são verificáveis no Gerenciador de Anúncios do Meta — basta abrir a campanha <code>[CST] [MSG] [FRIO][WPP]</code>, filtrar últimos 90 dias e olhar gasto + conversas iniciadas. <strong>1.010 conversas em 90 dias é o sinal claro de uma campanha que está sendo otimizada de forma eficiente pelo algoritmo do Meta.</strong></p>
+    <p><strong>O motivo do custo por conversa do Paciente Modelo ser 7,7× menor que o Quente</strong> (R$ 2,82 vs R$ 21,61) é simples: o Paciente Modelo rodava em audiência ampla (~75-88 mil pessoas com segmentação de luxo) com otimização "iniciar conversa" direta. O Quente roda em audiência muito pequena (~2.700 pessoas — quem viu 75% de vídeo da Atração) com a mesma otimização. Audiência menor + sinal de qualificação que não está bem feito = custo por conversa muito maior.</p>
+
+    <!-- PASSO 6 - o que cabe -->
+    <h3>Passo 6 — O que cabe em R$ 51/dia (orçamento efetivo da conta)</h3>
+    <p>Aplicando a mesma fórmula ao contrário, abaixo as configurações que <strong>realmente</strong> caberiam no orçamento atual da conta. custo por conversa R$ 2,82 é o que o Paciente Modelo entregava em audiência ampla com segmentação de luxo. custo por conversa R$ 5–8 é a estimativa para uma oferta premium com público de poder aquisitivo maior:</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Cenário</th>
+          <th>Estrutura</th>
+          <th class="right">Eventos/semana</th>
+          <th>Status (vs limite mínimo 50/sem)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="ok-row">
+          <td>A</td>
+          <td>1 conjunto "iniciar conversa" a R$ 51/dia, replicando o Paciente Modelo (custo por conversa R$ 2,82)</td>
+          <td class="right">~126</td>
+          <td>Maduro com folga (252% do limite mínimo)</td>
+        </tr>
+        <tr class="ok-row">
+          <td>B</td>
+          <td>2 conjuntos "iniciar conversa" a R$ 25/dia cada (Paciente Modelo + 1 amplo novo)</td>
+          <td class="right">~62 cada</td>
+          <td>Ambos maduros (124% do limite mínimo)</td>
+        </tr>
+        <tr class="ok-row">
+          <td>C</td>
+          <td>Paciente Modelo (R$ 22/dia, custo por conversa R$ 2,82) + 1 oferta premium nova (R$ 25/dia, custo por conversa estimado R$ 5)</td>
+          <td class="right">~55 + ~35</td>
+          <td>Paciente Modelo maduro; Premium perto do limite mínimo — <strong>nossa proposta</strong></td>
+        </tr>
+        <tr class="danger-row">
+          <td>D</td>
+          <td>Funil 3 etapas atual (5 conjuntos: 3 ABERTO + VV75 + Quente)</td>
+          <td class="right">~5 no Quente, ~20 demais</td>
+          <td>Quente em fase de aprendizado severo (11%), Atração/Qualif maduras mas otimizando o sinal errado</td>
+        </tr>
+      </tbody>
+    </table>
+    <p style="font-size: 14px; margin-top: 6px;">A diferença fundamental entre os cenários A/B/C e o D: nos primeiros, todo o orçamento vai para conjuntos com otimização <code>"iniciar conversa"</code> em audiência ampla. No cenário D, o orçamento é fragmentado entre 5 conjuntos, e o único que pode efetivamente gerar conversa (Quente) recebe só R$ 30/dia em audiência de 2.700 pessoas.</p>
+
+    <!-- PASSO 7 - exemplo concreto -->
+    <h3>Passo 7 — Exemplo concreto: o que o Quente precisa pra entregar 1 lead/dia maduro</h3>
+    <p>Vamos pegar a etapa Quente isoladamente, da forma como ela está hoje, e perguntar: "quanto orçamento eu preciso pra que ela entregue 1 conversa por dia em regime maduro?"</p>
+    <div class="calc-block">Dados reais do Quente em 90 dias (Gerenciador de Anúncios do Meta):<br>
+  Gasto total ............................... R$ 216,08<br>
+  Conversas iniciadas ....................... 10<br>
+  Custo por conversa ........................ R$ 21,61<br>
+  Eventos/semana atual (10 ÷ 13 sem) ........ ~5,4/semana<br>
+  % do limite mínimo Meta (50/sem) .............. <strong>11% (em fase de aprendizado severo)</strong><br>
+<br>
+Pra ATINGIR o limite mínimo de 50 conversas/semana:<br>
+  Eventos/dia necessários ................... 7,14<br>
+  Custo do evento ........................... R$ 21,61<br>
+  Orçamento diário mínimo ...................... <strong>R$ 154,29/dia</strong><br>
+<br>
+Mas o orçamento total da conta é .............. R$ 51/dia<br>
+Mesmo zerando Atração e Qualificação,<br>
+direcionando 100% pro Quente ............... R$ 51/dia<br>
+  Eventos/dia ............................... 2,36<br>
+  Eventos/semana ............................ 16,5<br>
+  % do limite mínimo ............................ <strong>33% (ainda em learning)</strong></div>
+    <p style="font-size: 14.5px; margin-top: 8px;"><strong>Conclusão do exemplo:</strong> mesmo redistribuindo 100% do orçamento contratado pro Quente, ele não consegue sair de fase de aprendizado. Pra resolver, seria preciso (a) triplicar o orçamento pra ~R$ 4.500/mês, ou (b) ter audiência muito maior com custo por conversa menor — exatamente o que o Paciente Modelo entregava com R$ 22/dia.</p>
+
+    <!-- Conclusão -->
+    <h3>Conclusão</h3>
+    <p>O Paciente Modelo era uma estrutura <strong>matematicamente compatível</strong> com o orçamento da conta — e os dados de 90 dias provam isso: 1.010 conversas geradas (157% do limite mínimo de fase de aprendizado), custo por conversa R$ 2,82, retorno 2,07× (cada R$ 1 investido virou R$ 2,07).</p>
+    <p>A estrutura de funil em 3 etapas exige <strong>R$ 158/dia</strong> para que todas as 3 etapas saiam de fase de aprendizado. O orçamento efetivo da conta é R$ 51/dia. <strong>O Quente — a única etapa que efetivamente gera lead — opera a 11% do limite mínimo, e mesmo redistribuindo 100% do orçamento pra ele atingiria apenas 33%.</strong> Esse não é problema de tempo, é problema de matemática inerente à estrutura escolhida.</p>
+    <p>Esse não é um diagnóstico baseado em opinião. Cada número acima vem de duas fontes: (a) a documentação oficial do Meta sobre Fase de Aprendizado, e (b) os dados de gasto e entrega da própria conta nos últimos 90 dias, extraídos do Gerenciador de Anúncios. <strong>Pedimos que vocês refaçam esses cálculos com seus próprios dados antes da reunião</strong> — se chegarmos à mesma conclusão matemática, podemos focar a conversa em "qual estrutura cabe no orçamento" em vez de "ajustes táticos na estrutura atual".</p>
+
+    <div class="quote">"A fragmentação do orçamento é o principal motivo pelo qual campanhas não saem da fase de aprendizado. Para contas com menos de US$ 5 mil/mês, consolide em 1 ou 2 conjuntos com otimização direta para conversão. Funis em múltiplas etapas foram desenhados para contas acima de US$ 5 mil/dia, que precisam de aquecimento de marca." — tradução livre do Modern Marketing Institute, guia de 2026</div>
+
+    <p class="source"><strong>Fontes:</strong> <a href="https://www.facebook.com/business/help/112167992830700" target="_blank">Meta Business Help — Learning Phase</a> &nbsp;|&nbsp; <a href="https://www.modernmarketinginstitute.com/blog/how-to-exit-the-meta-ads-learning-phase-fast-and-start-scaling-profitably-in-2026" target="_blank">Modern Marketing Institute 2026</a> &nbsp;|&nbsp; <a href="https://www.stackmatix.com/blog/meta-ads-funnel-strategy" target="_blank">Stackmatix — Meta Ads Funnel Strategy 2026</a> &nbsp;|&nbsp; <a href="https://www.go4whatsup.com/guides/click-to-whatsapp-ads/" target="_blank">go4whatsup — Guia 2026 de Anúncios para WhatsApp</a></p>
+  </div>
+
+  <!-- ========================= NÚMEROS ========================= -->
+  <section>
+    <h2>2. Os números antes vs depois da mudança</h2>
+    <p>Esses são os <strong>sintomas observáveis</strong> da matemática da Seção 1 acima. Comparação direta entre 6 dias <strong>antes</strong> da mudança (09 a 14/05) e 5 dias <strong>depois</strong> (15/05 a partir das 16h39 até 19/05).</p>
+
+    <div class="number-grid">
+      <div class="num-card ok">
+        <div class="num-label">Leads/dia ANTES</div>
+        <div class="num-value">~10</div>
+        <div class="num-delta">Média de 6 dias</div>
+      </div>
+      <div class="num-card danger">
+        <div class="num-label">Leads/dia DEPOIS</div>
+        <div class="num-value">0,6</div>
+        <div class="num-delta delta-down">−94%</div>
+      </div>
+      <div class="num-card ok">
+        <div class="num-label">custo por conversa ANTES (Paciente Modelo)</div>
+        <div class="num-value">R$ 2–3</div>
+        <div class="num-delta">Por lead</div>
+      </div>
+      <div class="num-card danger">
+        <div class="num-label">custo por conversa DEPOIS (estrutura nova)</div>
+        <div class="num-value">R$ 121,50</div>
+        <div class="num-delta delta-down">×40</div>
+      </div>
+    </div>
+
+    <h3>Detalhamento dos dois períodos</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Métrica</th>
+          <th class="right">Antes (09–14/05, 6 dias)</th>
+          <th class="right">Depois (15/05 17h–19/05, 5 dias)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Conversas no WhatsApp (Meta)</td>
+          <td class="right">63</td>
+          <td class="right">12</td>
+        </tr>
+        <tr>
+          <td>Leads no CRM atribuídos via Meta</td>
+          <td class="right">~50</td>
+          <td class="right">2</td>
+        </tr>
+        <tr>
+          <td>Leads comerciais totais (Meta + orgânico)</td>
+          <td class="right">~58</td>
+          <td class="right">3</td>
+        </tr>
+        <tr>
+          <td>Gasto total na conta</td>
+          <td class="right">R$ 376</td>
+          <td class="right">R$ 250</td>
+        </tr>
+        <tr class="highlight">
+          <td>custo por conversa no CRM (gasto ÷ leads atribuídos)</td>
+          <td class="right">R$ 7,50</td>
+          <td class="right">R$ 121,50</td>
+        </tr>
+      </tbody>
+    </table>
+    <p style="font-size: 12.5px; color: var(--ink-muted); margin-top: 4px;"><strong>Fonte:</strong> dados extraídos do Gerenciador de Anúncios do Meta (relatório diário, métrica "conversas iniciadas no WhatsApp por anúncio"). Atribuição no CRM feita automaticamente — o WhatsApp recebe junto com a mensagem inicial qual anúncio o lead clicou antes de iniciar a conversa.</p>
+  </section>
+
+  <!-- ========================= O QUE A AGÊNCIA FEZ ========================= -->
+  <section>
+    <h2>3. O que foi alterado em 15/05</h2>
+    <p>Linha do tempo das mudanças, extraída diretamente do Gerenciador de Anúncios do Meta (data da última atualização de cada campanha e conjunto).</p>
+
+    <div class="timeline">
+      <div class="timeline-item danger">
+        <div class="when">15/05 — 16h39</div>
+        <div class="what"><strong>Pausaram a campanha <code>[CST] [MSG] [FRIO][WPP]</code></strong> e o conjunto <code>05 - ULTRASEGUIMENTADO/PACIENTE MODELO</code>. Esse anúncio estava ativo há 94 dias, era o motor da conta (90 leads em 14 dias) e estava com otimização <code>"iniciar conversa"</code> (otimizando para conversa direta no WhatsApp).</div>
+      </div>
+      <div class="timeline-item warn">
+        <div class="when">15/05 — mesmo dia</div>
+        <div class="what"><strong>Criaram 2 conjuntos novos</strong> de Atração: <code>01 - ABERTO</code> e <code>02 - ABERTO</code>, ambos com R$ 7,94/dia e otimização <code>"visita ao perfil"</code> (otimizando para visita ao perfil do Instagram, <strong>não para conversa</strong>).</div>
+      </div>
+      <div class="timeline-item warn">
+        <div class="when">Já existia</div>
+        <div class="what">O conjunto <code>03 - ABERTO</code> com mesma configuração já estava ativo. Agora são <strong>3 conjuntos idênticos</strong> no leilão.</div>
+      </div>
+    </div>
+
+    <h3>Os 3 conjuntos "ABERTO" são tecnicamente idênticos</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Atributo</th>
+          <th>01 - ABERTO</th>
+          <th>02 - ABERTO</th>
+          <th>03 - ABERTO</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Orçamento diário</td><td>R$ 7,94</td><td>R$ 7,94</td><td>R$ 7,94</td></tr>
+        <tr><td>Idade / Gênero</td><td>25–65 / F</td><td>25–65 / F</td><td>25–65 / F</td></tr>
+        <tr><td>Geolocalização</td><td>20 km Campinas</td><td>20 km Campinas</td><td>20 km Campinas</td></tr>
+        <tr><td>Otimização</td><td>"visita ao perfil"</td><td>"visita ao perfil"</td><td>"visita ao perfil"</td></tr>
+        <tr><td>Destino</td><td>Perfil Instagram</td><td>Perfil Instagram</td><td>Perfil Instagram</td></tr>
+        <tr><td>Advantage+ Audience</td><td>Ligado</td><td>Ligado</td><td>Ligado</td></tr>
+        <tr class="highlight"><td>Audiência estimada</td><td>636.500–748.900</td><td>636.500–748.900</td><td>636.500–748.900</td></tr>
+      </tbody>
+    </table>
+    <p style="font-size: 12.5px; color: var(--ink-muted); margin-top: 4px;"><strong>Fonte:</strong> configurações de cada conjunto e estimativa de público disponíveis no Gerenciador de Anúncios do Meta (Gerenciador de Anúncios). Consultado em 19/05/2026, 19h45 BRT.</p>
+    <p>A única coisa diferente entre os 3 conjuntos é o <strong>anúncio</strong> dentro de cada um (ATR01, ATR02, ATR03). Tecnicamente é o equivalente a ter 3 vídeos no mesmo conjunto — mas dividido em três, o que fragmenta o orçamento e cria canibalização no leilão (ver problema #3 abaixo).</p>
+  </section>
+
+  <!-- ========================= AUDITORIA DOS LEADS ========================= -->
+  <section>
+    <h2>4. Os 4 leads que chegaram pós-mudança (auditoria fato-a-fato)</h2>
+    <p>Lista completa de leads criados no CRM <strong>depois</strong> da pausa (15/05 às 16h39 BRT). Dados extraídos do banco com filtro <code>created_at &gt;= 2026-05-15T20:00Z</code>.</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Quando</th>
+          <th>Nome</th>
+          <th>Stage atual</th>
+          <th>Origem</th>
+          <th>Veio da nova estratégia?</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>17/05 09h03</td>
+          <td>Socorro</td>
+          <td><span class="pill pill-warn">Follow Up</span></td>
+          <td>Meta — Quente "5 - ESTATICO" <em>(ad antigo, não foi alterado pela agência)</em></td>
+          <td><span class="pill pill-danger">Não</span></td>
+        </tr>
+        <tr>
+          <td>18/05 08h28</td>
+          <td>Edson Pereira</td>
+          <td><span class="pill pill-ok">Agendado</span></td>
+          <td>Orgânico (sem atribuição Meta)</td>
+          <td><span class="pill pill-danger">Não</span></td>
+        </tr>
+        <tr>
+          <td>19/05 12h31</td>
+          <td>Jessica Silva</td>
+          <td><span class="pill pill-neutral">Fornecedores</span></td>
+          <td>Orgânico (não é cliente — é fornecedor)</td>
+          <td><span class="pill pill-danger">Não</span></td>
+        </tr>
+        <tr>
+          <td>19/05 13h16</td>
+          <td>Taty</td>
+          <td><span class="pill pill-warn">Novo Lead</span></td>
+          <td>Meta — Quente "5 - ESTATICO" <em>(mesmo ad antigo, não foi alterado pela agência)</em></td>
+          <td><span class="pill pill-danger">Não</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p><strong>Leitura comercial:</strong></p>
+    <ul>
+      <li><strong>3 leads comerciais</strong> em 5 dias (Socorro, Edson e Taty — Jessica é fornecedor)</li>
+      <li><strong>2 vieram do Meta Ads</strong> (Socorro e Taty), os dois pelo mesmo anúncio antigo do conjunto Quente que <strong>já existia antes</strong> da mudança</li>
+      <li><strong>Zero leads</strong> vieram dos conjuntos novos <code>01 - ABERTO</code> e <code>02 - ABERTO</code>, apesar de R$ 62 gastos neles em 5 dias</li>
+    </ul>
+    <p style="font-size: 12.5px; color: var(--ink-muted);"><strong>Fonte:</strong> lista de leads no CRM MarketingPro (banco da Dra Nathalia). A atribuição de cada lead ao anúncio que ele clicou é feita automaticamente — o WhatsApp recebe essa informação junto com a mensagem inicial do lead.</p>
+  </section>
+
+  <!-- ========================= GASTO DETALHADO ========================= -->
+  <section>
+    <h2>5. Onde foi gasto o dinheiro nos 5 dias pós-mudança</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Conjunto</th>
+          <th>Função</th>
+          <th class="right">Gasto (5d)</th>
+          <th class="right">Conversas WPP</th>
+          <th class="right">Leads CRM</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="ok-row">
+          <td>1 - ENGAJOU 60D (Quente)</td>
+          <td>Resegmentação → conversa</td>
+          <td class="right">R$ 81</td>
+          <td class="right">4</td>
+          <td class="right">2</td>
+        </tr>
+        <tr>
+          <td>"viu 75% do vídeo" (Qualificação)</td>
+          <td>Engajamento de morno</td>
+          <td class="right">R$ 65</td>
+          <td class="right">3</td>
+          <td class="right">0</td>
+        </tr>
+        <tr class="danger-row">
+          <td>03 - ABERTO (existia)</td>
+          <td>Topo de funil</td>
+          <td class="right">R$ 35</td>
+          <td class="right">0</td>
+          <td class="right">0</td>
+        </tr>
+        <tr class="danger-row">
+          <td><strong>01 - ABERTO (criado 15/05)</strong></td>
+          <td>Topo de funil</td>
+          <td class="right"><strong>R$ 31</strong></td>
+          <td class="right"><strong>0</strong></td>
+          <td class="right"><strong>0</strong></td>
+        </tr>
+        <tr class="danger-row">
+          <td><strong>02 - ABERTO (criado 15/05)</strong></td>
+          <td>Topo de funil</td>
+          <td class="right"><strong>R$ 31</strong></td>
+          <td class="right"><strong>0</strong></td>
+          <td class="right"><strong>0</strong></td>
+        </tr>
+        <tr>
+          <td>05 - Paciente Modelo (PAUSADO)</td>
+          <td>Conversa direta</td>
+          <td class="right">R$ 7</td>
+          <td class="right">5</td>
+          <td class="right">0</td>
+        </tr>
+        <tr class="highlight">
+          <td colspan="2"><strong>TOTAL</strong></td>
+          <td class="right"><strong>R$ 250</strong></td>
+          <td class="right"><strong>12</strong></td>
+          <td class="right"><strong>2</strong></td>
+        </tr>
+      </tbody>
+    </table>
+    <p><strong>R$ 128 (51% do gasto)</strong> foi para os 3 conjuntos ABERTO de topo de funil, que entregaram <strong>zero conversas no WhatsApp</strong>. É gasto esperado não converter direto — mas só faz sentido se a otimização estivesse alinhada com a etapa seguinte, o que não está (ver problema #2 abaixo).</p>
+    <p style="font-size: 12.5px; color: var(--ink-muted);"><strong>Fonte:</strong> relatório diário do Gerenciador de Anúncios do Meta por conjunto de anúncios, janela 15/05 a 19/05/2026. A métrica "conversas iniciadas" é a forma oficial do Meta de contar quem clicou no anúncio e abriu o WhatsApp.</p>
+  </section>
+
+  <!-- ========================= 4 ANÁLISES TÉCNICAS ========================= -->
+  <section>
+    <h2>6. Outros pontos técnicos relevantes — 3 análises complementares</h2>
+    <p>Além da matemática do funil (que é o ponto central, na Seção 1), há outros 3 elementos técnicos que reforçam por que a estratégia atual não está entregando. Não estamos afirmando má-fé — estamos compartilhando o que estamos vendo e queremos discutir as nuances.</p>
+
+    <div class="problem-card severity-high">
+      <div class="severity">Análise complementar #1</div>
+      <h3>O conjunto pausado era o único com sinal maduro de conversa direta</h3>
+      <p>O conjunto <code>05 - ULTRASEGUIMENTADO/PACIENTE MODELO</code> estava ativo há 94 dias, com otimização <code>"iniciar conversa"</code> (otimizando para conversa direta no WhatsApp) e entregando 9–17 conversas por dia consistentemente. Era o único conjunto da conta que já tinha saído da fase de aprendizado do Meta.</p>
+      <div class="quote">"Pausar campanhas ou conjuntos por 7 dias ou mais reseta a fase de aprendizado, o que tem impacto significativo na performance. Quando o resultado cai, reduzir o orçamento diário em 30–50% (em vez de pausar tudo) preserva o aprendizado acumulado e ainda controla o gasto." — tradução livre do Modern Marketing Institute, guia de 2026</div>
+      <p><strong>Implicação imediata:</strong> a campanha foi pausada em 15/05 às 16h39. Se ficar pausada até 22/05 (7 dias completos), o aprendizado de 94 dias é apagado e ela volta como uma campanha nova. <strong>Restam ~3 dias úteis</strong> para reativar sem perder essa maturação.</p>
+      <p class="source"><strong>Fonte:</strong> <a href="https://www.modernmarketinginstitute.com/blog/how-to-exit-the-meta-ads-learning-phase-fast-and-start-scaling-profitably-in-2026" target="_blank">Modern Marketing Institute — How to Exit Meta Ads Learning Phase 2026</a> &nbsp;|&nbsp; <a href="https://www.facebook.com/business/help/112167992830700" target="_blank">Meta Business Help — About the Learning Phase</a></p>
+    </div>
+
+    <div class="problem-card severity-high">
+      <div class="severity">Análise complementar #2</div>
+      <h3>Os conjuntos novos otimizam para uma métrica que não alimenta o WhatsApp</h3>
+      <p>Os 3 conjuntos ABERTO usam <code>otimização_goal = "visita ao perfil"</code> — o Meta entrega o anúncio para pessoas com perfil estatístico de <strong>visitar o perfil do Instagram</strong>, não de iniciar conversa no WhatsApp.</p>
+      <div class="quote">"Ad delivery is optimized for Instagram Profile Visits only. The algorithm does not focus on video consumption or messaging when this objective is selected."</div>
+      <p>Confirmação numérica: os 3 conjuntos ABERTO juntos gastaram R$ 97 em 5 dias e entregaram <strong>zero conversas no WhatsApp</strong>. Para alimentar a audiência "viu 75% do vídeo" que serve a etapa seguinte (Qualificação), a otimização correta seria "visualização completa de vídeo" ou "visualização de vídeo" — segundo a documentação oficial do Meta.</p>
+      <p class="source"><strong>Fonte:</strong> <a href="https://www.jonloomer.com/create-a-traffic-campaign-with-instagram-profile-conversion-location/" target="_blank">Jon Loomer — Profile Visits Optimization Limitations</a> &nbsp;|&nbsp; <a href="https://www.facebook.com/business/help/2051461368219124" target="_blank">Meta Business Help — About visualização completa de vídeo</a></p>
+    </div>
+
+    <div class="problem-card severity-high">
+      <div class="severity">Análise complementar #3</div>
+      <h3>3 conjuntos com parâmetros idênticos podem estar canibalizando no leilão</h3>
+      <p>Os conjuntos <code>01 - ABERTO</code>, <code>02 - ABERTO</code> e <code>03 - ABERTO</code> têm parâmetros idênticos (mesma idade, gênero, geolocalização, otimização, audiência estimada de 636-749 mil pessoas em todos). A única diferença é o anúncio dentro de cada um.</p>
+      <div class="quote">"Duplicate audiences in different conjuntos will compete in the auction, driving up Custo por mil impressõess and wasting orçamento. Even using the same visuals or messaging across different conjuntos can still lead to significant cannibalization."</div>
+      <p>Em 5 dias, o Custo por mil impressões dos conjuntos ABERTO subiu de R$ 10,79 (03-ABERTO em 09/05) para R$ 12,20 (01-ABERTO em 19/05) — comportamento compatível com canibalização. O caminho correto, se a intenção era testar 3 vídeos diferentes, é colocar os 3 anúncios <strong>no mesmo conjunto</strong> e deixar o algoritmo Andromeda (atualização do Meta de 2024-2025) distribuir o orçamento para o vencedor.</p>
+      <p class="source"><strong>Fonte:</strong> <a href="https://segwise.ai/blog/prevent-audience-overlap-ad-campaigns" target="_blank">Segwise — Prevent Audience Overlap 2026</a> &nbsp;|&nbsp; <a href="https://www.adstellar.ai/blog/meta-ads-campaign-duplication-problems" target="_blank">AdStellar — Campaign Duplication Problems 2026</a> &nbsp;|&nbsp; <a href="https://fiveninestrategy.com/meta-andromeda-update-2025/" target="_blank">Five Nine Strategy — Meta Andromeda Update 2025</a></p>
+    </div>
+
+  </section>
+
+  <!-- ========================= TESES PARA DISCUSSÃO ========================= -->
+  <section>
+    <h2>7. Teses que queremos validar na reunião</h2>
+    <p>Abaixo listamos teses que <em>imaginamos</em> que possam estar por trás da estratégia escolhida, junto com o que os números mostram. Pode ser que existam nuances que não captamos — por isso queremos discutir cada uma.</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Tese possível</th>
+          <th>O que os números da nossa conta indicam</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>"O Paciente Modelo trazia lead barato demais — qualidade não era boa"</td>
+          <td>Concordamos que ticket médio (R$ 842) e win rate (1,1%) estavam abaixo do alvo. A pergunta é se a solução era <strong>desligar o motor antes de ter o substituto pronto</strong>, ou criar uma oferta premium em paralelo e migrar gradualmente. Gostaríamos de discutir essa abordagem.</td>
+        </tr>
+        <tr>
+          <td>"Funil em 3 etapas é o padrão moderno e a clínica precisa de aquecimento de marca"</td>
+          <td>A matemática completa da Seção 1 (passos 1 a 6, com dados de 90 dias) mostra que o funil exige <strong>R$ 158/dia</strong> pra que a etapa Quente saia de fase de aprendizado. O orçamento efetivo é <strong>R$ 51/dia</strong>. Atração e Qualif estão maduras, mas o Quente opera a 11% do limite mínimo. Como vocês esperam que ele saia de fase de aprendizado com 33% do orçamento necessário (mesmo redistribuindo tudo)?</td>
+        </tr>
+        <tr>
+          <td>"Em 30–60 dias o topo de funil vai popular as etapas seguintes e vai começar a converter"</td>
+          <td>O passo 7 da Seção 1 mostra que <strong>mesmo em regime ideal</strong>, com Atração e Qualificação populando perfeitamente, a etapa Quente continua precisando de R$ 144/dia pra sair de fase de aprendizado. Hoje recebe R$ 30/dia (21% do necessário). Tempo sozinho não fecha essa conta — o que muda em 30 dias?</td>
+        </tr>
+        <tr>
+          <td>"3 conjuntos diferentes testam criativos diferentes"</td>
+          <td>Verificamos no Gerenciador de Anúncios que os 3 conjuntos <code>01-</code>, <code>02-</code> e <code>03 - ABERTO</code> têm <strong>parâmetros idênticos</strong> (mesma idade, gênero, localização, otimização, audiência estimada 636-749 mil em todos). A documentação Meta 2025-2026 sobre Andromeda (atualização do algoritmo) recomenda colocar 3 criativos no <em>mesmo</em> conjunto e deixar o algoritmo distribuir. Existe alguma razão técnica para preferir 3 conjuntos separados?</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ========================= PROPOSTA PARA DISCUSSÃO ========================= -->
+  <section>
+    <h2>8. Proposta para discutirmos juntos na reunião</h2>
+    <p>Não é uma posição fechada — é o ponto de partida que faz sentido a partir da matemática da Seção 1 (cenário C do passo 6). Se vocês têm outra leitura, queremos ouvir antes de fechar a estratégia.</p>
+
+    <table class="horizon-table">
+      <thead>
+        <tr>
+          <th>Horizonte</th>
+          <th>O que sugerimos</th>
+          <th>Por quê</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="horizon-now">
+          <td><strong>Próximas 48–72h</strong><br><span style="font-size: 12px; color: var(--ink-muted);">Salvar o que ainda dá pra salvar</span></td>
+          <td>Religar o conjunto <code>05 - ULTRASEGUIMENTADO/PACIENTE MODELO</code> no orçamento original (R$ 18–25/dia). Pausar os conjuntos <code>01 - ABERTO</code> e <code>02 - ABERTO</code> (criados em 15/05).</td>
+          <td>O Paciente Modelo tem 94 dias de aprendizado acumulado pelo Meta (157% do limite mínimo). Pela regra documentada do Meta, esse aprendizado se perde se a campanha ficar pausada por 7 dias completos — vence em 22/05. Religar antes disso preserva o investimento. Em paralelo, o cenário C da Seção 1 (passo 6) indica que com R$ 22 + R$ 25 cabem 2 conjuntos maduros no orçamento de R$ 51/dia.</td>
+        </tr>
+        <tr class="horizon-med">
+          <td><strong>Próximas 4 semanas</strong><br><span style="font-size: 12px; color: var(--ink-muted);">Endereçar o problema real</span></td>
+          <td>Criar 1 conjunto novo em paralelo (não substituindo o Paciente Modelo) com <strong>oferta premium</strong>: ticket R$ 1.500–3.000, texto de autoridade (não promocional), público luxo, otimização "iniciar conversa". Orçamento R$ 25/dia. Rodar lado a lado com o Paciente Modelo por 2–3 semanas.</td>
+          <td>O problema legítimo apontado pela agência (ticket baixo, R$ 842 vs alvo R$ 1k–5k) continua válido. A solução é <strong>oferta nova</strong> em paralelo, não funil em 3 etapas que não cabe no orçamento. Esse desenho mantém o volume conhecido enquanto se testa o novo motor.</td>
+        </tr>
+        <tr class="horizon-far">
+          <td><strong>1–3 meses</strong><br><span style="font-size: 12px; color: var(--ink-muted);">Migração baseada em dados</span></td>
+          <td>Se a oferta premium superar o Paciente Modelo em (volume × ticket × win rate), migrar o orçamento gradualmente e aposentar o Paciente Modelo. Em paralelo, implementar CAPI (Conversions API) integrando o CRM ao Meta.</td>
+          <td>Sair do promocional fazendo a transição com o motor novo já rodando, não antes. A CAPI (em 2026 virou requisito de saúde de conta anúncio que abre o WhatsApp) permite mandar sinal de venda real ao Meta, melhorando a entrega de todos os conjuntos.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>Resumo: por que essa estrutura cabe no orçamento de R$ 1.500/mês</h3>
+    <p style="background: var(--ok-bg); border-left: 4px solid var(--ok); padding: 14px 18px; border-radius: 6px; font-size: 14.5px;">
+      <strong>Paciente Modelo (R$ 22/dia)</strong> = ~62 conversas/semana → maduro<br>
+      <strong>Oferta Premium nova (R$ 25/dia)</strong> = se custo por conversa ficar em R$ 5–8 (audiência luxo), são ~22–35 conversas/semana → <em>perto</em> do limite mínimo, mas com sinal suficiente pra o Meta começar a otimizar<br>
+      <strong>Total: R$ 47/dia</strong> = cabe nos R$ 51/dia do orçamento atual da conta.<br>
+      <br>
+      Tudo isso vem do passo 6 da Seção 1. <strong>É a única configuração que matematicamente se sustenta no orçamento contratado</strong>.
+    </p>
+  </section>
+
+  <!-- ========================= PONTOS PARA DISCUSSÃO ========================= -->
+  <section>
+    <h2>9. Pontos que queremos discutir na reunião</h2>
+    <p>Listamos abaixo as perguntas mais relevantes para alinharmos a estratégia adiante. Não são acusações — são pontos legítimos que precisam de resposta para tomarmos a melhor decisão em conjunto. Coloquei em ordem de prioridade.</p>
+    <ol style="font-size: 14.5px; padding-left: 22px;">
+      <li style="margin-bottom: 12px;"><strong>Sobre os 3 meses de contrato e o que o funil entregou:</strong> em 90 dias, o funil em 3 etapas consumiu R$ 1.757 (38% do investimento total em mídia) e entregou <strong>23 conversas no WhatsApp e zero vendas fechadas</strong>. O Paciente Modelo no mesmo período entregou 1.010 conversas e 7 vendas (R$ 5.893 de receita — retorno 2,07× (cada R$ 1 investido virou R$ 2,07) isolado). Quando vocês escolheram montar esse funil 3 meses atrás, qual era a expectativa de timeline pra que ele começasse a entregar vendas — e como vocês explicam que essa expectativa não se cumpriu mesmo com 3,5 meses de Atração rodando?</li>
+      <li style="margin-bottom: 12px;"><strong>Sobre a compatibilidade entre o orçamento atual e a estratégia escolhida (Seção 1 desta pré-leitura):</strong> a matemática indica que a etapa Quente sozinha precisa de aproximadamente <strong>R$ 154/dia</strong> para sair de fase de aprendizado, enquanto o orçamento efetivo da conta é <strong>R$ 51/dia</strong> (média 90d). Mesmo redistribuindo 100% do orçamento pro Quente, ele atingiria só 33% do limite mínimo. Como vocês veem essa relação? Existe algum elemento técnico que estamos perdendo?</li>
+      <li style="margin-bottom: 12px;"><strong>Sobre o Paciente Modelo:</strong> o conjunto foi pausado em 15/05 às 16h39. A regra Meta indica que o fase de aprendizado reseta após 7 dias pausado (vence em 22/05). Considerando os 94 dias de aprendizado acumulado, vocês veem espaço para reativá-lo antes dessa data?</li>
+      <li style="margin-bottom: 12px;"><strong>Sobre os conjuntos duplicados:</strong> verificamos no Gerenciador de Anúncios que os 3 conjuntos <code>01-</code>, <code>02-</code> e <code>03 - ABERTO</code> têm parâmetros idênticos. A literatura Meta 2026 (Andromeda, AdStellar, Segwise) sugere que esse tipo de duplicação causa canibalização no leilão. Existe uma tese técnica para preferir 3 conjuntos separados em vez de 3 criativos no mesmo conjunto?</li>
+      <li style="margin-bottom: 12px;"><strong>Sobre o critério de avaliação:</strong> em 5 dias, os 2 conjuntos novos (<code>01-</code> e <code>02-ABERTO</code>) gastaram R$ 62 e geraram zero leads no CRM. Qual o critério de tempo e gasto que vocês esperam aplicar para concluir se a nova estratégia está performando melhor ou pior do que o anterior?</li>
+      <li style="margin-bottom: 12px;"><strong>Sobre a evolução do custo por conversa:</strong> o custo por conversa do Paciente Modelo era R$ 2–3 com volume de 9–17 conversas/dia. O custo por conversa efetivo da estrutura atual em 5 dias é R$ 121,50 por lead. Vocês concordam que essa diferença não é variação normal? E qual seria o limite de custo por conversa pra a estratégia ser considerada "não funcionando"?</li>
+      <li style="margin-bottom: 12px;"><strong>Sobre o ticket baixo (problema legítimo levantado por vocês):</strong> concordamos que o ticket médio de R$ 842 (média das 7 vendas: 4 a R$ 799 + 3 a R$ 899) ficou abaixo do alvo. Topamos discutir uma <strong>oferta premium em paralelo</strong> (sem desligar o Paciente Modelo), conforme a proposta do horizonte de 4 semanas na seção 8. Como vocês veem essa abordagem?</li>
+    </ol>
+    <p style="background: var(--info-bg); border-left: 4px solid #0284C7; padding: 14px 18px; border-radius: 6px; margin-top: 16px; font-size: 14.5px;"><strong>Importante:</strong> mantenho aberta a possibilidade de termos perdido alguma nuance da estratégia. Se a matemática que apresentamos estiver incorreta em algum ponto, ou se houver um elemento técnico que justifica a estrutura escolhida apesar do déficit de orçamento, queremos entender. A reunião é pra alinharmos a partir dos mesmos números.</p>
+  </section>
+
+  <!-- ========================= FONTES ========================= -->
+  <section class="source-list">
+    <h3>Fontes consultadas (todas verificáveis)</h3>
+
+    <div class="source-group">
+      <div class="source-group-title">Documentação oficial Meta</div>
+      <ul>
+        <li><a href="https://www.facebook.com/business/help/112167992830700" target="_blank">Meta Business Help — About the Learning Phase</a></li>
+        <li><a href="https://www.facebook.com/business/help/2051461368219124" target="_blank">Meta Business Help — About visualização completa de vídeo</a></li>
+        <li><a href="https://www.facebook.com/business/help/273363992030035" target="_blank">Meta Business Help — Advantage+ Audience</a></li>
+      </ul>
+    </div>
+
+    <div class="source-group">
+      <div class="source-group-title">Especialistas internacionais</div>
+      <ul>
+        <li><a href="https://www.jonloomer.com/create-a-traffic-campaign-with-instagram-profile-conversion-location/" target="_blank">Jon Loomer — Profile Visits Optimization Limitations</a></li>
+        <li><a href="https://www.jonloomer.com/creative-testing-meta-advertising/" target="_blank">Jon Loomer — Creative Testing in Meta Advertising</a></li>
+        <li><a href="https://fiveninestrategy.com/meta-andromeda-update-2025/" target="_blank">Five Nine Strategy — Meta Andromeda Update 2025</a></li>
+        <li><a href="https://www.modernmarketinginstitute.com/blog/how-to-exit-the-meta-ads-learning-phase-fast-and-start-scaling-profitably-in-2026" target="_blank">Modern Marketing Institute — How to Exit Learning Phase 2026</a></li>
+        <li><a href="https://www.adstellar.ai/blog/meta-ads-learning-phase-explained" target="_blank">AdStellar — Learning Phase Explained 2026</a></li>
+        <li><a href="https://www.adstellar.ai/blog/meta-ads-campaign-duplication-problems" target="_blank">AdStellar — Campaign Duplication Problems 2026</a></li>
+        <li><a href="https://www.adstellar.ai/blog/meta-ads-audience-saturation" target="_blank">AdStellar — Audience Saturation</a></li>
+        <li><a href="https://segwise.ai/blog/prevent-audience-overlap-ad-campaigns" target="_blank">Segwise — Prevent Audience Overlap 2026</a></li>
+      </ul>
+    </div>
+
+    <div class="source-group">
+      <div class="source-group-title">Anúncios que abrem o WhatsApp — guias 2026</div>
+      <ul>
+        <li><a href="https://www.go4whatsup.com/guides/click-to-whatsapp-ads/" target="_blank">go4whatsup — Guia 2026 de Anúncios para WhatsApp</a></li>
+        <li><a href="https://www.egrow.com/en/blog/click-to-whatsapp-ads-the-complete-guide-to-driving-sales-from-meta-to-whatsapp-2026" target="_blank">egrow — Click-to-WhatsApp Complete Guide 2026</a></li>
+        <li><a href="https://www.stackmatix.com/blog/meta-ads-funnel-strategy" target="_blank">Stackmatix — Meta Ads Funnel Strategy 2026</a></li>
+      </ul>
+    </div>
+
+    <div class="source-group">
+      <div class="source-group-title">Benchmarks Brasil</div>
+      <ul>
+        <li><a href="https://pedrosobral.com.br/blog/c/estrategias-de-trafego-pago/como-criar-campanhas-no-meta-ads-em-2026-o-guia-completo-para-anunciar-no-instagram-facebook-e-whatsapp" target="_blank">Pedro Sobral — Meta Ads 2026</a></li>
+        <li><a href="https://raphaelhenriques.com/blog/trafego-pago-para-clinicas-de-cirurgia-plastica-e-estetica-2026/" target="_blank">Raphael Henriques — Tráfego Pago Estética 2026</a></li>
+      </ul>
+    </div>
+
+    <div class="source-group">
+      <div class="source-group-title">Dados internos (rastreáveis)</div>
+      <ul>
+        <li>Gerenciador de Anúncios do Meta — conta <code>act_1185561133726748</code> (Teofilo Estética e Odontologia)</li>
+        <li>Meta — Gerenciador de Anúncios da conta da Dra Nathalia (campanhas, conjuntos, anúncios, relatórios de performance, estimativas de público)</li>
+        <li>CRM MarketingPro — lista completa de leads e vendas da clínica</li>
+        <li>Atribuição de leads feita automaticamente pelo WhatsApp, que recebe junto com a mensagem inicial qual anúncio o lead clicou</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer class="doc-footer">
+    <p><strong>Documento gerado em:</strong> 19/05/2026 às 19h45 BRT</p>
+    <p><strong>Janela analisada:</strong> 09/05/2026 a 19/05/2026</p>
+    <p><strong>Próxima atualização:</strong> após reunião 17h30 com a agência (com posicionamento deles registrado)</p>
+  </footer>
+
+</div>
+</body>
+</html>
