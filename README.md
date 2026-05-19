@@ -38,3 +38,4 @@ Repositório **público** (requisito do GitHub Pages no plano gratuito). Para co
 | Slug | Cliente / Assunto | Data | URL |
 |---|---|---|---|
 | `dra-nathalia-meta-mai-2026` | Dra Nathalia Teófilo — Situação Meta Ads pré-reunião com agência | 19/05/2026 | [abrir](https://gudaneluti.github.io/relatorios-clientes/dra-nathalia-meta-mai-2026/) |
+| `dra-nathalia-guia-produtos` | Dra Nathalia Teófilo — Guia de Produtos da clínica | — | [abrir](https://gudaneluti.github.io/relatorios-clientes/dra-nathalia-guia-produtos/) |

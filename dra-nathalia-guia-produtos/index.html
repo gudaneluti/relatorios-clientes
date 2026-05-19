@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guia de Produtos · Dra. Nathalia Teofilo Porto</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+:root {
+  --rosa:         #C9748F;
+  --rosa-claro:   #F7E8ED;
+  --rosa-escuro:  #A85570;
+  --verde:        #2E7D6B;
+  --verde-claro:  #E8F5F1;
+  --azul:         #2B5F8E;
+  --azul-claro:   #E8F1F8;
+  --dourado:      #9A7B4F;
+  --dourado-claro:#F7F1E8;
+  --roxo:         #6B4E8A;
+  --roxo-claro:   #F0EBF7;
+  --cinza:        #6B6B6B;
+  --cinza-claro:  #F5F5F3;
+  --texto:        #1A1A1A;
+  --fundo:        #FAFAF8;
+  --linha:        #E8E0DC;
+  --branco:       #FFFFFF;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--fundo);
+  color: var(--texto);
+}
+
+/* ── HERO ── */
+.hero {
+  background: linear-gradient(135deg, #1A0A12 0%, #3D1A28 50%, #1A0A12 100%);
+  padding: 56px 48px 48px;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content:'';
+  position:absolute; top:-100px; right:-100px;
+  width:400px; height:400px;
+  background: radial-gradient(circle, rgba(201,116,143,.25) 0%, transparent 70%);
+  border-radius:50%;
+}
+.hero::after {
+  content:'';
+  position:absolute; bottom:-80px; left:10%;
+  width:300px; height:300px;
+  background: radial-gradient(circle, rgba(154,123,79,.15) 0%, transparent 70%);
+  border-radius:50%;
+}
+.hero-tag {
+  display:inline-block;
+  font-size:10px; font-weight:500; letter-spacing:3px; text-transform:uppercase;
+  color: rgba(201,116,143,.9);
+  border:1px solid rgba(201,116,143,.3);
+  padding:5px 14px; border-radius:20px;
+  margin-bottom:20px;
+  position:relative;
+}
+.hero h1 {
+  font-family:'Cormorant Garamond', serif;
+  font-size: clamp(28px,5vw,46px);
+  font-weight:300; color:#fff; line-height:1.15;
+  position:relative;
+}
+.hero h1 em { font-style:italic; color:var(--rosa); font-weight:600; }
+.hero-sub {
+  font-size:13px; color:rgba(255,255,255,.5);
+  margin-top:10px; font-weight:300;
+  position:relative;
+}
+.hero-aviso {
+  display:inline-flex; align-items:center; gap:8px;
+  margin-top:24px;
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.12);
+  padding:10px 18px; border-radius:8px;
+  font-size:12px; color:rgba(255,255,255,.6);
+  position:relative;
+}
+.hero-aviso span { color:var(--rosa); font-weight:500; }
+
+/* ── NAV ── */
+.nav {
+  background:#fff;
+  border-bottom:1px solid var(--linha);
+  padding:0 48px;
+  display:flex; gap:0;
+  overflow-x:auto;
+  position:sticky; top:0; z-index:100;
+  box-shadow:0 2px 12px rgba(0,0,0,.04);
+}
+.nav-btn {
+  padding:16px 20px;
+  font-size:12px; font-weight:500; letter-spacing:1.5px; text-transform:uppercase;
+  color:var(--cinza);
+  background:none; border:none; border-bottom:2px solid transparent;
+  cursor:pointer; white-space:nowrap;
+  transition:all .2s;
+}
+.nav-btn:hover { color:var(--rosa); }
+.nav-btn.active { color:var(--rosa); border-bottom-color:var(--rosa); }
+
+/* ── MAIN ── */
+main { max-width:1000px; margin:0 auto; padding:48px 24px 80px; }
+
+/* ── SECTION ── */
+.section { display:none; animation:fadeIn .4s ease; }
+.section.active { display:block; }
+@keyframes fadeIn { from{opacity:0;transform:translateY(10px)} to{opacity:1;transform:translateY(0)} }
+
+/* ── SECTION HEADER ── */
+.section-header {
+  margin-bottom:36px;
+  padding-bottom:20px;
+  border-bottom:1px solid var(--linha);
+}
+.section-header h2 {
+  font-family:'Cormorant Garamond', serif;
+  font-size:32px; font-weight:300; color:var(--texto);
+  margin-bottom:6px;
+}
+.section-header h2 em { font-style:italic; color:var(--rosa); }
+.section-header p { font-size:13px; color:var(--cinza); line-height:1.7; max-width:600px; }
+
+/* ── PRODUCT CARD ── */
+.product-grid { display:grid; gap:24px; }
+
+.product-card {
+  background:#fff;
+  border:1px solid var(--linha);
+  border-radius:16px;
+  overflow:hidden;
+  transition:box-shadow .2s;
+}
+.product-card:hover { box-shadow:0 8px 32px rgba(0,0,0,.08); }
+
+.card-header {
+  padding:24px 28px 20px;
+  border-bottom:1px solid var(--linha);
+  display:flex; align-items:flex-start; justify-content:space-between; gap:16px;
+}
+.card-header-left { flex:1; }
+.card-nome {
+  font-family:'Cormorant Garamond', serif;
+  font-size:22px; font-weight:600; color:var(--texto);
+  margin-bottom:4px;
+}
+.card-fabricante { font-size:11px; color:var(--cinza); letter-spacing:1px; text-transform:uppercase; }
+.card-badge {
+  font-size:10px; font-weight:500; letter-spacing:1.5px; text-transform:uppercase;
+  padding:5px 12px; border-radius:20px; white-space:nowrap;
+  flex-shrink:0;
+}
+.badge-atual { background:var(--verde-claro); color:var(--verde); border:1px solid rgba(46,125,107,.2); }
+.badge-linha  { background:var(--azul-claro);  color:var(--azul);  border:1px solid rgba(43,95,142,.2); }
+.badge-bio    { background:var(--roxo-claro);   color:var(--roxo);  border:1px solid rgba(107,78,138,.2); }
+
+.card-body { padding:24px 28px; }
+
+/* ── DADOS RÁPIDOS ── */
+.dados-rapidos {
+  display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+  gap:12px; margin-bottom:24px;
+}
+.dado-item {
+  background:var(--fundo);
+  border:1px solid var(--linha);
+  border-radius:10px; padding:12px 14px;
+}
+.dado-label { font-size:10px; font-weight:500; letter-spacing:1.5px; text-transform:uppercase; color:var(--cinza); margin-bottom:4px; }
+.dado-valor { font-size:13px; font-weight:500; color:var(--texto); line-height:1.4; }
+
+/* ── TABS DENTRO DO CARD ── */
+.card-tabs { display:flex; gap:0; border-bottom:1px solid var(--linha); margin-bottom:20px; }
+.card-tab {
+  font-size:11px; font-weight:500; letter-spacing:1px; text-transform:uppercase;
+  padding:10px 16px; color:var(--cinza);
+  background:none; border:none; border-bottom:2px solid transparent;
+  cursor:pointer; transition:all .2s;
+}
+.card-tab:hover { color:var(--rosa); }
+.card-tab.active { color:var(--rosa); border-bottom-color:var(--rosa); }
+.card-tab-content { display:none; }
+.card-tab-content.active { display:block; animation:fadeIn .3s ease; }
+
+/* ── TEXTO TÉCNICO ── */
+.texto-tecnico { font-size:13.5px; line-height:1.85; color:var(--cinza); }
+.texto-tecnico strong { color:var(--texto); font-weight:500; }
+
+/* ── LISTA SIMPLES ── */
+.lista-simples { list-style:none; }
+.lista-simples li {
+  font-size:13.5px; color:var(--cinza); line-height:1.7;
+  padding:6px 0 6px 18px; border-bottom:1px solid var(--linha);
+  position:relative;
+}
+.lista-simples li:last-child { border-bottom:none; }
+.lista-simples li::before { content:'→'; position:absolute; left:0; color:var(--rosa); font-size:12px; }
+
+/* ── OBJEÇÃO BOX ── */
+.objecao-grid { display:grid; gap:12px; }
+.objecao-item {
+  border-radius:10px; overflow:hidden;
+  border:1px solid var(--linha);
+}
+.objecao-pergunta {
+  background:var(--cinza-claro);
+  padding:12px 16px;
+  font-size:13px; font-weight:500; color:var(--texto);
+  display:flex; align-items:flex-start; gap:10px;
+}
+.objecao-pergunta::before { content:'💬'; font-size:14px; flex-shrink:0; }
+.objecao-resposta {
+  background:#fff;
+  padding:12px 16px;
+  font-size:13px; color:var(--cinza); line-height:1.7;
+  border-top:1px solid var(--linha);
+}
+.objecao-resposta::before { content:'✓ '; color:var(--verde); font-weight:700; }
+
+/* ── COMPARATIVO TABLE ── */
+.comp-table {
+  width:100%; border-collapse:collapse;
+  font-size:12.5px;
+}
+.comp-table th {
+  background:var(--rosa-claro); color:var(--rosa);
+  font-weight:500; font-size:10px; letter-spacing:1.5px; text-transform:uppercase;
+  padding:12px 16px; text-align:left;
+}
+.comp-table th:first-child { border-radius:8px 0 0 0; }
+.comp-table th:last-child { border-radius:0 8px 0 0; }
+.comp-table td { padding:12px 16px; border-bottom:1px solid var(--linha); color:var(--cinza); vertical-align:top; }
+.comp-table tr:last-child td { border-bottom:none; }
+.comp-table tr:nth-child(even) td { background:var(--fundo); }
+.comp-table td:first-child { font-weight:500; color:var(--texto); }
+.comp-table .destaque { color:var(--verde); font-weight:500; }
+
+/* ── DESTAQUE BOX ── */
+.destaque-box {
+  border-radius:10px; padding:16px 20px;
+  margin-top:16px;
+  display:flex; gap:12px; align-items:flex-start;
+}
+.destaque-box.verde { background:var(--verde-claro); border:1px solid rgba(46,125,107,.2); }
+.destaque-box.rosa  { background:var(--rosa-claro);  border:1px solid rgba(201,116,143,.2); }
+.destaque-box.dourado { background:var(--dourado-claro); border:1px solid rgba(154,123,79,.2); }
+.destaque-box-icone { font-size:18px; flex-shrink:0; }
+.destaque-box p { font-size:13px; line-height:1.75; color:var(--cinza); }
+.destaque-box strong { color:var(--texto); }
+
+/* ── DIVISOR ── */
+.divisor { height:1px; background:var(--linha); margin:32px 0; }
+
+/* ── FOOTER ── */
+footer {
+  background:#fff; border-top:1px solid var(--linha);
+  padding:24px 48px;
+  display:flex; align-items:center; justify-content:space-between;
+  font-size:12px; color:var(--cinza);
+}
+footer strong { color:var(--rosa); }
+
+@media(max-width:640px){
+  .hero { padding:36px 20px 32px; }
+  .nav { padding:0 16px; }
+  main { padding:32px 16px 60px; }
+  .card-header { flex-direction:column; }
+  .dados-rapidos { grid-template-columns:1fr 1fr; }
+  footer { flex-direction:column; gap:8px; text-align:center; }
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-tag">Documento Interno · Uso Restrito à Equipe</div>
+  <h1>Guia de <em>Produtos</em><br>da Clínica</h1>
+  <p class="hero-sub">Dra. Nathalia Teofilo Porto · Cirurgiã-Dentista · Harmonização Orofacial · Campinas/SP</p>
+  <div class="hero-aviso">⚠ <span>Documento confidencial.</span> Para uso da equipe interna — SDR, secretaria e auxiliares.
+  </div>
+</div>
+
+<!-- NAV -->
+<nav class="nav">
+  <button class="nav-btn active" onclick="showSection('toxinas')">💉 Toxinas Botulínicas</button>
+  <button class="nav-btn" onclick="showSection('preenchedores')">💧 Preenchedores</button>
+  <button class="nav-btn" onclick="showSection('bioestimulador')">✨ Bioestimulador</button>
+  <button class="nav-btn" onclick="showSection('objecoes')">💬 Objeções Frequentes</button>
+  <button class="nav-btn" onclick="showSection('comparativo')">📊 Comparativo Geral</button>
+</nav>
+
+<main>
+
+<!-- ══════════════════════════════════════════
+     TOXINAS BOTULÍNICAS
+══════════════════════════════════════════ -->
+<div id="toxinas" class="section active">
+  <div class="section-header">
+    <h2>Toxinas <em>Botulínicas</em></h2>
+    <p>Todas as toxinas utilizadas na clínica são aprovadas pela ANVISA e atuam bloqueando temporariamente a junção neuromuscular, inibindo a liberação de acetilcolina. O que diferencia cada uma é a composição molecular, a difusão e o perfil de imunogenicidade.</p>
+  </div>
+
+  <div class="product-grid">
+
+    <!-- BOTULIM -->
+    <div class="product-card">
+      <div class="card-header">
+        <div class="card-header-left">
+          <div class="card-nome">Botulim</div>
+          <div class="card-fabricante">Lanzhou Institute · China · Aprovado ANVISA</div>
+        </div>
+        <span class="card-badge badge-atual">✓ Em uso atual</span>
+      </div>
+      <div class="card-body">
+        <div class="dados-rapidos">
+          <div class="dado-item"><div class="dado-label">Tipo</div><div class="dado-valor">OnabotulinumtoxinA</div></div>
+          <div class="dado-item"><div class="dado-label">Início de ação</div><div class="dado-valor">2 a 4 dias</div></div>
+          <div class="dado-item"><div class="dado-label">Duração</div><div class="dado-valor">3 a 4 meses</div></div>
+          <div class="dado-item"><div class="dado-label">Proteínas complexas</div><div class="dado-valor">Sim</div></div>
+        </div>
+        <div class="card-tabs">
+          <button class="card-tab active" onclick="showTab(this,'botulim','tecnico')">Técnico</button>
+          <button class="card-tab" onclick="showTab(this,'botulim','equipe')">Para a equipe</button>
+          <button class="card-tab" onclick="showTab(this,'botulim','paciente')">Para o paciente</button>
+        </div>
+        <div id="botulim-tecnico" class="card-tab-content active">
+          <p class="texto-tecnico">Toxina botulínica tipo A produzida pelo Instituto Lanzhou, com aprovação ANVISA. Possui complexo proteico associado à neurotoxina, similar ao padrão de mercado. Atua bloqueando temporariamente a liberação de acetilcolina na junção neuromuscular, promovendo relaxamento muscular localizado. Boa previsibilidade clínica com perfil de difusão controlado.</p>
+          <div class="destaque-box verde" style="margin-top:16px">
+            <div class="destaque-box-icone">🔬</div>
+            <p><strong>Por que a Dra. Nathalia usa:</strong> Produto com aprovação ANVISA, boa previsibilidade de resultado e perfil clínico consistente. A escolha do produto é sempre individualizada — produto certo, dose certa, paciente certa.</p>
+          </div>
+        </div>
+        <div id="botulim-equipe" class="card-tab-content">
+          <ul class="lista-simples">
+            <li>Produto aprovado pela ANVISA — seguro e regulamentado no Brasil</li>
+            <li>Resultado esperado em 2 a 4 dias, completo em até 14 dias</li>
+            <li>Duração média de 3 a 4 meses — manutenção semestral recomendada</li>
+            <li>A Dra. Nathalia calibra a dose individualmente para cada paciente</li>
+            <li>Não é "mais barato = pior" — é uma escolha técnica baseada no perfil do paciente</li>
+          </ul>
+        </div>
+        <div id="botulim-paciente" class="card-tab-content">
+          <p class="texto-tecnico">O produto que utilizamos é aprovado pela ANVISA — o órgão regulador brasileiro de saúde — e tem ação temporária e segura. O resultado aparece de forma gradual nos primeiros dias e dura em média 3 a 4 meses. A Dra. Nathalia avalia cada caso individualmente para definir a dose ideal.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- XEOMIN -->
+    <div class="product-card">
+      <div class="card-header">
+        <div class="card-header-left">
+          <div class="card-nome">Xeomin</div>
+          <div class="card-fabricante">Merz Pharmaceuticals · Alemanha</div>
+        </div>
+        <span class="card-badge badge-linha">Linha da clínica</span>
+      </div>
+      <div class="card-body">
+        <div class="dados-rapidos">
+          <div class="dado-item"><div class="dado-label">Tipo</div><div class="dado-valor">IncobotulinumtoxinA</div></div>
+          <div class="dado-item"><div class="dado-label">Início de ação</div><div class="dado-valor">3 a 5 dias</div></div>
+          <div class="dado-item"><div class="dado-label">Duração</div><div class="dado-valor">3 a 4 meses</div></div>
+          <div class="dado-item"><div class="dado-label">Proteínas complexas</div><div class="dado-valor">❌ Toxina pura</div></div>
+        </div>
+        <div class="card-tabs">
+          <button class="card-tab active" onclick="showTab(this,'xeomin','tecnico')">Técnico</button>
+          <button class="card-tab" onclick="showTab(this,'xeomin','equipe')">Para a equipe</button>
+          <button class="card-tab" onclick="showTab(this,'xeomin','paciente')">Para o paciente</button>
+        </div>
+        <div id="xeomin-tecnico" class="card-tab-content active">
+          <p class="texto-tecnico">O Xeomin é a única toxina botulínica do mercado sem proteínas acessórias (NAPs), com peso molecular restrito a 150 kDa. Essa pureza reduz teoricamente o risco de formação de anticorpos neutralizantes — importante em pacientes com histórico de tratamentos repetidos. Indicado especialmente para pacientes com suspeita de resistência a outras formulações.</p>
+          <div class="destaque-box rosa">
+            <div class="destaque-box-icone">⭐</div>
+            <p><strong>Diferencial científico:</strong> O Xeomin possui 0,6 ng de proteína por 100U, contra ~5 ng no padrão de mercado. Isso reduz a carga proteica e a chance de imunogenicidade em tratamentos de longa data.</p>
+          </div>
+        </div>
+        <div id="xeomin-equipe" class="card-tab-content">
+          <ul class="lista-simples">
+            <li>Único produto sem proteínas complexas — "toxina pura"</li>
+            <li>Menor risco de o corpo criar resistência com o tempo</li>
+            <li>Início de ação um pouco mais lento (3 a 5 dias) — o paciente deve saber isso</li>
+            <li>Indicado pela Dra. para pacientes com muitos anos de tratamento</li>
+            <li>Fabricado na Alemanha pela Merz, empresa referência global em estética</li>
+          </ul>
+        </div>
+        <div id="xeomin-paciente" class="card-tab-content">
+          <p class="texto-tecnico">O Xeomin é chamado de "toxina pura" porque não possui proteínas adicionais na fórmula. Isso significa menor chance de o organismo criar resistência ao produto com o tempo — um cuidado pensado especialmente para quem faz tratamento há anos.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- DYSPORT -->
+    <div class="product-card">
+      <div class="card-header">
+        <div class="card-header-left">
+          <div class="card-nome">Dysport</div>
+          <div class="card-fabricante">Ipsen · França · Galderma distribuição</div>
+        </div>
+        <span class="card-badge badge-linha">Linha da clínica</span>
+      </div>
+      <div class="card-body">
+        <div class="dados-rapidos">
+          <div class="dado-item"><div class="dado-label">Tipo</div><div class="dado-valor">AbobotulinumtoxinA</div></div>
+          <div class="dado-item"><div class="dado-label">Início de ação</div><div class="dado-valor">1 a 3 dias</div></div>
+          <div class="dado-item"><div class="dado-label">Duração</div><div class="dado-valor">3 a 6 meses</div></div>
+          <div class="dado-item"><div class="dado-label">Difusão</div><div class="dado-valor">Maior que padrão</div></div>
+        </div>
+        <div class="card-tabs">
+          <button class="card-tab active" onclick="showTab(this,'dysport','tecnico')">Técnico</button>
+          <button class="card-tab" onclick="showTab(this,'dysport','equipe')">Para a equipe</button>
+          <button class="card-tab" onclick="showTab(this,'dysport','paciente')">Para o paciente</button>
+        </div>
+        <div id="dysport-tecnico" class="card-tab-content active">
+          <p class="texto-tecnico">O Dysport possui complexo proteico de composição diferenciada, conferindo maior difusão tecidual. É indicado para áreas mais amplas onde se deseja maior abrangência do relaxamento muscular — como testa e platisma. Sua proporção de equivalência é diferente: aproximadamente 2,5 a 3 unidades de Dysport para cada unidade do padrão de mercado.</p>
+          <div class="destaque-box verde">
+            <div class="destaque-box-icone">⚡</div>
+            <p><strong>Ponto técnico:</strong> Início de ação mais rápido (1 a 3 dias). A maior difusão é vantagem em áreas amplas, mas exige maior precisão técnica em regiões delicadas. A Dra. Nathalia avalia qual produto se adapta melhor à anatomia e queixa de cada paciente.</p>
+          </div>
+        </div>
+        <div id="dysport-equipe" class="card-tab-content">
+          <ul class="lista-simples">
+            <li>Início de ação mais rápido — resultado em 1 a 3 dias</li>
+            <li>Distribuído pela Galderma — empresa de referência global</li>
+            <li>Indicado para áreas onde se busca maior área de cobertura</li>
+            <li>Duração pode chegar a 6 meses em alguns pacientes</li>
+            <li>A dosagem é diferente das outras toxinas — só o profissional deve calcular</li>
+          </ul>
+        </div>
+        <div id="dysport-paciente" class="card-tab-content">
+          <p class="texto-tecnico">O Dysport é conhecido por ter início de ação rápido — o resultado começa a aparecer em 1 a 3 dias. É uma toxina produzida na França e distribuída pela Galderma, uma das maiores empresas de estética do mundo.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- BOTULIFT -->
+    <div class="product-card">
+      <div class="card-header">
+        <div class="card-header-left">
+          <div class="card-nome">Botulift</div>
+          <div class="card-fabricante">Lanzhou Institute · China · Aprovado ANVISA</div>
+        </div>
+        <span class="card-badge badge-linha">Linha da clínica</span>
+      </div>
+      <div class="card-body">
+        <div class="dados-rapidos">
+          <div class="dado-item"><div class="dado-label">Tipo</div><div class="dado-valor">BotulinumtoxinA</div></div>
+          <div class="dado-item"><div class="dado-label">Início de ação</div><div class="dado-valor">2 a 4 dias</div></div>
+          <div class="dado-item"><div class="dado-label">Duração</div><div class="dado-valor">3 a 4 meses</div></div>
+          <div class="dado-item"><div class="dado-label">Aprovação</div><div class="dado-valor">ANVISA ✓</div></div>
+        </div>
+        <div class="card-tabs">
+          <button class="card-tab active" onclick="showTab(this,'botulift','tecnico')">Técnico</button>
+          <button class="card-tab" onclick="showTab(this,'botulift','equipe')">Para a equipe</button>
+          <button class="card-tab" onclick="showTab(this,'botulift','paciente')">Para o paciente</button>
+        </div>
+        <div id="botulift-tecnico" class="card-tab-content active">
+          <p class="texto-tecnico">Toxina botulínica tipo A com aprovação ANVISA, perfil clínico similar ao padrão de mercado. Boa previsibilidade de resultado com difusão controlada. Utilizado como alternativa técnica conforme disponibilidade e indicação clínica individualizada pela Dra. Nathalia.</p>
+        </div>
+        <div id="botulift-equipe" class="card-tab-content">
+          <ul class="lista-simples">
+            <li>Aprovado pela ANVISA — regulamentado e seguro</li>
+            <li>Mesmo mecanismo de ação das demais toxinas da linha</li>
+            <li>Resultado em 2 a 4 dias, duração de 3 a 4 meses</li>
+            <li>A escolha entre os produtos é sempre da Dra. Nathalia, baseada no caso</li>
+          </ul>
+        </div>
+        <div id="botulift-paciente" class="card-tab-content">
+          <p class="texto-tecnico">Produto aprovado pela ANVISA, com ação segura e temporária. Os resultados aparecem gradualmente nos primeiros dias após a aplicação. A Dra. Nathalia define qual toxina é mais indicada para cada caso em consulta.</p>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /product-grid toxinas -->
+</div>
+
+<!-- ══════════════════════════════════════════
+     PREENCHEDORES
+══════════════════════════════════════════ -->
+<div id="preenchedores" class="section">
+  <div class="section-header">
+    <h2>Preenchedores de <em>Ácido Hialurônico</em></h2>
+    <p>O ácido hialurônico é uma substância naturalmente presente no corpo humano, capaz de se ligar a até 1.000x seu peso em água. Os preenchedores utilizados na clínica são biocompatíveis, reversíveis com hialuronidase e produzidos com tecnologias de reticulação de última geração.</p>
+  </div>
+
+  <div class="product-grid">
+
+    <!-- PERFECTHA DEEP -->
+    <div class="product-card">
+      <div class="card-header">
+        <div class="card-header-left">
+          <div class="card-nome">Perfectha Deep</div>
+          <div class="card-fabricante">Sinclair Pharma · França · Tecnologia E-brid</div>
+        </div>
+        <span class="card-badge badge-linha">Preenchedor</span>
+      </div>
+      <div class="card-body">
+        <div class="dados-rapidos">
+          <div class="dado-item"><div class="dado-label">Plano de aplicação</div><div class="dado-valor">Dérmico profundo</div></div>
+          <div class="dado-item"><div class="dado-label">Duração</div><div class="dado-valor">9 a 12 meses</div></div>
+          <div class="dado-item"><div class="dado-label">Tecnologia</div><div class="dado-valor">E-brid (sem BDDE)</div></div>
+          <div class="dado-item"><div class="dado-label">Reversível</div><div class="dado-valor">Sim ✓</div></div>
+        </div>
+        <div class="card-tabs">
+          <button class="card-tab active" onclick="showTab(this,'pdeep','tecnico')">Técnico</button>
+          <button class="card-tab" onclick="showTab(this,'pdeep','equipe')">Para a equipe</button>
+          <button class="card-tab" onclick="showTab(this,'pdeep','paciente')">Para o paciente</button>
+        </div>
+        <div id="pdeep-tecnico" class="card-tab-content active">
+          <p class="texto-tecnico">Preenchedor da linha Perfectha desenvolvido para aplicação na derme profunda. Utiliza tecnologia E-brid exclusiva da Sinclair (alternativa ao BDDE tradicional), com partículas de tamanho médio que proporcionam volumização moderada com naturalidade. Produzido 100% na França, certificado ISO 13485, com aprovação ANVISA, FDA e MHRA.</p>
+          <div class="destaque-box rosa">
+            <div class="destaque-box-icone">🇫🇷</div>
+            <p><strong>Diferenciais:</strong> Fabricado na França, tecnologia E-brid inovadora, evidências clínicas robustas de segurança e eficácia comprovadas ao longo de anos.</p>
+          </div>
+        </div>
+        <div id="pdeep-equipe" class="card-tab-content">
+          <ul class="lista-simples">
+            <li>Fabricado na França pela Sinclair — laboratório certificado ISO 13485 desde 2007</li>
+            <li>Aprovado pela ANVISA, FDA (EUA) e MHRA (Reino Unido)</li>
+            <li>Tecnologia E-brid — inovação que substitui o reticulante tradicional (BDDE)</li>
+            <li>Resultado natural, sem aspecto artificial</li>
+            <li>Duração de 9 a 12 meses — melhor custo-benefício ao longo do tempo</li>
+            <li>Totalmente reversível com hialuronidase se necessário</li>
+          </ul>
+        </div>
+        <div id="pdeep-paciente" class="card-tab-content">
+          <p class="texto-tecnico">Produto fabricado na França, com aprovação dos órgãos reguladores do Brasil, EUA e Reino Unido. É um ácido hialurônico de alta qualidade que proporciona resultado natural e dura em média de 9 a 12 meses. Caso queira reverter, é possível com uma injeção simples.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- PERFECTHA SUBSKIN -->
+    <div class="product-card">
+      <div class="card-header">
+        <div class="card-header-left">
+          <div class="card-nome">Perfectha Subskin</div>
+          <div class="card-fabricante">Sinclair Pharma · França · Volumização profunda</div>
+        </div>
+        <span class="card-badge badge-linha">Preenchedor</span>
+      </div>
+      <div class="card-body">
+        <div class="dados-rapidos">
+          <div class="dado-item"><div class="dado-label">Plano de aplicação</div><div class="dado-valor">Subcutâneo / subperiosteal</div></div>
+          <div class="dado-item"><div class="dado-label">Duração</div><div class="dado-valor">12 a 18 meses</div></div>
+          <div class="dado-item"><div class="dado-label">Indicação</div><div class="dado-valor">Full face, mandíbula, queixo</div></div>
+          <div class="dado-item"><div class="dado-label">Reversível</div><div class="dado-valor">Sim ✓</div></div>
+        </div>
+        <div class="card-tabs">
+          <button class="card-tab active" onclick="showTab(this,'psubskin','tecnico')">Técnico</button>
+          <button class="card-tab" onclick="showTab(this,'psubskin','equipe')">Para a equipe</button>
+          <button class="card-tab" onclick="showTab(this,'psubskin','paciente')">Para o paciente</button>
+        </div>
+        <div id="psubskin-tecnico" class="card-tab-content active">
+          <p class="texto-tecnico">O Perfectha Subskin é referência entre profissionais de full face pela sua alta capacidade volumizadora em planos profundos. Partículas maiores e maior resistência à degradação enzimática conferem durabilidade superior. Pode ser aplicado via cânula ou agulha. Indicado para bochechas, mandíbula, queixo, rinoplastia não cirúrgica e região infraorbitária profunda.</p>
+          <div class="destaque-box verde">
+            <div class="destaque-box-icone">📌</div>
+            <p><strong>Nota clínica:</strong> Um dos preenchedores mais utilizados pelos grandes full facers da HOF brasileira. Maior densidade molecular confere maior efeito volumizador e maior resistência à degradação.</p>
+          </div>
+        </div>
+        <div id="psubskin-equipe" class="card-tab-content">
+          <ul class="lista-simples">
+            <li>Um dos mais usados na harmonização full face no Brasil</li>
+            <li>Indicado para volumização profunda — bochechas, mandíbula, queixo</li>
+            <li>Duração de 12 a 18 meses — manutenção anual</li>
+            <li>Vem em embalagem com 3 seringas de 1ml — alta precisão de dose</li>
+            <li>Mesmo laboratório do Perfectha Deep — consistência de qualidade</li>
+          </ul>
+        </div>
+        <div id="psubskin-paciente" class="card-tab-content">
+          <p class="texto-tecnico">Produto francês de alta qualidade, indicado para áreas que precisam de mais volume e estrutura, como bochechas e mandíbula. Dura de 12 a 18 meses — um dos ácidos hialurônicos mais duradouros da categoria. É totalmente reversível.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- RESTYLANE GEL -->
+    <div class="product-card">
+      <div class="card-header">
+        <div class="card-header-left">
+          <div class="card-nome">Restylane Gel</div>
+          <div class="card-fabricante">Galderma · Suécia · Tecnologia NASHA</div>
+        </div>
+        <span class="card-badge badge-linha">Preenchedor</span>
+      </div>
+      <div class="card-body">
+        <div class="dados-rapidos">
+          <div class="dado-item"><div class="dado-label">Tecnologia</div><div class="dado-valor">NASHA</div></div>
+          <div class="dado-item"><div class="dado-label">Duração</div><div class="dado-valor">12 a 18 meses</div></div>
+          <div class="dado-item"><div class="dado-label">Característica</div><div class="dado-valor">Gel firme · lifting</div></div>
+          <div class="dado-item"><div class="dado-label">Reversível</div><div class="dado-valor">Sim ✓</div></div>
+        </div>
+        <div class="card-tabs">
+          <button class="card-tab active" onclick="showTab(this,'rgel','tecnico')">Técnico</button>
+          <button class="card-tab" onclick="showTab(this,'rgel','equipe')">Para a equipe</button>
+          <button class="card-tab" onclick="showTab(this,'rgel','paciente')">Para o paciente</button>
+        </div>
+        <div id="rgel-tecnico" class="card-tab-content active">
+          <p class="texto-tecnico">O Restylane Gel pertence à linha NASHA (Non-Animal Stabilized Hyaluronic Acid) da Galderma — pioneira no mercado de preenchedores. Gel de textura firme com alta capacidade de lifting e sustentação. Ideal para sulco nasolabial, linhas de marionete e contorno facial onde se busca estruturação.</p>
+          <div class="destaque-box dourado">
+            <div class="destaque-box-icone">🏆</div>
+            <p><strong>Pioneirismo:</strong> O Restylane foi o primeiro preenchedor de ácido hialurônico estabilizado não-animal do mundo. Décadas de evidência clínica e segurança comprovada.</p>
+          </div>
+        </div>
+        <div id="rgel-equipe" class="card-tab-content">
+          <ul class="lista-simples">
+            <li>Produto da Galderma — uma das maiores empresas de dermatologia do mundo</li>
+            <li>Primeiro ácido hialurônico estabilizado não-animal lançado no mercado global</li>
+            <li>Gel mais firme — ideal para estruturação e efeito lifting</li>
+            <li>Duração de 12 a 18 meses</li>
+            <li>Alta confiabilidade clínica com décadas de estudos</li>
+          </ul>
+        </div>
+        <div id="rgel-paciente" class="card-tab-content">
+          <p class="texto-tecnico">O Restylane é um dos ácidos hialurônicos mais tradicionais e estudados do mundo. Foi o primeiro do seu tipo lançado globalmente. Tem textura mais firme, ótima para contornos e estruturação facial, com duração de 12 a 18 meses.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- RESTYLANE DERM -->
+    <div class="product-card">
+      <div class="card-header">
+        <div class="card-header-left">
+          <div class="card-nome">Restylane Derm</div>
+          <div class="card-fabricante">Galderma · Suécia · Tecnologia OBT</div>
+        </div>
+        <span class="card-badge badge-linha">Preenchedor</span>
+      </div>
+      <div class="card-body">
+        <div class="dados-rapidos">
+          <div class="dado-item"><div class="dado-label">Tecnologia</div><div class="dado-valor">OBT™</div></div>
+          <div class="dado-item"><div class="dado-label">Duração</div><div class="dado-valor">até 18 meses</div></div>
+          <div class="dado-item"><div class="dado-label">Característica</div><div class="dado-valor">Gel macio · flexível</div></div>
+          <div class="dado-item"><div class="dado-label">Indicação</div><div class="dado-valor">Lábios · nasolabial</div></div>
+        </div>
+        <div class="card-tabs">
+          <button class="card-tab active" onclick="showTab(this,'rderm','tecnico')">Técnico</button>
+          <button class="card-tab" onclick="showTab(this,'rderm','equipe')">Para a equipe</button>
+          <button class="card-tab" onclick="showTab(this,'rderm','paciente')">Para o paciente</button>
+        </div>
+        <div id="rderm-tecnico" class="card-tab-content active">
+          <p class="texto-tecnico">O Restylane Derm utiliza tecnologia OBT (Optimal Balance Technology) — géis macios e flexíveis ideais para regiões de maior movimento muscular. Desenvolvido especificamente para a região labial, atingindo o equilíbrio entre suavidade, flexibilidade e firmeza. Indicado para lábios, sulcos nasolabiais e linhas de marionete.</p>
+          <div class="destaque-box rosa">
+            <div class="destaque-box-icone">💋</div>
+            <p><strong>Para lábios:</strong> Desenvolvido especificamente para a região labial. A tecnologia OBT permite que o produto acompanhe o movimento natural dos lábios sem rigidez, garantindo resultado natural.</p>
+          </div>
+        </div>
+        <div id="rderm-equipe" class="card-tab-content">
+          <ul class="lista-simples">
+            <li>Desenvolvido especificamente para lábios pela Galderma</li>
+            <li>Tecnologia OBT — gel macio que acompanha o movimento natural</li>
+            <li>Resultado que pode durar até 18 meses</li>
+            <li>Mantém expressões faciais naturais — 95% dos pacientes em estudos clínicos</li>
+            <li>Alta satisfação em estudos clínicos (questionário KISSABILITY da Galderma)</li>
+          </ul>
+        </div>
+        <div id="rderm-paciente" class="card-tab-content">
+          <p class="texto-tecnico">Produto criado especialmente para os lábios pela Galderma. Tem textura macia e flexível — isso significa que ele se move com você, sem aquela sensação de rigidez. Resultado natural que pode durar até 18 meses.</p>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /product-grid preenchedores -->
+</div>
+
+<!-- ══════════════════════════════════════════
+     BIOESTIMULADOR
+══════════════════════════════════════════ -->
+<div id="bioestimulador" class="section">
+  <div class="section-header">
+    <h2><em>Bioestimulador</em> de Colágeno</h2>
+    <p>Diferente dos preenchedores que adicionam volume externo, o bioestimulador age estimulando o próprio corpo a produzir colágeno. O resultado é progressivo, natural e de longa duração.</p>
+  </div>
+
+  <div class="product-grid">
+
+    <!-- ELLANSÉ -->
+    <div class="product-card">
+      <div class="card-header">
+        <div class="card-header-left">
+          <div class="card-nome">Ellansé</div>
+          <div class="card-fabricante">Sinclair Pharma · Policaprolactona + CMC</div>
+        </div>
+        <span class="card-badge badge-bio">Bioestimulador</span>
+      </div>
+      <div class="card-body">
+        <div class="dados-rapidos">
+          <div class="dado-item"><div class="dado-label">Composição</div><div class="dado-valor">PCL + gel CMC</div></div>
+          <div class="dado-item"><div class="dado-label">Efeito imediato</div><div class="dado-valor">Sim (gel carreador)</div></div>
+          <div class="dado-item"><div class="dado-label">Versão em uso</div><div class="dado-valor">Ellansé M · ~2 anos</div></div>
+          <div class="dado-item"><div class="dado-label">Colágeno</div><div class="dado-valor">Tipo I · progressivo</div></div>
+        </div>
+        <div class="card-tabs">
+          <button class="card-tab active" onclick="showTab(this,'ellanse','tecnico')">Técnico</button>
+          <button class="card-tab" onclick="showTab(this,'ellanse','equipe')">Para a equipe</button>
+          <button class="card-tab" onclick="showTab(this,'ellanse','paciente')">Para o paciente</button>
+          <button class="card-tab" onclick="showTab(this,'ellanse','variacoes')">Variações S·M·L·E</button>
+        </div>
+        <div id="ellanse-tecnico" class="card-tab-content active">
+          <p class="texto-tecnico">O Ellansé é um bioestimulador híbrido composto por 30% de microesferas de policaprolactona (PCL) suspensas em 70% de gel carreador de carboximetilcelulose (CMC). Atua em duas fases: o gel proporciona volumização imediata, enquanto as microesferas estimulam os fibroblastos a produzirem colágeno tipo I de forma progressiva e sustentada. À medida que o gel é reabsorvido, o colágeno neoformado assume seu lugar.</p>
+          <div class="destaque-box verde">
+            <div class="destaque-box-icone">🔬</div>
+            <p><strong>Base científica:</strong> A policaprolactona é um polímero biodegradável e biocompatível utilizado há décadas na medicina. As microesferas de PCL estimulam fibroblastos a produzirem colágeno tipo I — proteína responsável pela estrutura e firmeza da pele.</p>
+          </div>
+        </div>
+        <div id="ellanse-equipe" class="card-tab-content">
+          <ul class="lista-simples">
+            <li>Resultado em dois tempos: volume imediato + melhora progressiva nos meses seguintes</li>
+            <li>Duração de 1 a 4 anos dependendo da versão escolhida (S, M, L, E)</li>
+            <li>O paciente pode ver resultado imediato e continuar melhorando por meses</li>
+            <li>Estimula o próprio colágeno do paciente — resultado mais natural e progressivo</li>
+            <li>Totalmente biocompatível e reabsorvível — não deixa resíduos</li>
+            <li>Indicado para flacidez, perda de contorno, rejuvenescimento global</li>
+            <li>A Dra. Nathalia escolhe a versão (duração) conforme o objetivo do paciente</li>
+          </ul>
+        </div>
+        <div id="ellanse-paciente" class="card-tab-content">
+          <p class="texto-tecnico">O Ellansé funciona diferente dos preenchedores comuns. Ele não só adiciona volume — ele estimula o seu próprio corpo a produzir colágeno. Você sai com resultado imediato e nos meses seguintes continua melhorando naturalmente. É totalmente absorvido pelo organismo, sem deixar resíduos. A duração varia de 1 a 4 anos, conforme a versão indicada pela Dra. Nathalia para o seu caso.</p>
+        </div>
+        <div id="ellanse-variacoes" class="card-tab-content">
+          <table class="comp-table">
+            <thead>
+              <tr><th>Versão</th><th>Duração estimada</th><th>Indicação principal</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Ellansé S</td><td>~1 ano</td><td>Primeiro tratamento · avaliação de resposta</td></tr>
+              <tr style="background:var(--verde-claro)"><td><strong>Ellansé M ✓</strong></td><td class="destaque"><strong>~2 anos · Em uso na clínica</strong></td><td>Manutenção regular · flacidez moderada · excelente custo-benefício</td></tr>
+              <tr><td>Ellansé L</td><td>~3 anos</td><td>Rejuvenescimento de longa duração</td></tr>
+              <tr><td>Ellansé E</td><td>~4 anos</td><td>Máxima durabilidade · casos selecionados</td></tr>
+            </tbody>
+          </table>
+          <div class="destaque-box verde" style="margin-top:16px">
+            <div class="destaque-box-icone">✓</div>
+            <p><strong>A Dra. Nathalia utiliza o Ellansé M</strong> — duração de aproximadamente 2 anos, com excelente equilíbrio entre resultado imediato, estímulo progressivo de colágeno e durabilidade. A versão é escolhida com base na avaliação individual de cada paciente.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     OBJEÇÕES
+══════════════════════════════════════════ -->
+<div id="objecoes" class="section">
+  <div class="section-header">
+    <h2>Objeções <em>Frequentes</em></h2>
+    <p>Respostas prontas para a SDR usar com segurança e autoridade. Baseadas em evidências científicas e no posicionamento da clínica.</p>
+  </div>
+
+  <div class="objecao-grid">
+
+    <div class="objecao-item">
+      <div class="objecao-pergunta">"Vi uma clínica cobrando bem menos pelo mesmo procedimento."</div>
+      <div class="objecao-resposta">O valor de um procedimento estético não está só no produto — está na avaliação clínica, no planejamento individualizado, na técnica de aplicação e no acompanhamento pós. A Dra. Nathalia planeja cada caso, escolhe o produto adequado para cada anatomia e acompanha o resultado. Além disso, todos os produtos usados têm aprovação ANVISA e vêm de laboratórios certificados. Qualidade e segurança têm custo — e protegem o seu rosto.</div>
+    </div>
+
+    <div class="objecao-item">
+      <div class="objecao-pergunta">"Por que não usa Botox (Allergan)? Ouvi que é o melhor."</div>
+      <div class="objecao-resposta">O Botox é uma das marcas mais conhecidas — e também a com maior apelo de marketing. Mas todas as toxinas botulínicas usadas na clínica têm aprovação ANVISA e comprovação científica de segurança e eficácia. O Xeomin, por exemplo, é chamado de "toxina pura" por não ter proteínas adicionais — isso reduz o risco de resistência em tratamentos longos. A escolha do produto é sempre técnica, feita pela Dra. Nathalia com base no seu perfil específico.</div>
+    </div>
+
+    <div class="objecao-item">
+      <div class="objecao-pergunta">"Ácido hialurônico é tudo igual, não é?"</div>
+      <div class="objecao-resposta">Não. A tecnologia de reticulação, o tamanho das partículas, a origem do produto e o plano de aplicação fazem diferença enorme no resultado. O Perfectha, por exemplo, usa tecnologia E-brid (inovação francesa que substitui o reticulante tradicional). O Restylane Derm foi desenvolvido especificamente para lábios. Cada produto tem uma indicação. Colocar o produto errado no plano errado pode gerar resultado insatisfatório — mesmo com produto de qualidade.</div>
+    </div>
+
+    <div class="objecao-item">
+      <div class="objecao-pergunta">"Tenho medo de ficar artificial."</div>
+      <div class="objecao-resposta">Esse é exatamente o motivo pelo qual a Dra. Nathalia faz uma avaliação detalhada antes de qualquer aplicação. Ela não transforma — ela revela o que já está lá. O planejamento respeita a anatomia de cada paciente, e o lema da clínica é "devolver a autoestima com naturalidade". Além disso, todos os preenchedores usados são reversíveis — se houver qualquer insatisfação, é possível corrigir.</div>
+    </div>
+
+    <div class="objecao-item">
+      <div class="objecao-pergunta">"E se eu não gostar do resultado?"</div>
+      <div class="objecao-resposta">Os preenchedores de ácido hialurônico são totalmente reversíveis com hialuronidase. Isso dá segurança real ao procedimento. Para as toxinas botulínicas, o efeito é temporário e se dissolve naturalmente em 3 a 4 meses. O Ellansé, por ser bioestimulador, não é reversível — mas é progressivo e natural, o que reduz o risco de resultados indesejados.</div>
+    </div>
+
+    <div class="objecao-item">
+      <div class="objecao-pergunta">"Posso parcelar? O valor ficou acima do que esperava."</div>
+      <div class="objecao-resposta">Entendemos. Vale lembrar que a duração dos produtos usados na clínica é de 6 meses a até 4 anos — o que significa que o custo por mês é muito menor do que parece inicialmente. Podemos verificar as opções de parcelamento disponíveis e, se necessário, discutir um plano de tratamento por etapas com a Dra. Nathalia.</div>
+    </div>
+
+    <div class="objecao-item">
+      <div class="objecao-pergunta">"Já tive uma experiência ruim com preenchimento antes."</div>
+      <div class="objecao-resposta">A Dra. Nathalia atende muitas pacientes nessa situação — e esse é exatamente o tipo de caso onde o acolhimento e o olhar clínico fazem diferença. Ela começa com uma conversa antes de qualquer procedimento, entende o histórico e só avança quando a paciente está segura e confortável. Venha para uma avaliação — sem compromisso.</div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     COMPARATIVO
+══════════════════════════════════════════ -->
+<div id="comparativo" class="section">
+  <div class="section-header">
+    <h2>Comparativo <em>Geral</em></h2>
+    <p>Visão consolidada de todos os produtos da clínica para consulta rápida.</p>
+  </div>
+
+  <div style="overflow-x:auto; margin-bottom:32px;">
+    <table class="comp-table">
+      <thead>
+        <tr>
+          <th>Produto</th>
+          <th>Categoria</th>
+          <th>Fabricante</th>
+          <th>Início de ação</th>
+          <th>Duração</th>
+          <th>Diferencial</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Botulim ✓</td>
+          <td>Toxina botulínica</td>
+          <td>Lanzhou · China</td>
+          <td>2–4 dias</td>
+          <td>3–4 meses</td>
+          <td>Em uso atual · ANVISA</td>
+        </tr>
+        <tr>
+          <td>Xeomin</td>
+          <td>Toxina botulínica</td>
+          <td>Merz · Alemanha</td>
+          <td>3–5 dias</td>
+          <td>3–4 meses</td>
+          <td class="destaque">Toxina pura · sem proteínas complexas</td>
+        </tr>
+        <tr>
+          <td>Dysport</td>
+          <td>Toxina botulínica</td>
+          <td>Ipsen/Galderma · França</td>
+          <td>1–3 dias</td>
+          <td>3–6 meses</td>
+          <td class="destaque">Início mais rápido · maior difusão</td>
+        </tr>
+        <tr>
+          <td>Botulift</td>
+          <td>Toxina botulínica</td>
+          <td>Lanzhou · China</td>
+          <td>2–4 dias</td>
+          <td>3–4 meses</td>
+          <td>ANVISA aprovado</td>
+        </tr>
+        <tr>
+          <td>Perfectha Deep</td>
+          <td>Preenchedor AH</td>
+          <td>Sinclair · França</td>
+          <td>Imediato</td>
+          <td>9–12 meses</td>
+          <td class="destaque">Tecnologia E-brid · derme profunda</td>
+        </tr>
+        <tr>
+          <td>Perfectha Subskin</td>
+          <td>Preenchedor AH</td>
+          <td>Sinclair · França</td>
+          <td>Imediato</td>
+          <td>12–18 meses</td>
+          <td class="destaque">Full face · volumização profunda</td>
+        </tr>
+        <tr>
+          <td>Restylane Gel</td>
+          <td>Preenchedor AH</td>
+          <td>Galderma · Suécia</td>
+          <td>Imediato</td>
+          <td>12–18 meses</td>
+          <td class="destaque">NASHA · lifting · estruturação</td>
+        </tr>
+        <tr>
+          <td>Restylane Derm</td>
+          <td>Preenchedor AH</td>
+          <td>Galderma · Suécia</td>
+          <td>Imediato</td>
+          <td>até 18 meses</td>
+          <td class="destaque">OBT · específico para lábios</td>
+        </tr>
+        <tr>
+          <td>Ellansé M ✓</td>
+          <td>Bioestimulador</td>
+          <td>Sinclair · PCL+CMC</td>
+          <td>Imediato + progressivo</td>
+          <td class="destaque">~2 anos</td>
+          <td class="destaque">Dupla ação · colágeno tipo I · em uso atual</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="destaque-box dourado">
+    <div class="destaque-box-icone">📌</div>
+    <p><strong>Lembre-se sempre:</strong> A escolha do produto é exclusivamente da Dra. Nathalia, baseada na avaliação clínica de cada paciente. A SDR e a equipe não devem indicar qual produto será usado — apenas informar sobre a qualidade e o padrão dos produtos da clínica.</p>
+  </div>
+
+</div>
+
+</main>
+
+<footer>
+  <span>Documento interno · <strong>Dra. Nathalia Teofilo Porto</strong> · Harmonização Orofacial · Campinas/SP</span>
+  <span>Uso restrito à equipe da clínica · Não compartilhar externamente</span>
+</footer>
+
+<script>
+function showSection(id) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  event.target.classList.add('active');
+  window.scrollTo({top:0, behavior:'smooth'});
+}
+
+function showTab(btn, prefix, tab) {
+  const card = btn.closest('.card-body');
+  card.querySelectorAll('.card-tab').forEach(t => t.classList.remove('active'));
+  card.querySelectorAll('.card-tab-content').forEach(c => c.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById(prefix + '-' + tab).classList.add('active');
+}
+</script>
+</body>
+</html>
