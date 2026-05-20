@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Briefing de Produtos · Dra. Nathalia Teofilo Porto</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --rosa:#C9748F; --rosa-claro:#F7E8ED; --rosa-escuro:#A85570;
+  --verde:#2E7D6B; --verde-claro:#E8F5F1;
+  --azul:#2B5F8E; --azul-claro:#E8F1F8;
+  --roxo:#6B4E8A; --roxo-claro:#F0EBF7;
+  --dourado:#9A7B4F; --dourado-claro:#F7F1E8;
+  --vermelho:#B84040; --vermelho-claro:#FAEAEA;
+  --cinza:#6B6B6B; --texto:#1A1A1A; --fundo:#FAFAF8; --linha:#E8E0DC;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'DM Sans',sans-serif;background:var(--fundo);color:var(--texto);padding:0 0 80px;}
+
+header{background:linear-gradient(135deg,#1A0A12 0%,#3D1A28 100%);padding:40px 48px 32px;position:relative;overflow:hidden;}
+header::before{content:'';position:absolute;top:-60px;right:-60px;width:280px;height:280px;background:radial-gradient(circle,rgba(201,116,143,.2) 0%,transparent 70%);border-radius:50%;}
+.header-tag{display:inline-block;font-size:10px;font-weight:500;letter-spacing:2.5px;text-transform:uppercase;color:rgba(201,116,143,.9);border:1px solid rgba(201,116,143,.3);padding:5px 14px;border-radius:20px;margin-bottom:16px;position:relative;}
+header h1{font-family:'Cormorant Garamond',serif;font-size:clamp(24px,4vw,38px);font-weight:300;color:#fff;line-height:1.2;position:relative;}
+header h1 em{font-style:italic;color:var(--rosa);font-weight:600;}
+.header-sub{font-size:13px;color:rgba(255,255,255,.5);margin-top:8px;position:relative;}
+
+main{max-width:780px;margin:0 auto;padding:48px 24px;}
+
+.secao{margin-bottom:52px;}
+.secao-titulo{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:300;color:var(--texto);margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid var(--linha);}
+.secao-titulo em{font-style:italic;color:var(--rosa);}
+
+.produto{background:#fff;border-radius:14px;padding:24px 28px;margin-bottom:16px;border:1px solid var(--linha);position:relative;overflow:hidden;}
+.produto::after{content:'';position:absolute;top:0;left:0;width:4px;height:100%;border-radius:4px 0 0 4px;}
+.p-rosa::after{background:var(--rosa);}
+.p-azul::after{background:var(--azul);}
+.p-roxo::after{background:var(--roxo);}
+.p-verde::after{background:var(--verde);}
+.p-dourado::after{background:var(--dourado);}
+
+.produto-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;gap:12px;flex-wrap:wrap;}
+.produto-nome{font-size:16px;font-weight:500;color:var(--texto);}
+.produto-badge{font-size:10px;font-weight:500;letter-spacing:1px;padding:4px 12px;border-radius:20px;white-space:nowrap;}
+.badge-atual{background:var(--verde-claro);color:var(--verde);border:1px solid rgba(46,125,107,.2);}
+.badge-linha{background:var(--rosa-claro);color:var(--rosa);border:1px solid rgba(201,116,143,.2);}
+.badge-bio{background:var(--roxo-claro);color:var(--roxo);border:1px solid rgba(107,78,138,.2);}
+
+.topicos{list-style:none;}
+.topicos li{font-size:13.5px;color:var(--cinza);line-height:1.7;padding:7px 0 7px 18px;border-bottom:1px solid var(--linha);position:relative;}
+.topicos li:last-child{border-bottom:none;}
+.topicos li::before{content:'—';position:absolute;left:0;color:var(--rosa);font-weight:500;}
+.topicos li strong{color:var(--texto);}
+
+.exemplo{background:var(--fundo);border-radius:10px;padding:14px 18px;margin-top:14px;border-left:3px solid var(--rosa);}
+.exemplo-label{font-size:10px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:var(--rosa);margin-bottom:6px;}
+.exemplo-texto{font-family:'Cormorant Garamond',serif;font-size:16px;font-style:italic;color:var(--texto);line-height:1.7;}
+
+.nota{border-radius:10px;padding:14px 18px;margin-top:14px;font-size:13px;line-height:1.7;border:1px solid transparent;}
+.nota-rosa{background:var(--rosa-claro);color:var(--rosa-escuro);border-color:rgba(201,116,143,.15);}
+.nota-verde{background:var(--verde-claro);color:var(--verde);border-color:rgba(46,125,107,.15);}
+.nota-dourado{background:var(--dourado-claro);color:var(--dourado);border-color:rgba(154,123,79,.15);}
+.nota strong{font-weight:500;}
+
+.cfo-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;}
+.cfo-box{border-radius:12px;padding:18px 20px;}
+.cfo-pode{background:var(--verde-claro);border:1px solid rgba(46,125,107,.2);}
+.cfo-naopode{background:var(--vermelho-claro);border:1px solid rgba(184,64,64,.15);}
+.cfo-titulo{font-size:11px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:12px;}
+.cfo-pode .cfo-titulo{color:var(--verde);}
+.cfo-naopode .cfo-titulo{color:var(--vermelho);}
+.cfo-lista{list-style:none;}
+.cfo-lista li{font-size:13px;color:var(--cinza);line-height:1.7;padding:5px 0 5px 20px;position:relative;border-bottom:1px solid rgba(0,0,0,.06);}
+.cfo-lista li:last-child{border-bottom:none;}
+.cfo-pode .cfo-lista li::before{content:'✓';position:absolute;left:0;color:var(--verde);font-weight:700;}
+.cfo-naopode .cfo-lista li::before{content:'✗';position:absolute;left:0;color:var(--vermelho);font-weight:700;}
+
+.obrigatorio{background:var(--dourado-claro);border:1px solid rgba(154,123,79,.2);border-radius:10px;padding:14px 18px;margin-top:0;}
+.obrigatorio-titulo{font-size:11px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:var(--dourado);margin-bottom:8px;}
+.obrigatorio p{font-size:13px;color:var(--cinza);line-height:1.7;}
+.obrigatorio strong{color:var(--dourado);}
+
+.frase{font-family:'Cormorant Garamond',serif;font-size:19px;font-style:italic;font-weight:600;color:var(--rosa-escuro);padding:14px 18px;background:var(--rosa-claro);border-radius:10px;border-left:3px solid var(--rosa);line-height:1.65;margin-top:14px;}
+
+.diferencial{background:#fff;border-radius:14px;padding:24px 28px;border:1px solid var(--linha);position:relative;overflow:hidden;}
+.diferencial::after{content:'';position:absolute;top:0;left:0;width:4px;height:100%;background:var(--dourado);border-radius:4px 0 0 4px;}
+
+footer{background:#fff;border-top:1px solid var(--linha);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;font-size:12px;color:var(--cinza);margin-top:60px;}
+footer strong{color:var(--rosa);}
+
+@media(max-width:600px){
+  header{padding:28px 20px 24px;}
+  main{padding:28px 16px;}
+  .produto{padding:18px 20px;}
+  .cfo-grid{grid-template-columns:1fr;}
+  footer{flex-direction:column;gap:8px;text-align:center;padding:16px 20px;}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-tag">Briefing de Produtos · Base para Posts</div>
+  <h1>Guia de <em>Produtos</em></h1>
+  <p class="header-sub">Dra. Nathalia Teofilo Porto · Harmonização Orofacial · Campinas/SP · CRO-SP 171374</p>
+</header>
+
+<main>
+
+  <!-- ── TOXINAS ── -->
+  <div class="secao">
+    <h2 class="secao-titulo">Toxinas <em>Botulínicas</em></h2>
+
+    <div class="produto p-azul">
+      <div class="produto-header">
+        <span class="produto-nome">Botulim</span>
+        <span class="produto-badge badge-atual">✓ Em uso atual</span>
+      </div>
+      <ul class="topicos">
+        <li>Toxina botulínica tipo A aprovada pela ANVISA</li>
+        <li>Início de ação em 2 a 4 dias · duração de 3 a 4 meses</li>
+        <li>Boa previsibilidade clínica · perfil de difusão controlado</li>
+        <li>Escolha atual da Dra. Nathalia pela consistência de resultado</li>
+      </ul>
+      <div class="exemplo">
+        <div class="exemplo-label">Tom de voz — exemplo de frase</div>
+        <div class="exemplo-texto">"Uso o Botulim — aprovado pela ANVISA, com ação previsível e resultado consistente. O produto certo começa com a avaliação certa."</div>
+      </div>
+    </div>
+
+    <div class="produto p-azul">
+      <div class="produto-header">
+        <span class="produto-nome">Xeomin · Merz · Alemanha</span>
+        <span class="produto-badge badge-linha">Linha da clínica</span>
+      </div>
+      <ul class="topicos">
+        <li>Única toxina do mercado <strong>sem proteínas complexas</strong> — chamada de "toxina pura"</li>
+        <li>Menor risco de o corpo criar resistência com o tempo</li>
+        <li>Indicada para pacientes com histórico longo de tratamentos</li>
+        <li>Início de ação em 3 a 5 dias · duração de 3 a 4 meses</li>
+      </ul>
+      <div class="exemplo">
+        <div class="exemplo-label">Tom de voz — exemplo de frase</div>
+        <div class="exemplo-texto">"O Xeomin é a única toxina sem proteínas adicionais — isso reduz a chance de resistência em quem faz tratamento há anos. Uma escolha técnica, não aleatória."</div>
+      </div>
+    </div>
+
+    <div class="produto p-azul">
+      <div class="produto-header">
+        <span class="produto-nome">Dysport · Ipsen/Galderma · França</span>
+        <span class="produto-badge badge-linha">Linha da clínica</span>
+      </div>
+      <ul class="topicos">
+        <li>Início de ação mais rápido — resultado em 1 a 3 dias</li>
+        <li>Maior difusão tecidual · indicada para áreas mais amplas</li>
+        <li>Duração pode chegar a 6 meses em alguns casos</li>
+        <li>Distribuída pela Galderma — referência global em estética</li>
+      </ul>
+      <div class="exemplo">
+        <div class="exemplo-label">Tom de voz — exemplo de frase</div>
+        <div class="exemplo-texto">"O Dysport age mais rápido e cobre áreas maiores. Para alguns casos, é exatamente o que o rosto precisa — e é isso que eu avalio antes de escolher."</div>
+      </div>
+    </div>
+
+    <div class="produto p-azul">
+      <div class="produto-header">
+        <span class="produto-nome">Botulift · Lanzhou · China</span>
+        <span class="produto-badge badge-linha">Linha da clínica</span>
+      </div>
+      <ul class="topicos">
+        <li>Toxina botulínica tipo A aprovada pela ANVISA</li>
+        <li>Mesmo mecanismo de ação das demais · perfil clínico consistente</li>
+        <li>Início de ação em 2 a 4 dias · duração de 3 a 4 meses</li>
+      </ul>
+      <div class="exemplo">
+        <div class="exemplo-label">Tom de voz — exemplo de frase</div>
+        <div class="exemplo-texto">"Aprovado pela ANVISA, com resultado confiável. A marca muda — o cuidado na escolha é sempre o mesmo."</div>
+      </div>
+    </div>
+
+    <div class="nota nota-rosa">
+      <strong>Para todos os posts sobre toxina:</strong> todas as marcas têm o mesmo mecanismo de ação — relaxam o músculo temporariamente. O que muda é o perfil molecular, a difusão e a indicação clínica. A escolha é sempre da Dra. Nathalia, baseada no histórico e perfil de cada paciente. Nunca afirmar que uma é melhor que a outra de forma absoluta.
+    </div>
+  </div>
+
+  <!-- ── PREENCHEDORES ── -->
+  <div class="secao">
+    <h2 class="secao-titulo">Preenchedores de <em>Ácido Hialurônico</em></h2>
+
+    <div class="produto p-rosa">
+      <div class="produto-header">
+        <span class="produto-nome">Perfectha Deep · Sinclair · França</span>
+        <span class="produto-badge badge-linha">Preenchedor</span>
+      </div>
+      <ul class="topicos">
+        <li>Aplicado na derme profunda · definição e contorno</li>
+        <li>Tecnologia E-brid exclusiva — inovação francesa sem reticulante tradicional</li>
+        <li>Aprovado FDA, ANVISA e MHRA (Reino Unido)</li>
+        <li>Duração de 9 a 12 meses</li>
+      </ul>
+      <div class="exemplo">
+        <div class="exemplo-label">Tom de voz — exemplo de frase</div>
+        <div class="exemplo-texto">"O Perfectha Deep é francês, aprovado em três países. Uso para contorno e definição — onde cada décimo de mililitro precisa de precisão."</div>
+      </div>
+    </div>
+
+    <div class="produto p-rosa">
+      <div class="produto-header">
+        <span class="produto-nome">Perfectha Subskin · Sinclair · França</span>
+        <span class="produto-badge badge-linha">Preenchedor</span>
+      </div>
+      <ul class="topicos">
+        <li>Aplicado em plano profundo · volumização estrutural</li>
+        <li>Indicado para bochechas, mandíbula, queixo e full face</li>
+        <li>Um dos mais usados em harmonização full face no Brasil</li>
+        <li>Duração de 12 a 18 meses</li>
+      </ul>
+      <div class="exemplo">
+        <div class="exemplo-label">Tom de voz — exemplo de frase</div>
+        <div class="exemplo-texto">"Para quem precisa de estrutura — bochechas, mandíbula, full face. O Subskin vai fundo e dura. É o produto que respeita o rosto como sistema."</div>
+      </div>
+    </div>
+
+    <div class="produto p-rosa">
+      <div class="produto-header">
+        <span class="produto-nome">Restylane Gel · Galderma · Suécia</span>
+        <span class="produto-badge badge-linha">Preenchedor</span>
+      </div>
+      <ul class="topicos">
+        <li>Primeiro ácido hialurônico estabilizado não-animal do mundo</li>
+        <li>Gel firme · ideal para estruturação, lifting e contorno facial</li>
+        <li>Décadas de evidência clínica e segurança comprovada</li>
+        <li>Duração de 12 a 18 meses</li>
+      </ul>
+      <div class="exemplo">
+        <div class="exemplo-label">Tom de voz — exemplo de frase</div>
+        <div class="exemplo-texto">"O Restylane Gel foi o primeiro do mundo. Décadas de evidência clínica não são marketing — são segurança real para quem senta na minha cadeira."</div>
+      </div>
+    </div>
+
+    <div class="produto p-rosa">
+      <div class="produto-header">
+        <span class="produto-nome">Restylane Derm · Galderma · Suécia</span>
+        <span class="produto-badge badge-linha">Preenchedor</span>
+      </div>
+      <ul class="topicos">
+        <li>Desenvolvido especificamente para lábios pela Galderma</li>
+        <li>Tecnologia OBT — gel macio que acompanha o movimento natural</li>
+        <li>Resultado que respeita as expressões · naturalidade garantida</li>
+        <li>Duração até 18 meses</li>
+      </ul>
+      <div class="exemplo">
+        <div class="exemplo-label">Tom de voz — exemplo de frase</div>
+        <div class="exemplo-texto">"O Derm foi feito para lábio — não adaptado. Ele se move com você. É o que garante que o resultado parece seu, não colocado."</div>
+      </div>
+    </div>
+
+    <div class="nota nota-rosa">
+      <strong>Para todos os posts sobre preenchedor:</strong> o ácido hialurônico existe naturalmente no corpo, é biocompatível e reversível. Produto diferente para cada anatomia e objetivo. Nunca dizer "qualquer ácido hialurônico é igual" — e nunca prometer resultado específico.
+    </div>
+  </div>
+
+  <!-- ── BIOESTIMULADOR ── -->
+  <div class="secao">
+    <h2 class="secao-titulo"><em>Bioestimulador</em> de Colágeno</h2>
+
+    <div class="produto p-roxo">
+      <div class="produto-header">
+        <span class="produto-nome">Ellansé M · Sinclair · Policaprolactona</span>
+        <span class="produto-badge badge-bio">✓ Em uso atual</span>
+      </div>
+      <ul class="topicos">
+        <li>Não preenche — <strong>estimula o próprio corpo a produzir colágeno tipo I</strong></li>
+        <li>Dupla ação: volume imediato + melhora progressiva nos meses seguintes</li>
+        <li>Indicado para flacidez, perda de contorno e pele sem viço</li>
+        <li>Versão M · duração aproximada de 2 anos</li>
+        <li>Totalmente biocompatível e reabsorvível · não deixa resíduos</li>
+        <li><strong>Não substitui o ácido hialurônico — funções diferentes</strong></li>
+      </ul>
+      <div class="exemplo">
+        <div class="exemplo-label">Tom de voz — exemplo de frase</div>
+        <div class="exemplo-texto">"O Ellansé não preenche — ele manda o seu corpo produzir colágeno. O resultado aparece aos poucos e fica por até 2 anos. Não é mágica, é biologia."</div>
+      </div>
+    </div>
+
+    <div class="nota nota-rosa">
+      <strong>Para posts sobre Ellansé:</strong> o bioestimulador trata a causa (perda de colágeno), não o sintoma (volume perdido). Quando o rosto precisa dos dois — flacidez e volume — os dois podem ser indicados juntos. Isso não é venda de produto, é planejamento clínico honesto.
+    </div>
+  </div>
+
+  <!-- ── DIFERENCIAL ── -->
+  <div class="secao">
+    <h2 class="secao-titulo">O <em>Diferencial</em> da Clínica</h2>
+
+    <div class="diferencial">
+      <ul class="topicos">
+        <li>Avaliação completa antes de qualquer procedimento — conversa, fotos e planejamento</li>
+        <li>Produto escolhido para o perfil de cada paciente · nunca o mesmo para duas pessoas</li>
+        <li>Técnica escolhida com base no histórico · ex: cânula para quem tem facilidade em roxear</li>
+        <li>Olhar clínico de cirurgiã — dentes, estrutura óssea e face avaliados em conjunto</li>
+        <li>Acompanhamento pós-procedimento · retorno de 2 a 3 vezes para massagens de acomodação</li>
+        <li>Atendimento humanizado — espaço para respirar, decidir e se sentir segura</li>
+        <li>A HOF não transforma — revela o que já está lá</li>
+      </ul>
+      <div class="frase">"Meu trabalho não é vender produto. É entregar resultado."</div>
+    </div>
+
+    <div class="nota nota-dourado" style="margin-top:16px;">
+      <strong>Esse bloco é o coração de todo conteúdo.</strong> Qualquer post sobre produto deve terminar reforçando que a escolha é técnica, individualizada e acompanhada. Não é sobre o produto — é sobre quem avalia, planeja e aplica.
+    </div>
+  </div>
+
+  <!-- ── CFO ── -->
+  <div class="secao">
+    <h2 class="secao-titulo">Regras do <em>CFO</em> para Posts</h2>
+    <p style="font-size:13px;color:var(--cinza);margin-bottom:20px;line-height:1.7;">Baseado na Resolução CFO 196/2019 e atualização CFO 271/2025. A equipe precisa conhecer — qualquer deslize é responsabilidade da Dra. Nathalia.</p>
+
+    <div class="cfo-grid">
+      <div class="cfo-box cfo-pode">
+        <div class="cfo-titulo">✓ Pode</div>
+        <ul class="cfo-lista">
+          <li>Antes e depois — com TCLE assinado pelo paciente</li>
+          <li>Vídeos educativos sobre procedimentos e produtos</li>
+          <li>Selfies com pacientes — com autorização prévia</li>
+          <li>Mencionar marcas e técnicas de forma informativa</li>
+          <li>Divulgar cursos, especializações e atualizações</li>
+          <li>Depoimentos espontâneos de pacientes</li>
+        </ul>
+      </div>
+      <div class="cfo-box cfo-naopode">
+        <div class="cfo-titulo">✗ Não pode</div>
+        <ul class="cfo-lista">
+          <li>Fotos ou vídeos durante o procedimento — "o durante" é proibido</li>
+          <li>Frases como "resultado garantido", "transformação garantida"</li>
+          <li>Frases como "melhor resultado", "sorriso perfeito em uma sessão"</li>
+          <li>Mostrar equipamentos, instrumentais ou tecidos biológicos</li>
+          <li>Publicar em nome da clínica — só a Dra. Nathalia pode divulgar</li>
+          <li>Usar casos clínicos de terceiros sem autorização</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="obrigatorio">
+      <div class="obrigatorio-titulo">⚠ Obrigatório em todo post</div>
+      <p>Todo post deve conter: <strong>Dra. Nathalia Teofilo Porto · Cirurgiã-Dentista · CRO-SP 171374</strong></p>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <span>Briefing interno · <strong>Dra. Nathalia Teofilo Porto</strong> · Campinas/SP</span>
+  <span>Base para criação de posts · Equipe de marketing</span>
+</footer>
+
+</body>
+</html>
