@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Protocolo de Lábios · Dra. Nathalia Teofilo Porto</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+:root{--rosa:#C9748F;--rosa-claro:#F7E8ED;--rosa-escuro:#A85570;--verde:#2E7D6B;--verde-claro:#E8F5F1;--azul:#2B5F8E;--azul-claro:#E8F1F8;--roxo:#6B4E8A;--roxo-claro:#F0EBF7;--dourado:#9A7B4F;--dourado-claro:#F7F1E8;--cinza:#6B6B6B;--texto:#1A1A1A;--fundo:#FAFAF8;--linha:#E8E0DC;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'DM Sans',sans-serif;background:var(--fundo);color:var(--texto);padding:0 0 80px;}
+.hero{background:linear-gradient(135deg,#1A0A12 0%,#3D1A28 50%,#1A0A12 100%);padding:48px 48px 40px;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;top:-80px;right:-80px;width:350px;height:350px;background:radial-gradient(circle,rgba(201,116,143,.2) 0%,transparent 70%);border-radius:50%;}
+.hero-tag{display:inline-block;font-size:10px;font-weight:500;letter-spacing:2.5px;text-transform:uppercase;color:rgba(201,116,143,.9);border:1px solid rgba(201,116,143,.3);padding:5px 14px;border-radius:20px;margin-bottom:20px;position:relative;}
+.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,5vw,44px);font-weight:300;color:#fff;line-height:1.15;margin-bottom:8px;position:relative;}
+.hero h1 em{font-style:italic;color:var(--rosa);font-weight:600;}
+.hero-sub{font-size:13px;color:rgba(255,255,255,.5);font-weight:300;position:relative;margin-bottom:20px;}
+.hero-badges{display:flex;gap:8px;flex-wrap:wrap;position:relative;}
+.hero-badge{font-size:11px;font-weight:500;padding:5px 14px;border-radius:20px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);color:rgba(255,255,255,.75);}
+.nav{background:#fff;border-bottom:1px solid var(--linha);padding:0 48px;display:flex;gap:0;overflow-x:auto;position:sticky;top:0;z-index:100;box-shadow:0 2px 12px rgba(0,0,0,.04);}
+.nav-btn{padding:16px 18px;font-size:11px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:var(--cinza);background:none;border:none;border-bottom:2px solid transparent;cursor:pointer;white-space:nowrap;transition:all .2s;}
+.nav-btn:hover{color:var(--rosa);}
+.nav-btn.active{color:var(--rosa);border-bottom-color:var(--rosa);}
+main{max-width:860px;margin:0 auto;padding:48px 24px;}
+.section{display:none;animation:fadeIn .4s ease;}
+.section.active{display:block;}
+@keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.section-header{margin-bottom:32px;padding-bottom:20px;border-bottom:1px solid var(--linha);}
+.section-header h2{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:300;color:var(--texto);margin-bottom:6px;}
+.section-header h2 em{font-style:italic;color:var(--rosa);}
+.section-header p{font-size:13px;color:var(--cinza);line-height:1.7;max-width:600px;}
+.etapa{background:#fff;border-radius:16px;overflow:hidden;margin-bottom:20px;border:1px solid var(--linha);}
+.etapa-header{padding:20px 28px;display:flex;align-items:center;gap:16px;border-bottom:1px solid var(--linha);}
+.etapa-num{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:700;flex-shrink:0;}
+.n-rosa{background:var(--rosa-claro);color:var(--rosa);}
+.n-verde{background:var(--verde-claro);color:var(--verde);}
+.n-azul{background:var(--azul-claro);color:var(--azul);}
+.n-roxo{background:var(--roxo-claro);color:var(--roxo);}
+.n-dourado{background:var(--dourado-claro);color:var(--dourado);}
+.etapa-info{flex:1;}
+.etapa-label{font-size:10px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--cinza);margin-bottom:3px;}
+.etapa-nome{font-size:17px;font-weight:500;color:var(--texto);}
+.etapa-tag{font-size:10px;font-weight:500;padding:4px 12px;border-radius:20px;white-space:nowrap;}
+.tag-rosa{background:var(--rosa-claro);color:var(--rosa);border:1px solid rgba(201,116,143,.2);}
+.tag-verde{background:var(--verde-claro);color:var(--verde);border:1px solid rgba(46,125,107,.2);}
+.tag-azul{background:var(--azul-claro);color:var(--azul);border:1px solid rgba(43,95,142,.2);}
+.tag-dourado{background:var(--dourado-claro);color:var(--dourado);border:1px solid rgba(154,123,79,.2);}
+.etapa-body{padding:22px 28px;}
+.topicos{list-style:none;}
+.topicos li{font-size:13.5px;color:var(--cinza);line-height:1.75;padding:8px 0 8px 20px;border-bottom:1px solid var(--linha);position:relative;}
+.topicos li:last-child{border-bottom:none;}
+.topicos li::before{content:'--';position:absolute;left:0;color:var(--rosa);font-weight:500;}
+.topicos li strong{color:var(--texto);}
+.dif-box{background:var(--rosa-claro);border:1px solid rgba(201,116,143,.2);border-radius:10px;padding:14px 18px;margin-top:16px;display:flex;gap:10px;align-items:flex-start;}
+.dif-box p{font-size:13px;color:var(--rosa-escuro);line-height:1.7;}
+.dif-box strong{color:var(--rosa-escuro);}
+.sci-box{background:var(--azul-claro);border:1px solid rgba(43,95,142,.2);border-radius:10px;padding:14px 18px;margin-top:16px;display:flex;gap:10px;align-items:flex-start;}
+.sci-box p{font-size:13px;color:var(--azul);line-height:1.7;}
+.sci-box strong{color:var(--azul);}
+.av-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-top:8px;}
+.av-item{background:var(--fundo);border:1px solid var(--linha);border-radius:10px;padding:14px 16px;}
+.av-icone{font-size:20px;margin-bottom:8px;}
+.av-nome{font-size:12px;font-weight:500;color:var(--texto);margin-bottom:4px;}
+.av-desc{font-size:12px;color:var(--cinza);line-height:1.6;}
+.tec-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:8px;}
+.tec-item{border-radius:12px;padding:16px 18px;border:1px solid var(--linha);}
+.tec-canula{background:var(--verde-claro);border-color:rgba(46,125,107,.2);}
+.tec-agulha{background:var(--azul-claro);border-color:rgba(43,95,142,.2);}
+.tec-hibrida{background:var(--roxo-claro);border-color:rgba(107,78,138,.2);grid-column:1/-1;}
+.tec-titulo{font-size:11px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:10px;}
+.tec-canula .tec-titulo{color:var(--verde);}
+.tec-agulha .tec-titulo{color:var(--azul);}
+.tec-hibrida .tec-titulo{color:var(--roxo);}
+.tec-lista{list-style:none;}
+.tec-lista li{font-size:13px;color:var(--cinza);padding:5px 0 5px 16px;position:relative;line-height:1.6;border-bottom:1px solid rgba(0,0,0,.05);}
+.tec-lista li:last-child{border-bottom:none;}
+.tec-canula .tec-lista li::before,.tec-agulha .tec-lista li::before,.tec-hibrida .tec-lista li::before{content:'v';position:absolute;left:0;font-weight:700;font-size:11px;}
+.tec-canula .tec-lista li::before{color:var(--verde);}
+.tec-agulha .tec-lista li::before{color:var(--azul);}
+.tec-hibrida .tec-lista li::before{color:var(--roxo);}
+.pos-grid{display:grid;gap:12px;margin-top:8px;}
+.pos-item{background:#fff;border-radius:12px;padding:16px 20px;border:1px solid var(--linha);display:flex;gap:14px;align-items:flex-start;}
+.pos-icone{font-size:20px;flex-shrink:0;}
+.pos-titulo{font-size:13px;font-weight:500;color:var(--texto);margin-bottom:4px;}
+.pos-desc{font-size:13px;color:var(--cinza);line-height:1.65;}
+.ideia-grid{display:grid;gap:16px;}
+.ideia-card{background:#fff;border-radius:14px;padding:22px 26px;border:1px solid var(--linha);position:relative;overflow:hidden;}
+.ideia-card::after{content:'';position:absolute;top:0;left:0;width:4px;height:100%;border-radius:4px 0 0 4px;}
+.ic-rosa::after{background:var(--rosa);}
+.ic-verde::after{background:var(--verde);}
+.ic-azul::after{background:var(--azul);}
+.ic-roxo::after{background:var(--roxo);}
+.ic-dourado::after{background:var(--dourado);}
+.ideia-label{font-size:10px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--cinza);margin-bottom:6px;}
+.ideia-titulo{font-size:15px;font-weight:500;color:var(--texto);margin-bottom:10px;}
+.ideia-topicos{list-style:none;}
+.ideia-topicos li{font-size:13px;color:var(--cinza);padding:5px 0 5px 16px;position:relative;line-height:1.6;border-bottom:1px solid var(--linha);}
+.ideia-topicos li:last-child{border-bottom:none;}
+.ideia-topicos li::before{content:'>';position:absolute;left:0;color:var(--rosa);font-size:11px;}
+.ideia-gancho{font-family:'Cormorant Garamond',serif;font-size:16px;font-style:italic;color:var(--rosa-escuro);padding:12px 16px;background:var(--rosa-claro);border-radius:8px;border-left:3px solid var(--rosa);margin-top:12px;line-height:1.65;}
+footer{background:#fff;border-top:1px solid var(--linha);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;font-size:12px;color:var(--cinza);}
+footer strong{color:var(--rosa);}
+@media(max-width:640px){.hero{padding:32px 20px 28px;}.nav{padding:0 16px;}main{padding:28px 16px;}.etapa-body{padding:18px 20px;}.tec-grid{grid-template-columns:1fr;}.tec-hibrida{grid-column:unset;}footer{flex-direction:column;gap:8px;text-align:center;padding:16px 20px;}}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-tag">Protocolo Clínico · Base para Conteúdo</div>
+  <h1>Protocolo de <em>Preenchimento Labial</em></h1>
+  <p class="hero-sub">Dra. Nathalia Teofilo Porto · Cirurgiã-Dentista · CRO-SP 171374 · Campinas/SP</p>
+  <div class="hero-badges">
+    <span class="hero-badge">💉 Ácido Hialurônico</span>
+    <span class="hero-badge">🎯 Técnica Híbrida</span>
+    <span class="hero-badge">🤍 Atendimento Humanizado</span>
+    <span class="hero-badge">📋 Base para posts da equipe</span>
+  </div>
+</div>
+
+<nav class="nav">
+  <button class="nav-btn active" onclick="showSection('avaliacao')">👁️ Avaliação</button>
+  <button class="nav-btn" onclick="showSection('procedimento')">💉 Procedimento</button>
+  <button class="nav-btn" onclick="showSection('tecnicas')">📐 Técnicas</button>
+  <button class="nav-btn" onclick="showSection('pos')">🌿 Pós-operatório</button>
+  <button class="nav-btn" onclick="showSection('ideias')">💡 Ideias de Posts</button>
+</nav>
+
+<main>
+
+<!-- AVALIAÇÃO -->
+<div id="avaliacao" class="section active">
+  <div class="section-header">
+    <h2>Avaliação e <em>Planejamento</em></h2>
+    <p>Tudo começa antes de qualquer produto. A avaliação é onde o resultado é construído.</p>
+  </div>
+
+  <div class="etapa">
+    <div class="etapa-header">
+      <div class="etapa-num n-rosa">01</div>
+      <div class="etapa-info">
+        <div class="etapa-label">Primeira etapa</div>
+        <div class="etapa-nome">Análise da Anatomia Labial</div>
+      </div>
+      <span class="etapa-tag tag-rosa">Antes de tudo</span>
+    </div>
+    <div class="etapa-body">
+      <div class="av-grid">
+        <div class="av-item"><div class="av-icone">📐</div><div class="av-nome">Proporção</div><div class="av-desc">Relação entre lábio superior e inferior · equilíbrio do terço inferior</div></div>
+        <div class="av-item"><div class="av-icone">🔍</div><div class="av-nome">Arco do Cupido</div><div class="av-desc">Definição e simetria · presença ou ausência de projeção</div></div>
+        <div class="av-item"><div class="av-icone">📏</div><div class="av-nome">Medidas</div><div class="av-desc">Medições precisas para planejamento milimétrico · cada décimo importa</div></div>
+        <div class="av-item"><div class="av-icone">🦷</div><div class="av-nome">Estrutura Dental</div><div class="av-desc">Os dentes formam a base do lábio · avaliados antes de qualquer decisão</div></div>
+        <div class="av-item"><div class="av-icone">👁️</div><div class="av-nome">Assimetrias</div><div class="av-desc">Diferenças de espessura entre os lados · sombras · pontos de correção</div></div>
+        <div class="av-item"><div class="av-icone">😊</div><div class="av-nome">Sorriso em Movimento</div><div class="av-desc">Como o lábio se comporta em expressão · não só em repouso</div></div>
+      </div>
+      <div class="dif-box"><p><strong>Diferencial:</strong> A Dra. Nathalia avalia os dentes como parte do planejamento labial. O lábio é a moldura — e os dentes são a estrutura que sustenta essa moldura. Nenhum profissional de estética que não é dentista faz isso.</p></div>
+    </div>
+  </div>
+
+  <div class="etapa">
+    <div class="etapa-header">
+      <div class="etapa-num n-verde">02</div>
+      <div class="etapa-info">
+        <div class="etapa-label">Segunda etapa</div>
+        <div class="etapa-nome">Documentação Fotográfica e Planejamento</div>
+      </div>
+      <span class="etapa-tag tag-verde">Antes do procedimento</span>
+    </div>
+    <div class="etapa-body">
+      <ul class="topicos">
+        <li><strong>Fotos padronizadas</strong> — frontal, perfil e ¾ antes de qualquer intervenção</li>
+        <li><strong>Planejamento mostrado para a paciente</strong> — ela vê o que será feito antes de acontecer</li>
+        <li><strong>Desenho na própria boca</strong> — marcações direto no lábio para visualizar o resultado planejado</li>
+        <li><strong>Alinhamento de expectativas</strong> — conversa real sobre o que é possível e o que o lábio dela pede</li>
+        <li>Escolha do produto e da técnica com base na anatomia individual</li>
+      </ul>
+      <div class="dif-box"><p><strong>Diferencial:</strong> Mostrar o planejamento para a paciente antes do procedimento é raro. Elimina insegurança, alinha expectativas e cria confiança antes da primeira aplicação.</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- PROCEDIMENTO -->
+<div id="procedimento" class="section">
+  <div class="section-header">
+    <h2>O <em>Procedimento</em></h2>
+    <p>Cada etapa tem um propósito. Nada é por acaso.</p>
+  </div>
+
+  <div class="etapa">
+    <div class="etapa-header">
+      <div class="etapa-num n-verde">01</div>
+      <div class="etapa-info"><div class="etapa-label">Preparação</div><div class="etapa-nome">Limpeza e Antissepsia</div></div>
+      <span class="etapa-tag tag-verde">Segurança</span>
+    </div>
+    <div class="etapa-body">
+      <ul class="topicos">
+        <li>Remoção completa de maquiagem e resíduos da região labial</li>
+        <li><strong>Clorexidina</strong> para limpeza e antissepsia — reduz risco de infecção</li>
+        <li>Região preparada antes de qualquer contato com produto</li>
+      </ul>
+      <div class="sci-box"><p>A antissepsia com clorexidina é etapa obrigatória em procedimentos injetáveis para prevenção de eventos adversos infecciosos.</p></div>
+    </div>
+  </div>
+
+  <div class="etapa">
+    <div class="etapa-header">
+      <div class="etapa-num n-azul">02</div>
+      <div class="etapa-info"><div class="etapa-label">Conforto</div><div class="etapa-nome">Anestesia Intraoral</div></div>
+      <span class="etapa-tag tag-azul">Conforto da paciente</span>
+    </div>
+    <div class="etapa-body">
+      <ul class="topicos">
+        <li><strong>Anestesia intraoral</strong> — bloqueio do nervo para conforto real durante todo o procedimento</li>
+        <li>Dosagem individualizada — calculada para cada paciente, inclusive para quem tem histórico de dor</li>
+        <li><strong>Tempo de espera</strong> — a paciente tem espaço para respirar, se acalmar e se sentir segura antes de iniciar</li>
+        <li>Nenhum procedimento começa sem a paciente estar confortável e tranquila</li>
+      </ul>
+      <div class="dif-box"><p><strong>Diferencial:</strong> A anestesia intraoral garante que a paciente não sente dor — nem leve. Isso é especialmente importante para quem já teve experiências ruins com outros profissionais.</p></div>
+    </div>
+  </div>
+
+  <div class="etapa">
+    <div class="etapa-header">
+      <div class="etapa-num n-rosa">03</div>
+      <div class="etapa-info"><div class="etapa-label">Aplicação</div><div class="etapa-nome">Técnica de Preenchimento</div></div>
+      <span class="etapa-tag tag-rosa">Técnica individualizada</span>
+    </div>
+    <div class="etapa-body">
+      <ul class="topicos">
+        <li>Técnica escolhida <strong>para aquele lábio específico</strong> — não há protocolo fixo</li>
+        <li>Escolha entre cânula, agulha ou técnica híbrida baseada na anatomia e histórico da paciente</li>
+        <li>Distribuição milimétrica do produto — cada décimo tem um destino planejado</li>
+        <li>Avaliação constante durante a aplicação — resultado construído em tempo real</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- TÉCNICAS -->
+<div id="tecnicas" class="section">
+  <div class="section-header">
+    <h2>As <em>Técnicas</em></h2>
+    <p>A escolha da técnica é clínica — não estética. Cada lábio pede algo diferente.</p>
+  </div>
+
+  <div class="etapa">
+    <div class="etapa-header">
+      <div class="etapa-num n-rosa">—</div>
+      <div class="etapa-info"><div class="etapa-label">Comparativo</div><div class="etapa-nome">Cânula · Agulha · Técnica Híbrida</div></div>
+    </div>
+    <div class="etapa-body">
+      <div class="tec-grid">
+        <div class="tec-item tec-canula">
+          <div class="tec-titulo">Cânula</div>
+          <ul class="tec-lista">
+            <li>Menos trauma vascular</li>
+            <li>Ideal para quem roxa fácil</li>
+            <li>Recuperação mais rápida</li>
+            <li>Menor risco de hematoma</li>
+            <li>Distribuição suave do produto</li>
+          </ul>
+        </div>
+        <div class="tec-item tec-agulha">
+          <div class="tec-titulo">Agulha</div>
+          <ul class="tec-lista">
+            <li>Maior precisão no contorno</li>
+            <li>Ideal para arco do cupido</li>
+            <li>Controle de pontos específicos</li>
+            <li>Indicada para correções sutis</li>
+            <li>Aplicações superficiais precisas</li>
+          </ul>
+        </div>
+        <div class="tec-item tec-hibrida">
+          <div class="tec-titulo">Técnica Híbrida — o diferencial da Dra. Nathalia</div>
+          <ul class="tec-lista">
+            <li>Combinação de cânula e agulha no mesmo procedimento — e pode incluir produtos diferentes para cada região e objetivo</li>
+            <li>Contorno + volume + hidratação em uma única sessão · ex: Perfectha Deep para contorno, Restylane Derm para volume e hidratação</li>
+            <li>Resultado mais equilibrado e duradouro — respaldado na literatura científica</li>
+            <li>Cada técnica aplicada onde faz mais sentido anatomicamente</li>
+            <li>Decisão feita durante o procedimento, baseada no que o lábio pede em tempo real</li>
+          </ul>
+        </div>
+      </div>
+      <div class="sci-box" style="margin-top:16px;"><p><strong>Respaldo científico:</strong> A combinação de técnicas diferentes no mesmo procedimento resulta em maior equilíbrio e durabilidade do resultado. A escolha do instrumento deve ser determinada pela área, profundidade e perfil individual da paciente.</p></div>
+    </div>
+  </div>
+
+  <div class="etapa">
+    <div class="etapa-header">
+      <div class="etapa-num n-dourado">—</div>
+      <div class="etapa-info"><div class="etapa-label">Produtos utilizados</div><div class="etapa-nome">Restylane Derm e Perfectha Deep</div></div>
+      <span class="etapa-tag tag-dourado">Linha labial</span>
+    </div>
+    <div class="etapa-body">
+      <ul class="topicos">
+        <li><strong>Restylane Derm</strong> — desenvolvido para lábios · gel macio que acompanha o movimento natural · tecnologia OBT</li>
+        <li><strong>Perfectha Deep</strong> — para contorno e definição · tecnologia E-brid francesa · aprovado FDA, ANVISA e MHRA</li>
+        <li>Escolha do produto baseada na queixa, anatomia e objetivo de cada paciente</li>
+        <li>Nunca o mesmo produto para duas pacientes</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- PÓS-OPERATÓRIO -->
+<div id="pos" class="section">
+  <div class="section-header">
+    <h2>Pós-<em>Operatório</em></h2>
+    <p>O acompanhamento faz parte do resultado. O procedimento não termina quando a paciente sai.</p>
+  </div>
+
+  <div class="pos-grid">
+    <div class="pos-item"><div class="pos-icone">📄</div><div><div class="pos-titulo">Documento Personalizado</div><div class="pos-desc">Cada paciente recebe um documento de cuidados pós-operatórios personalizado — não uma folha genérica.</div></div></div>
+    <div class="pos-item"><div class="pos-icone">🧊</div><div><div class="pos-titulo">Compressa Fria</div><div class="pos-desc">Nas primeiras horas para controlar edema e vasodilatação local.</div></div></div>
+    <div class="pos-item"><div class="pos-icone">💊</div><div><div class="pos-titulo">Dexametasona</div><div class="pos-desc">Prescrita por 1 a 3 dias para reduzir a resposta inflamatória.</div></div></div>
+    <div class="pos-item"><div class="pos-icone">🧴</div><div><div class="pos-titulo">Hirudoid + Hidratante Labial</div><div class="pos-desc">Hirudoid se aparecer hematoma. Protetor e hidratante labial para manter a região cuidada.</div></div></div>
+    <div class="pos-item"><div class="pos-icone">🚫</div><div><div class="pos-titulo">Restrições</div><div class="pos-desc">Sem batom ou maquiagem por 24h · sem atividade física por 48h · sem sol, sauna ou calor intenso por 24h · sem álcool nas primeiras 24h · sem canudinho.</div></div></div>
+    <div class="pos-item"><div class="pos-icone">📅</div><div><div class="pos-titulo">Acompanhamento 15 Primeiros Dias</div><div class="pos-desc">A Dra. Nathalia acompanha de perto — a paciente tem acesso direto para tirar dúvidas e reportar qualquer alteração.</div></div></div>
+    <div class="pos-item"><div class="pos-icone">💆</div><div><div class="pos-titulo">Retornos Agendados para Massagens</div><div class="pos-desc">Mínimo 2 retornos com dias e horários fixos agendados — para massagens de acomodação do produto. Se necessário, sessões adicionais são incluídas. A paciente sai do consultório já com os próximos retornos marcados.</div></div></div>
+    <div class="pos-item"><div class="pos-icone">✨</div><div><div class="pos-titulo">Resultado Final — 15 a 30 dias</div><div class="pos-desc">O resultado real só é avaliado entre 15 e 30 dias — quando o produto está completamente acomodado e o edema resolvido.</div></div></div>
+  </div>
+
+  <div class="dif-box" style="margin-top:8px;"><p><strong>Diferencial:</strong> O procedimento não termina quando a paciente sai. O acompanhamento ativo nos 15 primeiros dias e os retornos para massagem são parte do protocolo — não um extra. Isso é o que garante o resultado final.</p></div>
+</div>
+
+<!-- IDEIAS DE POSTS -->
+<div id="ideias" class="section">
+  <div class="section-header">
+    <h2>Ideias de <em>Posts</em></h2>
+    <p>Baseadas no protocolo real da Dra. Nathalia. Cada ideia tem um gancho pronto.</p>
+  </div>
+
+  <div class="ideia-grid">
+    <div class="ideia-card ic-rosa">
+      <div class="ideia-label">Conteúdo educativo</div>
+      <div class="ideia-titulo">O que eu avalio antes de tocar no seu lábio</div>
+      <ul class="ideia-topicos">
+        <li>Proporção e medidas</li>
+        <li>Arco do cupido</li>
+        <li>Estrutura dental</li>
+        <li>Simetria e assimetrias</li>
+        <li>Comportamento no sorriso</li>
+      </ul>
+      <div class="ideia-gancho">"Antes de qualquer produto, eu passo por 6 etapas de avaliação. A maioria das pessoas não sabe disso."</div>
+    </div>
+
+    <div class="ideia-card ic-verde">
+      <div class="ideia-label">Bastidor · processo</div>
+      <div class="ideia-titulo">Por que eu mostro o planejamento para a paciente antes de começar</div>
+      <ul class="ideia-topicos">
+        <li>Fotos antes do procedimento</li>
+        <li>Desenho na própria boca</li>
+        <li>Alinhamento de expectativas</li>
+        <li>A paciente aprova antes de aplicar</li>
+      </ul>
+      <div class="ideia-gancho">"Eu nunca aplico sem antes mostrar o que vou fazer. A paciente precisa ver antes de sentir."</div>
+    </div>
+
+    <div class="ideia-card ic-azul">
+      <div class="ideia-label">Educativo · técnica</div>
+      <div class="ideia-titulo">Cânula ou agulha — e quando uso as duas juntas</div>
+      <ul class="ideia-topicos">
+        <li>O que cada técnica faz</li>
+        <li>Quando a cânula é a escolha certa</li>
+        <li>Quando a agulha é necessária</li>
+        <li>O que é técnica híbrida</li>
+      </ul>
+      <div class="ideia-gancho">"Cânula ou agulha? Essa decisão não é aleatória. Deixa eu te explicar o meu raciocínio."</div>
+    </div>
+
+    <div class="ideia-card ic-roxo">
+      <div class="ideia-label">Humanizado · pós</div>
+      <div class="ideia-titulo">O que eu entrego depois do procedimento</div>
+      <ul class="ideia-topicos">
+        <li>Documento personalizado de cuidados</li>
+        <li>Acompanhamento nos 15 primeiros dias</li>
+        <li>Retornos agendados com dia e hora fixos — mínimo 2 sessões de massagem</li>
+        <li>Resultado real só em 15 a 30 dias</li>
+      </ul>
+      <div class="ideia-gancho">"O meu trabalho não termina quando você sai do consultório. Ele continua por 30 dias."</div>
+    </div>
+
+    <div class="ideia-card ic-dourado">
+      <div class="ideia-label">Autoridade · diferencial</div>
+      <div class="ideia-titulo">Por que a anestesia intraoral muda tudo</div>
+      <ul class="ideia-topicos">
+        <li>O que é anestesia intraoral</li>
+        <li>Por que elimina a dor de verdade</li>
+        <li>A diferença para quem já teve experiências ruins</li>
+        <li>O tempo de espera como cuidado</li>
+      </ul>
+      <div class="ideia-gancho">"Você não deveria sentir dor em um preenchimento labial. Nem leve. Se sentiu — a anestesia não foi feita do jeito certo."</div>
+    </div>
+  </div>
+</div>
+
+</main>
+
+<footer>
+  <span>Protocolo clínico · <strong>Dra. Nathalia Teofilo Porto</strong> · CRO-SP 171374 · Campinas/SP</span>
+  <span>Base para criação de conteúdo · Equipe de social mídia</span>
+</footer>
+
+<script>
+function showSection(id){
+  document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
+  document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  event.target.classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+</script>
+</body>
+</html>

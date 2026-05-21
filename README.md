@@ -40,3 +40,4 @@ Repositório **público** (requisito do GitHub Pages no plano gratuito). Para co
 | `dra-nathalia-meta-mai-2026` | Dra Nathalia Teófilo — Situação Meta Ads pré-reunião com agência | 19/05/2026 | [abrir](https://gudaneluti.github.io/relatorios-clientes/dra-nathalia-meta-mai-2026/) |
 | `dra-nathalia-guia-produtos` | Dra Nathalia Teófilo — Guia de Produtos da clínica | — | [abrir](https://gudaneluti.github.io/relatorios-clientes/dra-nathalia-guia-produtos/) |
 | `dra-nathalia-briefing-produtos` | Dra Nathalia Teófilo — Briefing de Produtos da equipe | — | [abrir](https://gudaneluti.github.io/relatorios-clientes/dra-nathalia-briefing-produtos/) |
+| `dra-nathalia-protocolo-labios` | Dra Nathalia Teófilo — Protocolo de Lábios da equipe | 20/05/2026 | [abrir](https://gudaneluti.github.io/relatorios-clientes/dra-nathalia-protocolo-labios/) |
