@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MarketingPro — Boas-vindas Trio</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #0a0a0a;
+      --surface: #111111;
+      --surface-2: #1a1a1a;
+      --border: #1f1f1f;
+      --border-strong: #2e2e2e;
+      --text: #fafafa;
+      --text-muted: #888;
+      --text-dim: #555;
+      --accent: #4F6EF7;
+      --accent-light: #6B8AFF;
+      --accent-dim: rgba(79, 110, 247, 0.12);
+      --green: #22c55e;
+      --green-dim: rgba(34, 197, 94, 0.12);
+      --yellow: #eab308;
+      --yellow-dim: rgba(234, 179, 8, 0.12);
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      overflow: hidden;
+      height: 100vh;
+      width: 100vw;
+    }
+
+    .slide {
+      display: none;
+      flex-direction: column;
+      height: 100vh;
+      width: 100vw;
+      padding: 90px 80px 80px;
+      position: relative;
+      animation: fadeIn 0.4s ease;
+    }
+
+    .slide.active { display: flex; }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Header */
+    .header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 12px 32px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      z-index: 50;
+      height: 56px;
+    }
+    .header img { height: 28px; width: 28px; border-radius: 50%; }
+    .header-brand {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text);
+    }
+    .header-meta {
+      margin-left: auto;
+      display: flex;
+      gap: 22px;
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+    .header-meta strong { color: var(--accent-light); font-weight: 600; }
+
+    .progress-bar {
+      position: fixed;
+      top: 56px; left: 0;
+      height: 2px;
+      background: var(--accent);
+      transition: width 0.4s ease;
+      z-index: 100;
+    }
+
+    .nav {
+      position: fixed;
+      bottom: 32px; right: 40px;
+      display: flex; gap: 10px;
+      z-index: 100;
+    }
+    .nav button {
+      background: var(--surface-2);
+      border: 1px solid var(--border-strong);
+      color: var(--text-muted);
+      padding: 10px 18px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      transition: all 0.2s;
+    }
+    .nav button:hover {
+      background: var(--accent);
+      color: white;
+      border-color: var(--accent);
+    }
+
+    .slide-counter {
+      position: fixed;
+      bottom: 38px; left: 40px;
+      font-size: 13px;
+      color: var(--text-muted);
+      font-weight: 500;
+      z-index: 100;
+    }
+
+    h1 {
+      font-size: 48px;
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -1.8px;
+      margin-bottom: 18px;
+    }
+
+    h2 {
+      font-size: 34px;
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -1px;
+      margin-bottom: 14px;
+    }
+
+    .subtitle {
+      font-size: 18px;
+      color: var(--text-muted);
+      font-weight: 400;
+      line-height: 1.6;
+      max-width: 720px;
+    }
+
+    .accent { color: var(--accent-light); }
+    .green { color: var(--green); }
+    .yellow { color: var(--yellow); }
+
+    .slide-content {
+      max-width: 1100px;
+      width: 100%;
+      margin: 0 auto;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .tag {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--accent-light);
+      margin-bottom: 14px;
+    }
+
+    /* Cover */
+    .cover {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      flex: 1;
+    }
+    .cover img {
+      height: 110px;
+      width: 110px;
+      border-radius: 50%;
+      margin-bottom: 36px;
+    }
+    .cover h1 {
+      font-size: 56px;
+      letter-spacing: -2px;
+    }
+
+    /* Cards */
+    .cards-3 {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 16px;
+      margin-top: 24px;
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 22px 24px;
+    }
+    .card-tag {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      color: var(--accent-light);
+      margin-bottom: 10px;
+    }
+    .card-title {
+      font-size: 19px;
+      font-weight: 700;
+      letter-spacing: -0.4px;
+      margin-bottom: 12px;
+    }
+    .card-body {
+      font-size: 13.5px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+    .card-body strong { color: var(--text); font-weight: 600; }
+
+    /* Objectives list */
+    .obj-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-top: 28px;
+    }
+    .obj-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 18px;
+      padding: 18px 22px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+    }
+    .obj-num {
+      width: 36px;
+      height: 36px;
+      min-width: 36px;
+      border-radius: 50%;
+      background: var(--accent-dim);
+      color: var(--accent-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      font-weight: 800;
+    }
+    .obj-text {
+      font-size: 16px;
+      color: var(--text);
+      line-height: 1.5;
+    }
+    .obj-text small {
+      display: block;
+      color: var(--text-muted);
+      font-size: 13px;
+      margin-top: 4px;
+      font-weight: 400;
+    }
+
+    /* Question card */
+    .question-card {
+      margin-top: 28px;
+      padding: 22px 26px;
+      background: rgba(79, 110, 247, 0.08);
+      border-left: 4px solid var(--accent);
+      border-radius: 8px;
+      font-size: 18px;
+      color: var(--text);
+      line-height: 1.6;
+      font-weight: 500;
+    }
+    .question-card .q-label {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      color: var(--accent-light);
+      display: block;
+      margin-bottom: 8px;
+    }
+    .question-card .q-list {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-top: 10px;
+    }
+    .question-card .q-item {
+      font-size: 15px;
+      color: var(--text-muted);
+      line-height: 1.5;
+      padding-left: 14px;
+      position: relative;
+    }
+    .question-card .q-item::before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      color: var(--accent-light);
+      font-weight: 700;
+    }
+
+    /* Person card with bullets */
+    .person-task {
+      display: flex;
+      flex-direction: column;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px 26px;
+    }
+    .person-task .pt-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 14px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+    .person-task .pt-role {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      color: var(--accent-light);
+    }
+    .person-task .pt-name {
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      margin-left: auto;
+    }
+    .person-task .pt-bullets {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .person-task .pt-bullet {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.55;
+      padding-left: 16px;
+      position: relative;
+    }
+    .person-task .pt-bullet::before {
+      content: "·";
+      position: absolute;
+      left: 0;
+      color: var(--accent-light);
+      font-size: 22px;
+      line-height: 1;
+      font-weight: 800;
+    }
+    .person-task .pt-bullet b { color: var(--text); font-weight: 600; }
+
+    .note {
+      margin-top: 16px;
+      padding: 14px 18px;
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+    .note b { color: var(--text); }
+
+    /* Goal example boxes */
+    .goal-example {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 14px;
+      margin-top: 22px;
+    }
+    .goal-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 18px 20px;
+    }
+    .goal-vertical {
+      font-size: 10.5px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--accent-light);
+      margin-bottom: 8px;
+    }
+    .goal-name {
+      font-size: 15px;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+    .goal-items {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .goal-pct-row {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      font-size: 12.5px;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+    .goal-pct {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--yellow);
+      min-width: 28px;
+    }
+
+    /* Next steps */
+    .steps-list {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .step-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 14px 20px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+    }
+    .step-num {
+      width: 28px;
+      height: 28px;
+      min-width: 28px;
+      border-radius: 50%;
+      background: var(--accent-dim);
+      color: var(--accent-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      font-weight: 700;
+    }
+    .step-text {
+      font-size: 15px;
+      color: var(--text);
+      line-height: 1.5;
+    }
+    .step-text small {
+      display: block;
+      color: var(--text-muted);
+      font-size: 12.5px;
+      margin-top: 3px;
+      font-weight: 400;
+    }
+
+    .keyboard-hint {
+      position: fixed;
+      bottom: 38px; left: 50%;
+      transform: translateX(-50%);
+      font-size: 11px;
+      color: var(--text-dim);
+      opacity: 0.5;
+    }
+    kbd {
+      background: var(--surface-2);
+      border: 1px solid var(--border-strong);
+      border-radius: 4px;
+      padding: 2px 6px;
+      font-family: 'Inter', sans-serif;
+      font-size: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="header">
+    <img src="logo-mp.png" alt="MP">
+    <span class="header-brand">MarketingPro · Trio Kickoff</span>
+    <div class="header-meta">
+      <span>22 mai 2026</span>
+      <span><strong>Cap table:</strong> 55 / 25 / 20</span>
+    </div>
+  </div>
+
+  <div class="progress-bar" id="progressBar"></div>
+
+  <!-- SLIDE 1: Capa -->
+  <div class="slide active" id="slide-1">
+    <div class="slide-content cover">
+      <img src="logo-mp.png" alt="MP">
+      <div class="tag">Primeira conversa do trio</div>
+      <h1>Bem-vindo, <span class="accent">Yago</span>.</h1>
+      <p class="subtitle">A partir de hoje, somos três sócios. Esta é a conversa curta de hoje. A reunião de planejamento real é segunda.</p>
+    </div>
+  </div>
+
+  <!-- SLIDE 2: Por que estamos aqui hoje -->
+  <div class="slide" id="slide-2">
+    <div class="slide-content">
+      <div class="tag">O que vamos fazer agora</div>
+      <h2>3 objetivos para esta conversa.<br>Curtos.</h2>
+
+      <div class="obj-list">
+        <div class="obj-item">
+          <div class="obj-num">1</div>
+          <div class="obj-text">
+            Oficializar a entrada do Yago como co-founder do MarketingPro
+            <small>Acordo verbal entre os três, vamos formalizar nas próximas semanas com advogado e contador</small>
+          </div>
+        </div>
+        <div class="obj-item">
+          <div class="obj-num">2</div>
+          <div class="obj-text">
+            Tirar dúvidas sobre os 3 briefings que cada um recebeu
+            <small>Yago leu o dele, Marcos leu o dele, eu trouxe o de produto. Vamos alinhar leituras antes de planejar</small>
+          </div>
+        </div>
+        <div class="obj-item">
+          <div class="obj-num">3</div>
+          <div class="obj-text">
+            Definir o que cada um traz para a reunião de planejamento de segunda
+            <small>Segunda é a primeira reunião de cadência semanal. Cada um vem com lição de casa</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 3: Vez do Yago — alinhamento de leitura -->
+  <div class="slide" id="slide-3">
+    <div class="slide-content">
+      <div class="tag">Objetivo deste slide — Yago no centro</div>
+      <h2>Antes de planejar,<br>queremos <span class="accent">ouvir você</span>.</h2>
+      <p class="subtitle" style="margin-top: 4px;">Você leu o doc da tua vertical. Marcos e eu lemos os nossos. Esse momento é para ajustar o que precisa antes de irmos para o "como executar".</p>
+
+      <div class="obj-list" style="margin-top: 22px;">
+        <div class="obj-item">
+          <div class="obj-num">?</div>
+          <div class="obj-text">
+            Como foi a leitura do teu doc?
+            <small>Algo que te surpreendeu sobre o estado da empresa, dos clientes, ou da operação?</small>
+          </div>
+        </div>
+        <div class="obj-item">
+          <div class="obj-num">?</div>
+          <div class="obj-text">
+            Algum gap na descrição da tua vertical?
+            <small>Algo que tu vê diferente, ou que faltou explicitar sobre o que esperamos da operação?</small>
+          </div>
+        </div>
+        <div class="obj-item">
+          <div class="obj-num">?</div>
+          <div class="obj-text">
+            Cap table, vesting, governança — alguma dúvida?
+            <small>Antes de formalizar com advogado e contador, é o momento certo de levantar</small>
+          </div>
+        </div>
+        <div class="obj-item">
+          <div class="obj-num">?</div>
+          <div class="obj-text">
+            Alguma proposta tua que faz mais sentido que o que está no doc?
+            <small>Doc é hipótese. Se você vê outra forma, traz</small>
+          </div>
+        </div>
+      </div>
+
+      <div class="note">
+        <b>Depois do Yago:</b> Marcos e Gustavo complementam — dúvidas sobre suas próprias verticais ou pontos a alinhar entre as três.
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 4: O que cada um traz na segunda -->
+  <div class="slide" id="slide-4">
+    <div class="slide-content">
+      <div class="tag">Lição de casa para segunda</div>
+      <h2>Cada um chega com <span class="accent">um esboço</span>.<br>Não é prescrição — é input pra discussão.</h2>
+
+      <div class="cards-3">
+        <div class="person-task">
+          <div class="pt-header">
+            <div class="pt-role">Yago</div>
+            <div class="pt-name" style="color: var(--accent-light);">Operação</div>
+          </div>
+          <div class="pt-bullets">
+            <div class="pt-bullet"><b>Hipótese de processo de onboarding</b> — baseado no que funcionou com Skin House (12 dias, 3 reuniões)</div>
+            <div class="pt-bullet"><b>Plano dos primeiros 30 dias</b> — o que tu quer atacar primeiro: imersão, Revitta, Grasiele, base de conhecimento</div>
+            <div class="pt-bullet"><b>Setup do Notion</b> — primeira estrutura proposta do hub central</div>
+          </div>
+        </div>
+
+        <div class="person-task">
+          <div class="pt-header">
+            <div class="pt-role">Marcos</div>
+            <div class="pt-name" style="color: var(--accent-light);">Vendas</div>
+          </div>
+          <div class="pt-bullets">
+            <div class="pt-bullet"><b>Pipeline atual qualificado</b> — quem está na frente comercial, em que estágio</div>
+            <div class="pt-bullet"><b>Plano comercial dos próximos 90 dias</b> — onde focar, quais canais ativar, parceria Stephanie</div>
+            <div class="pt-bullet"><b>Features prioritárias para destravar venda</b> — o que do roadmap fala mais alto para o cliente</div>
+          </div>
+        </div>
+
+        <div class="person-task">
+          <div class="pt-header">
+            <div class="pt-role">Gustavo</div>
+            <div class="pt-name" style="color: var(--accent-light);">Produto</div>
+          </div>
+          <div class="pt-bullets">
+            <div class="pt-bullet"><b>Hipótese de prioridades de produto</b> — multi-funil, onboarding flow, IA — com triggers de venda e operação</div>
+            <div class="pt-bullet"><b>Riscos técnicos a monitorar</b> — Meta, OpenAI cost, Evolution API</div>
+            <div class="pt-bullet"><b>Status da abertura da empresa</b> — advogado, contador, próximos passos</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="note">
+        <b>Importante:</b> não é apresentação pronta. É rascunho para a gente debater junto na segunda. O objetivo de segunda é convergir os 3 esboços em um plano único de 90 dias.
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 5: Metas semestrais -->
+  <div class="slide" id="slide-5">
+    <div class="slide-content">
+      <div class="tag">Prioridade da semana</div>
+      <h2>Cada um rascunha <span class="accent">suas 3 metas semestrais</span>.</h2>
+      <p class="subtitle" style="margin-top: 4px;">São as etapas de milestone vesting (20/20/10). Definidas pelos três antes de assinar.</p>
+
+      <div class="goal-example">
+        <div class="goal-box">
+          <div class="goal-vertical">Yago — Operação</div>
+          <div class="goal-name">Exemplos de meta</div>
+          <div class="goal-items">
+            <div class="goal-pct-row"><span class="goal-pct">20%</span><span>Playbook de onboarding documentado e aplicado</span></div>
+            <div class="goal-pct-row"><span class="goal-pct">20%</span><span>Taxa de churn 60d abaixo de Z%</span></div>
+            <div class="goal-pct-row"><span class="goal-pct">10%</span><span>NPS médio acima de W</span></div>
+          </div>
+        </div>
+
+        <div class="goal-box">
+          <div class="goal-vertical">Marcos — Vendas</div>
+          <div class="goal-name">Exemplos de meta</div>
+          <div class="goal-items">
+            <div class="goal-pct-row"><span class="goal-pct">20%</span><span>X clientes ativos pagantes</span></div>
+            <div class="goal-pct-row"><span class="goal-pct">20%</span><span>R$Y MRR sustentado</span></div>
+            <div class="goal-pct-row"><span class="goal-pct">10%</span><span>Parceria de canal fechada</span></div>
+          </div>
+        </div>
+
+        <div class="goal-box">
+          <div class="goal-vertical">Gustavo — Produto</div>
+          <div class="goal-name">Exemplos de meta</div>
+          <div class="goal-items">
+            <div class="goal-pct-row"><span class="goal-pct">20%</span><span>Multi-funil + Onboarding flow em produção</span></div>
+            <div class="goal-pct-row"><span class="goal-pct">20%</span><span>Agente IA + Copiloto liberados (qualidade)</span></div>
+            <div class="goal-pct-row"><span class="goal-pct">10%</span><span>Plataforma pronta para escala</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="question-card">
+        <span class="q-label">Pergunta para guiar o exercício</span>
+        Qual a meta que, se atingida, prova que a tua vertical funcionou nos primeiros 6 meses?
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 6: Próximos passos -->
+  <div class="slide" id="slide-6">
+    <div class="slide-content">
+      <div class="tag">A partir de hoje</div>
+      <h2>Próximos passos <span class="accent">concretos</span>.</h2>
+
+      <div class="steps-list">
+        <div class="step-row">
+          <div class="step-num">1</div>
+          <div class="step-text">
+            Cada um rascunha as 3 metas semestrais durante a semana
+            <small>Para discussão e calibragem na segunda</small>
+          </div>
+        </div>
+        <div class="step-row">
+          <div class="step-num">2</div>
+          <div class="step-text">
+            Cada um traz o esboço da lição de casa para segunda
+            <small>Yago: onboarding + 30d · Marcos: pipeline + 90d · Gustavo: roadmap + riscos</small>
+          </div>
+        </div>
+        <div class="step-row">
+          <div class="step-num">3</div>
+          <div class="step-text">
+            Setup do Slack e Notion essa semana
+            <small>Yago lidera, todos contribuem com a estrutura inicial</small>
+          </div>
+        </div>
+        <div class="step-row">
+          <div class="step-num">4</div>
+          <div class="step-text">
+            Email com domínio próprio (@marketingprocrm.com.br) configurado
+            <small>Setup técnico com Cloudflare em paralelo</small>
+          </div>
+        </div>
+        <div class="step-row">
+          <div class="step-num">5</div>
+          <div class="step-text">
+            Próxima reunião — segunda-feira, 1h
+            <small>Primeira reunião de cadência semanal. Planejamento dos 90 dias</small>
+          </div>
+        </div>
+      </div>
+
+      <div class="question-card" style="margin-top: 22px;">
+        <span class="q-label">Antes de encerrar</span>
+        Tem algo que ficou solto? Algo que cada um precisa do outro para conseguir trazer o esboço de segunda?
+      </div>
+    </div>
+  </div>
+
+  <div class="slide-counter" id="slideCounter">1 / 6</div>
+  <div class="keyboard-hint"><kbd>←</kbd> <kbd>→</kbd> ou clique para navegar</div>
+  <div class="nav">
+    <button onclick="prevSlide()">← Anterior</button>
+    <button onclick="nextSlide()">Próximo →</button>
+  </div>
+
+  <script>
+    const slides = document.querySelectorAll('.slide');
+    const totalSlides = slides.length;
+    let current = 0;
+
+    function showSlide(index) {
+      slides[current].classList.remove('active');
+      current = Math.max(0, Math.min(index, totalSlides - 1));
+      slides[current].classList.add('active');
+      document.getElementById('slideCounter').textContent = `${current + 1} / ${totalSlides}`;
+      document.getElementById('progressBar').style.width = `${((current + 1) / totalSlides) * 100}%`;
+    }
+    function nextSlide() { showSlide(current + 1); }
+    function prevSlide() { showSlide(current - 1); }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); nextSlide(); }
+      if (e.key === 'ArrowLeft') { e.preventDefault(); prevSlide(); }
+    });
+
+    let touchStartX = 0;
+    document.addEventListener('touchstart', (e) => { touchStartX = e.touches[0].clientX; });
+    document.addEventListener('touchend', (e) => {
+      const diff = touchStartX - e.changedTouches[0].clientX;
+      if (Math.abs(diff) > 50) { diff > 0 ? nextSlide() : prevSlide(); }
+    });
+
+    document.getElementById('progressBar').style.width = `${(1 / totalSlides) * 100}%`;
+  </script>
+
+</body>
+</html>
